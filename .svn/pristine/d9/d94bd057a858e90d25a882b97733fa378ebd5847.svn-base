@@ -1,0 +1,69 @@
+
+define(['services/services'],
+  function(services) {
+
+    services.factory('deptFactory', ['$http', function ($http, utils) {
+
+     var urlBase = 'http://10.188.192.200:8080/';
+    var deptFactory = {};
+    var deptUrl = "/department";
+
+    deptFactory.getDepts = function () {
+        return $http.get(urlBase +deptUrl +'/all',{cache: true});
+    };
+    deptFactory.getDeptsAndEmployees = function () {
+        return $http.get(urlBase +deptUrl +'/departments/employees',{cache: true});
+    };
+
+    deptFactory.getDept = function (deptId) {
+        return $http.get(urlBase  +deptUrl+ '/' + deptId,{cache: true});
+    };
+
+    deptFactory.insertDept = function (data) {
+      return $http.post(urlBase +deptUrl,data);
+    };
+
+    deptFactory.deleteDept = function (deptId) {
+        return $http.delete(urlBase +deptUrl + '/'+ deptId);
+    };
+
+    deptFactory.updateDept = function (deptId,data) {
+        return $http.put(urlBase  +deptUrl+ '/' + deptId ,data);
+    };
+
+    deptFactory.getDepartmentJobTitles = function(deptId){
+    return $http.get(urlBase + '/jobTitle/department/' + deptId );
+    }
+
+    deptFactory.getDepartmentPositions = function(deptId){
+    return $http.get(urlBase + '/position/department/' + deptId );
+    }
+
+    return deptFactory;
+  }])
+
+  .factory('utils', function () {
+
+    return {
+
+      // Util for finding an object by its 'id' property among an array
+      findById: function findById(a, id) {
+        for (var i = 0; i < a.length; i++) {
+          if (a[i].id == id) return a[i];
+        }
+        return null;
+      },
+
+      // Util for returning a randomKey from a collection that also isn't the current key
+      newRandomKey: function newRandomKey(coll, key, currentKey){
+        var randKey;
+        do {
+          randKey = coll[Math.floor(coll.length * Math.random())][key];
+        } while (randKey == currentKey);
+        return randKey;
+      }
+
+    };
+
+  });
+});

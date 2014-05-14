@@ -1,0 +1,67 @@
+<!--
+Author  : hmm
+Date    : 20140211
+Describe: 员工列表
+-->
+
+<div>
+ <form class="navbar-form pull-right">
+      <span class="navbarText">Filter:</span>&nbsp;&nbsp;<input type="text" data-ng-model="searchText" class="novalidate" />
+  </form>
+ <!--  <h2>{{dept.name}}</h2> -->
+<table class="table table-striped table-bordered table-advance table-hover dataTable userlist_table" id="employeeList_dt">
+
+    <thead>
+
+        <tr>
+
+            <th><i class="icon-user"></i> ID</th>
+
+            <th><i class="icon-user"></i> 用户名</th>
+
+            <th><i class="icon-user"></i> 邮箱</th>
+
+            <th><i class="icon-briefcase"></i> 主手机</th>
+
+            <th><i class="icon-briefcase"></i> 操作</th>
+            
+        </tr>
+        <tr ng-repeat="employee in employees | orderBy:predicate">
+          
+          <td>{{employee.employeeId}}</td>
+          <td ng-show="!isEdit(employee)"><input type="text" ng-model="employee.employeeName" />{{employee.employeeName}}</td>
+          <td><input type="text" ng-model="employee.employeeEmail" />{{employee.employeeEmail}}</td>
+           <td><input type="text" ng-model="employee.employeeMobilePhoneMaster" />{{employee.employeeMobilePhoneMaster}}</td>
+          <td><button name="deleteButton" ng-click="delete(employee)" 
+               ng-show="!employee.IsLocked">Delete</button>
+         
+              <button name="editButton" ng-click="edit(employee)" 
+               ng-show="!employee.IsLocked">Edit</button>
+              <button name="updateButton" ng-click="update(employee)" 
+               ng-show="isEdit(employee)">Update</button>
+          </td>
+      </tr>
+
+
+    </thead>
+    <tbody>
+    </tbody>
+
+</table>
+   <div class="row show-hide-animation" data-ng-show="customers.length > 0">
+        <div class="span12">
+            <div data-pagination="" data-on-select-page="pageChanged(page)" data-total-items="totalRecords" data-page="currentPage" 
+                 data-boundary-links="true" class="pagination-small"></div>
+
+            <h5>Showing {{ filteredCount }} of {{ totalRecords}} total customers</h5>
+        </div>
+    </div>
+</div>
+ <div ui-view ng-animate="{enter:'fade-enter'}">
+    <!-- Example of default content. This content will be replace as soon as
+         this ui-view is populate with a template -->
+    <small class="muted">Click on a contact item to view and/or edit it.</small>
+  </div>
+
+    <script src="scripts/controllers/employee.js"></script>
+        <script src="scripts/controllers\employee.js"></script>

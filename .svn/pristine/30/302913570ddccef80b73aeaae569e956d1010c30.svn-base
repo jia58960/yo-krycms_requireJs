@@ -1,0 +1,92 @@
+define(['app'], function(app) {
+  return app.config(
+    [          '$stateProvider', '$urlRouterProvider',
+      function ($stateProvider,   $urlRouterProvider) {
+        $stateProvider
+          
+          //客户管理路由设置
+            //客户管理页
+              .state('home.index.client_page', {
+                abstract: true,
+                url: '/client_page',
+                templateUrl: 'views/client_manage/client_page.html',
+                controller: 'projectListCtrl'
+              })
+              .state('home.index.client_page.list', {
+                url: '/list'
+              })
+          //以下页面仅为测试页，与路由无关
+            //客户组增删改查
+            .state('home.index.bus_group_setting',{
+                abstract: true,
+                url: '/bus_group_setting',
+                templateUrl: 'views/client_manage/pages/bus_group_setting.html'
+
+            })
+            .state('home.index.bus_group_setting.list', {
+                url: '/list',
+                templateUrl: 'views/client_manage/pages/bus_group_list.html',
+                controller:'buzGroupListCtrl'
+            })
+            .state('home.index.bus_group_setting.add', {
+                url: '/add',
+                templateUrl: 'views/client_manage/pages/bus_group_add.html',
+                controller:'buzGroupAddCtrl'
+            })
+            .state('home.index.bus_group_setting.detail', {
+                url: '/detail',
+                templateUrl: 'views/client_manage/pages/bus_group_view.html',
+                controller: 'buzGroupSetCtrl'
+            })
+            //客户项目列表页
+            /*.state('home.index.clientprolist_page', {
+                abstract: true,
+                url: '/clientprolist_page',
+                templateUrl: 'views/client_manage/pages/clientprolist_page.html'
+            })*/
+            .state('home.index.client_page.clientprolist_page.list', {
+                url: '/list',
+                views: {
+                    'prolist': {
+                        templateUrl: 'views/client_manage/pages/clientprolist_ofen.html'
+                    }
+                }
+                //templateUrl: 
+            })
+            .state('home.index.clientprolist_page.ofen', {
+                url: '/ofen',
+                templateUrl: 'views/client_manage/pages/clientprolist_ofen.html'
+                //controller:'DeptAddCtrl'
+            })
+            .state('home.index.clientprolist_page.prolist', {
+                url: '/prolist',
+                templateUrl: 'views/client_manage/pages/clientprolist.html'
+            })
+          //过程管理列表页
+            .state('home.index.processlist_page', {
+                abstract: true,
+                url: '/processlist_page',
+                templateUrl: 'views/client_manage/pages/processlist_page.html'
+                //controller: 'resConfigCtrl'
+            })
+            .state('home.index.processlist_page.list', {
+                url: '/list'
+            })
+          //过程管理详细页
+            .state('home.index.processdetail_page', {
+                abstract: true,
+                url: '/processdetail_page',
+                templateUrl: 'views/client_manage/pages/processdetail_page.html',
+                controller: function ($scope) {
+                    $scope.message = {
+                        text: 'hello world!',
+                        time: '2014-03-15 11:25'
+                    };
+                }
+            })
+            .state('home.index.processdetail_page.list', {
+                url: '/list'
+            })
+
+      }]);
+});

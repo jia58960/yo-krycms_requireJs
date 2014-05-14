@@ -1,0 +1,57 @@
+<form role="form" class="bg-white">
+<header class="panel-heading font-bold">基本信息</header>
+<div class="panel-body">
+    <form action="">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        角色名称
+                    </label>
+                    <input type="text" ng-model="role.roleName" name="roleName" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        角色排序号
+                    </label>
+                    <input type="text" name="roleID" ng-model="role.roleId" class="form-control" readonly="readonly">
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-sm btn-default" type="submit" ng-click="updateRole(role)">
+            提交
+        </button>
+        </form>
+        <header class="panel-heading font-bold">权限信息</header>
+        <form ng-submit="addPermissionsToRoles()">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                   <!--  <label ng-repeat="permission in permissions">
+                      <input
+                        type="checkbox"
+                        name="selectedPermissions[]"
+                        value="{{permission.permissionName}}"
+                        ng-checked="permission.selected"
+                        ng-model="permission.selected"
+                      > {{permission.permissionName}}
+                    </label> -->
+                    <label ng-repeat="permission in permissions">
+                      <input
+                        type="checkbox"
+                       checklist-model="role_permissions" checklist-value="permission.permissionId"
+                      > {{permission.permissionName}}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-sm btn-default" type="submit">
+            提交
+        </button>
+    </form>
+    
+</div>

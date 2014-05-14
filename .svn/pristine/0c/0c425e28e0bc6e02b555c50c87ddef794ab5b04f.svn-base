@@ -1,0 +1,115 @@
+<div class="col-sm-7" style="padding-top: 15px;">
+    <section class="panel">
+        <header class="panel-heading font-bold">分配任务</header>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">任务标题:</label>
+
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">任务类型:</label>
+
+                    <div class="col-lg-3">
+                        <select name="account" class="form-control">
+                            <option>客户关系维护</option>
+                            <option>贸易操作</option>
+                            <option>其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">任务目标:</label>
+
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">汇报周期:</label>
+                    <div class="col-lg-9">
+                        <span style="float: left;line-height: 35px;">每隔&nbsp;</span>
+                        <select class="day form-control" style="width: auto;float: left;">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25" selected>25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option></select>
+                        <span style="line-height: 35px;">&nbsp;天汇报一次</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">截止时间:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">任务内容:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">任务负责人:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/><span style="color: red">注意：只能选择一个任务负责人</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">任务参与人:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">阅知:</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><span style="color: red">说明:</span></label>
+                    <span class="col-lg-9" style="color: red">
+                        系统会自动把您新增任务的消息以内部短消息的形式通知给您所选择的"任务负责人"、"任务参与人"及"阅知人"。
+                    </span>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-9">
+                        <a href="#" class="btn btn-s-md btn-info">提交</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

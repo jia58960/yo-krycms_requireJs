@@ -1,0 +1,114 @@
+    <div class="col-sm-7">
+      <section class="panel">
+        <header class="panel-heading font-bold">新增银行资料</header>
+        <div class="panel-body">
+          <form class="bs-example form-horizontal">
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><font color="red">*</font>银行类型:</label>
+              <div class="col-lg-4">
+                <select name="account" class="form-control">
+				  <option>请选择</option>
+				  <option>option 1</option>
+				  <option>option 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><font color="red">*</font>所属银行类别:</label>
+              <div class="col-lg-9">
+                <select name="account" class="form-control m-b">
+				  <option>请选择</option>
+				  <option>option 1</option>
+				  <option>option 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><font color="red">*</font>所属银行名称:</label>
+              <div class="col-lg-4">
+                <select name="account" class="form-control m-b">
+				  <option>请选择</option>
+				  <option>option 1</option>
+				  <option>option 2</option>
+                </select>
+              </div>
+			  <div class="col-lg-5">
+                <select name="account" class="form-control m-b">
+				  <option>请选择</option>
+				  <option>option 1</option>
+				  <option>option 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><font color="red">*</font>银行全称:</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" placeholder="中国银行" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">项目说明:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="项目说明"  style="height:100px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">关联主体:</label>
+              <div class="col-sm-9">
+              <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1" /> 金瑞亿</label> 
+              <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2" /> 晨珀</label> 
+			  <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2" /> 主体很疼</label> 
+			  <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2" /> 主体</label> 
+			  </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><font color="red">*</font>主管领导:</label>
+              <div class="col-lg-9">
+                <select name="account" class="form-control m-b">
+                  <option>option 1</option>
+                  <option>option 2</option>
+                  <option>option 3</option>
+                  <option>option 4</option>
+                </select>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-6 control-label" style="padding-right:21px;"><font color="red">*</font>主办银行经理:</label>
+                  <div class="col-lg-6"  style="padding-left:8px;">
+                    <select name="account" class="form-control m-b">
+                      <option>请选择</option>
+                      <option>option 1</option>
+                      <option>option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-6 control-label">协办银行经理:</label>
+                  <div class="col-lg-6" style="padding-right:0px;">
+                    <select name="account" class="form-control m-b">
+					  <option>请选择</option>
+                      <option>option 1</option>
+                      <option>option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+			  <div class="col-lg-3"></div>
+              <div class="col-lg-9">
+                <a href="#" class="btn btn-s-md btn-info">提交</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>

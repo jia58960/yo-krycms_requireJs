@@ -1,0 +1,64 @@
+<section class="panel">
+    <form role="form" class="bg-white">
+        <header class="panel-heading font-bold">基本信息</header>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            项目名称
+                        </label>
+                        <input type="text" name="groupName"  class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <header class="panel-heading font-bold">关联信息</header>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>
+                                项目参与者
+                            </label>
+                             <select style="width:300px" ui-select2 multiple style="width: 300px" ng-model="proParticipant">
+                                 <optgroup label="IT部">
+                                     <option value="1K">张佳</option>
+                                     <option value="HI">陈万才</option>
+                                 </optgroup>
+                                 <optgroup label="资金部">
+                                     <option value="CA">郑伟</option>
+                                     <option value="NV">黄志艳</option>
+                                 </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>
+                                项目关联客户
+                            </label>
+                           <select style="width:300px" ui-select2 multiple style="width: 300px" ng-model="proLinkClient">
+                               <optgroup label="IT部">
+                                   <option value="1K">张佳</option>
+                                   <option value="HI">陈万才</option>
+                               </optgroup>
+                               <optgroup label="资金部">
+                                   <option value="CA">郑伟</option>
+                                   <option value="NV">黄志艳</option>
+                               </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-sm btn-default" type="submit">
+                    提交
+                </button>
+            </div>
+
+        </form>
+    </section>

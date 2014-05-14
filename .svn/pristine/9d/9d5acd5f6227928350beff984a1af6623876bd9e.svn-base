@@ -1,0 +1,32 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+            type="button">
+                搜索
+            </button>
+           
+        </div>
+    </div>
+</header>
+<ul class="list-group alt">  
+    <li class="list-group-item" ng-repeat="role2 in roles | filter:query" ui-sref-active="active">
+    <div class="media">
+        <div class="pull-right text-success m-t-sm">  
+            <i class="fa fa-circle">
+            </i>
+        </div>
+        <div class="media-body">
+            <div>
+                <a ui-sref="home.index.set_role.detail({roleId:role2.roleId})">
+                   {{role2.roleName}}
+                </a>
+            </div>
+            <small class="text-muted">
+                {{role2.roleId}}
+            </small>
+        </div>
+    </div>
+</li>                                      
+</ul>

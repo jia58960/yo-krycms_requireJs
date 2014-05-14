@@ -1,0 +1,312 @@
+<div class="row b-b m-l-none m-r-none">
+    <div class="col-sm-4">
+        <h3 class="m-t m-b-none">
+            客户管理
+        </h3>
+        <p class="block text-muted">
+            客户管理
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+            <div class="pull-left">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Users
+                    <span class="badge up bg-danger">
+                        +5
+                    </span>
+                </span>
+                <span class="h4">
+                    432k
+                </span>
+                    <i class="fa fa-level-up text-success">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                         data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left m-l-lg">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Profit
+                </span>
+                <span class="h4">
+                    $4k
+                </span>
+                    <i class="fa fa-level-down text-danger">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                         data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="scrollable wrapper">
+<div class="row">
+<div class="col-sm-6 portlet ui-sortable">
+    <section class="panel portlet-item" style="opacity: 1;">
+        <header class="panel-heading">
+            拓展部
+        </header>
+        <section class="panel-body">
+            <article class="media">
+                <div class="pull-left">
+                    <span class="fa fa-stack fa-2x">
+                        <i class="fa fa-circle text-primary fa-stack-2x"></i>
+                        <i class="fa fa-file text-white fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <a class="h4" href="#">
+                        项目客户列表
+                    </a>
+                    <small class="block m-t-xs">
+                        部门所有客户按照其类型及项目分类
+                    </small>
+
+                </div>
+            </article>
+            <div class="line pull-in">
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-primary" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-primary" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-primary" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-primary" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right text-primary m-t-sm" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="line pull-in">
+            </div>
+        </section>
+    </section>
+</div>
+<div class="col-sm-6 portlet ui-sortable">
+    <section class="panel portlet-item" style="opacity: 1;">
+        <header class="panel-heading">
+            资金部
+        </header>
+        <section class="panel-body">
+            <article class="media">
+                <div class="pull-left">
+                    <span class="fa fa-stack fa-2x">
+                        <i class="fa fa-circle text-success fa-stack-2x"></i>
+                        <i class="fa fa-bold text-white fa-stack-1x"></i>
+                    </span>
+                </div>
+                <div class="media-body">
+                    <a class="h4" href="#">
+                        项目银行列表
+                    </a>
+                    <small class="block m-t-xs">
+                        部门所有银行按照其类型及项目分类
+                    </small>
+
+                </div>
+            </article>
+            <div class="line pull-in">
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-success" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            陈家奎
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-success" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            郑威
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-success" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            郑威
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right m-t-sm text-success" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            郑威
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="media">
+                <span class="pull-left thumb-sm">
+                    <img src="images/avatar.jpg" alt="John said" class="img-circle">
+                </span>
+                <a class="pull-right text-success m-t-sm" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            郑威
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后下线: 2 minutes ago
+                    </small>
+                </div>
+            </div>
+            <div class="line pull-in">
+            </div>
+        </section>
+    </section>
+</div>
+</div>
+</section>

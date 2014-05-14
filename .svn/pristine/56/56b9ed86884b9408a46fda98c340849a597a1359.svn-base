@@ -1,0 +1,112 @@
+
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                角色权限设置
+            </h3>
+            <p class="block text-muted">
+                对角色权限的调配
+            </p>
+        </div>
+        <div class="col-sm-8">
+            <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+                <div class="pull-left">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Users
+                            <span class="badge up bg-danger">
+                                +5
+                            </span>
+                        </span>
+                        <span class="h4">
+                            432k
+                        </span>
+                        <i class="fa fa-level-up text-success">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                        data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left m-l-lg">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Profit
+                        </span>
+                        <span class="h4">
+                            $4k
+                        </span>
+                        <i class="fa fa-level-down text-danger">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                        data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="content">
+        <section class="hbox stretch">
+            <section class="panel">
+                <header class="panel-heading font-bold">角色权限配置</header>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">
+                                权限操作
+                            </label>
+                            <div class="col-sm-10">
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="operateRoles" ng-model='type'  value="0" /> 添加权限
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="radio" name="operateRoles" ng-model='type' value="1" /> 删除权限    
+                                </label>
+                            </div>
+                            
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div> 
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">选择角色</label>
+                            <div class="col-sm-10">
+                            <label class="checkbox-inline" ng-repeat="role in roles">
+                            <input type="checkbox" checklist-model="role_selected" checklist-value="role.roleId"/>
+                            {{role.roleName}}
+                            </label>
+                            </div>                        
+                        </div>
+                        <div class="line line-dashed line-lg pull-in"></div>
+                        <div class="form-group">
+                         <label class="col-sm-2 control-label">选择权限</label>
+                            <div class="col-sm-10">
+                            <label ng-repeat="permission in permissions">
+                              <input
+                                type="checkbox"
+                               checklist-model="permission_selected" checklist-value="permission.permissionId"
+                              > {{permission.permissionName}}
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button class="btn btn-sm btn-default" type="submit" ng-click="submit()">提交</button>
+                                <button class="btn btn-sm btn-white" type="submit" ng-click="clear()">重置</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>               
+            </section>
+        </section>
+    </section>

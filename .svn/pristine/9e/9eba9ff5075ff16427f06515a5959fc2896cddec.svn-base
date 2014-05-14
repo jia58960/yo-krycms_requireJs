@@ -1,0 +1,122 @@
+
+    <div class="col-sm-7">
+      <section class="panel">
+        <header class="panel-heading font-bold">新增银行资料</header>
+        <div class="panel-body">
+          <form class="bs-example form-horizontal">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*银行类型:</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*所属银行类别:</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*所属银行名称:</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+			  <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*银行全称:</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">项目说明:</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">关联主体</label>
+              <div class="col-sm-10">
+              <!-- ngRepeat: role in roles --> 
+              <label class="checkbox-inline ng-scope ng-binding" ng-repeat="role in roles">
+              <input type="checkbox" checklist-value="role.roleId" ng-model="checked" class="ng-scope ng-valid ng-dirty" />
+              金瑞亿</label> 
+              <!-- end ngRepeat: role in roles --> 
+              <label class="checkbox-inline ng-scope ng-binding" ng-repeat="role in roles">
+              <input type="checkbox" checklist-value="role.roleId" ng-model="checked" class="ng-scope ng-valid ng-dirty" />
+              晨珀</label> 
+              <!-- end ngRepeat: role in roles --></div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*主管领导</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">*主办银行经理</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">协办银行经理</label>
+              <div class="col-lg-10">
+                <select class="form-control ng-pristine ng-valid" name="superDepartmentId" ng-model="dept.krDepartment"
+                ng-options="x.departmentName for x in depts" ng-change="show()" style="">
+                  <option value="" class="">-请选择-</option>
+                  <option value="0">部门名称修改</option>
+                  <option value="1">IT部</option>
+                  <option value="2">商务中心111</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-sm btn-default">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  

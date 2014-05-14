@@ -1,0 +1,23 @@
+
+define(['services/services'],
+  function(services) {
+
+    services.factory('loginFactory', ['$http', function ($http) {
+
+    // $http.defaults.useXDomain = true ;
+     var url_prefix = 'http://10.188.192.200:8080/';
+    var loginFactory = {};
+    
+    loginFactory.doLogin = function (user) {
+       var path = url_prefix + 'login/doLogin';
+        return $http.post(path,user);
+    };
+
+    loginFactory.logout = function () {
+        var path = url_prefix + 'login/logout';
+        return $http.post(path);
+    };
+
+    return loginFactory;
+  }]);
+});

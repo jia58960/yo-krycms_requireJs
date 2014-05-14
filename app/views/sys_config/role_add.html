@@ -1,0 +1,23 @@
+<form role="form" class="bg-white">
+    <header class="panel-heading font-bold">创建角色</header>
+    <div class="panel-body">
+        <form action="">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            角色名称
+                        </label>
+                        <input type="text" name="roleName" ng-model="role.roleName" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="btn btn-sm btn-default" type="submit" ng-click="insertRole(role)">
+                提交
+            </button>
+        </form>
+    </div>
+
+</form>

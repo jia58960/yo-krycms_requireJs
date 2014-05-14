@@ -1,0 +1,125 @@
+<section class="panel">
+<form role="form" class="bg-white">
+<header class="panel-heading font-bold">基本信息</header>
+<div class="panel-body">
+   
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+            <label>
+                部门名称
+            </label>
+            <input type="text" ng-bind="dept.departmentName" ng-model="dept.departmentName" name="departmentName" class="form-control">
+        </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        部门颜色标识
+                    </label>
+                    <input type="text" name="departmentColor" ng-bind="dept.departmentColor" ng-model="dept.departmentColor" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        父级部门
+                    </label>
+
+                    <select class="form-control" name="superDepartmentId" ng-model="dept.krDepartment" ng-options="x.departmentName for x in depts" ng-change="show()">
+                        <option value="">-请选择-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        部门排序号
+                    </label>
+                    <input type="text" name="departmentSortNumber" class="form-control" ng-bind="dept.departmentSortNumber" ng-model="dept.departmentSortNumber">
+                </div>
+            </div>
+        </div>
+        		
+		<div class="form-group">
+			<label>
+				部门简述
+			</label>
+			<textarea class="form-control" name="departmentDescribe" ng-bind="dept.departmentDescribe" ng-model="dept.departmentDescribe" rows="3">
+						{{dept.departmentDescribe}}</textarea>
+		</div>
+   
+</div>
+
+<header class="panel-heading font-bold">职位信息</header>
+
+<div class="panel-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        部门主管
+                    </label>
+                     <select style="width:300px" ui-select2 multiple ng-model="departmentManagerId">
+                        <optgroup label="{{dept.departmentName}}" ng-repeat="dept in deptsandEmployees">
+                            <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                        </optgroup>
+                    </select> 
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+
+                    <label>
+                        部门副主管
+                    </label>
+                   <select style="width:300px" ui-select2 multiple ng-model="viceDepartmentManagerId">
+                        <optgroup label="{{dept.departmentName}}" ng-repeat="dept in deptsandEmployees">
+                            <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                        </optgroup>
+                    </select> 
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>
+                        部门直管                
+                    </label>
+                     <select style="width:300px" ui-select2 multiple ng-model="directDepartmentManagerId" class="populate" >
+                        <optgroup label="{{dept.departmentName}}" ng-repeat="dept in deptsandEmployees">
+                            <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                        </optgroup>
+                    </select> 
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label>部门分管</label>
+                    <select style="width:300px" ui-select2 multiple ng-model="separateDepartmentManagerId" class="populate" >
+                        <optgroup label="{{dept.departmentName}}" ng-repeat="dept in deptsandEmployees">
+                            <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                        </optgroup>
+                    </select> 
+                </div>                    
+            </div>
+        </div>
+        
+        <button class="btn btn-sm btn-default" type="submit" ng-click="updateDept(dept)">
+            提交
+        </button>
+
+        <button class="btn btn-sm btn-danger" type="submit">
+            删除
+        </button>
+
+    
+</div>
+</form>
+</section>

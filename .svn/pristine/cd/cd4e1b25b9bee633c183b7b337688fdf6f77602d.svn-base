@@ -1,0 +1,229 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh" class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<link rel="stylesheet" href="styles/app.v2.css" type="text/css"/>
+	<link rel="stylesheet" href="styles/font.css" type="text/css"/>
+	<link rel="stylesheet" href="styles/fuelux.css" type="text/css"/>
+
+
+	<link rel="stylesheet" type="text/css" href="js/datatables/datatables.css">
+	<link rel="stylesheet" type="text/css" href="js/select2/select2.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/AngularJS-Toaster/toaster.css">
+	<link rel="stylesheet" href="styles/ng-animation.css" type="text/css"/>
+
+	<link rel="stylesheet" type="text/css" href="styles/webChat.css">
+	<!--ng-table-->
+	<!-- <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" type="text/css" /> -->
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">对不起，您的浏览器已 <strong>过时</strong> . 请<a href="http://browsehappy.com/">在此升级您的浏览器</a> .</p>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<section class="hbox stretch">
+
+	<aside class="bg-primary aside-sm" id="nav">
+		<section class="vbox slide-right" ui-view="menu">
+
+		</section>
+	</aside>
+
+	<section id="content" ui-view="dashbord" style="width:100%;">
+
+	</section>
+</section>
+
+
+<!--聊天模块-->
+<div id="webim2" ng-init="clicked='none';list=true" style="display:none">
+	<div class="webim-body">
+	    <!--标题栏-->
+	    <div class="webim-body-comtent-header " style="display: {{clicked}}">
+	     <span class="webim-header-minibar">
+		     <i class="fa fa-cog" style="padding-right: 10px;"></i>
+		     <i class="fa fa-minus" style="padding-right: 10px;"></i>
+		     <i class="fa fa-times" style="padding-right: 10px;cursor: pointer;" ng-click="clicked=clicked=='none'?'block':'none'"></i>
+	     </span>
+		 <em class="imjs-userstatus webim-username-offline">&nbsp;</em>
+		 <span class="imjs-username"><strong>张生</strong></span>
+	    </div>
+	    <!--左侧聊天窗口 -->
+	    <div class="webim-body-content" style="display: {{clicked}}">
+	    <div class="webim-body-comtent-talk-tips">&nbsp;&nbsp;来源：<a style="" class="imjs-link"
+	                                                                href="http://sz.ganji.com/fang2/883989416x.htm"
+	                                                                target="_blank"
+	                                                                title="求上下沙附近1室1厅带阳台房间">求上下沙附近1室1厅带阳台房间</a><a></a></div>
+	    <div id="imjs-body-content-talk" class="webim-body-content-talk mCustomScrollbar _mCS_2">
+	     <div class="mCustomScrollBox mCS-light" id="mCSB_2"
+	          style="position:relative; height:100%; overflow:hidden; max-width:100%;">
+	      <div class="mCSB_container" style="position: relative; top: -330px;">
+	       <div class="imjs-msg-list">
+	     <div class="textalign-left imjs-msg-default">
+	      <div class="webim-body-comtent-msg-left imjs-msg-content">{content}<s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">{time}</span>
+	     </div>
+	     <div class="textalign-right imjs-msg-default">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">{content}<s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">{time}</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922198716">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922198716">123</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:56</span>
+	     </div>
+	     <div class="textalign-left" id="msg_483738640">
+	      <div class="webim-body-comtent-msg-left imjs-msg-content">
+	       <div id="msgcontent2_483738640"><span id="msgcontent_483738640"></span>123123</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:56</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922223896">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922223896">123</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-left" id="msg_483739940">
+	      <div class="webim-body-comtent-msg-left imjs-msg-content">
+	       <div id="msgcontent2_483739940"><span id="msgcontent_483739940"></span>46546</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922241602">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922241602">啊我 打我 的啊 我打 啊我 打安 慰的</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922248668">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922248668">啊我 打我 的</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922249776">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922249776">啊我 打啊 我打</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922250777">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922250777">啊我 打啊 我打</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-right" id="msg_1396922251745">
+	      <div class="webim-body-comtent-msg-right imjs-msg-content">
+	       <div id="msgcontent2_1396922251745">啊我 打我 的</div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	     <div class="textalign-left" id="msg_483741440">
+	      <div class="webim-body-comtent-msg-left imjs-msg-content">
+	       <div id="msgcontent2_483741440"><span id="msgcontent_483741440"></span><img
+	      src="http://sta.ganjistatic1.com/src/tool/webim_v2/img/emotions/13.gif"></div>
+	       <s>&nbsp;</s></div>
+	      <span class="webim-times imjs-msg-time">09:57</span>
+	     </div>
+	       </div>
+	       <div id="imjs-msg-mao"></div>
+	      </div>
+	      <div class="mCSB_scrollTools" style="position: absolute; display: block;"><a class="mCSB_buttonUp"
+	                                                                                   oncontextmenu="return false;"></a>
+
+	       <div class="mCSB_draggerContainer">
+	     <div class="mCSB_dragger" style="position: absolute; top: 142px; height: 106px;"
+	          oncontextmenu="return false;">
+	      <div class="mCSB_dragger_bar" style="position: relative; line-height: 106px;"></div>
+	     </div>
+	     <div class="mCSB_draggerRail"></div>
+	       </div>
+	       <a class="mCSB_buttonDown" oncontextmenu="return false;"></a></div>
+	     </div>
+	    </div>
+
+	    <div class="imjs-left-bottom">
+	    <div class="webim-body-content-tools" style="height: 26px;">
+	    <a class="icon-history" style="" href="http://www.ganji.com/vip/my_message_list.php"
+	       target="_blank">聊天记录</a>
+	    <i class="fa fa-smile-o" style="margin-left:10px"></i>
+	    <i class="fa fa-comment-o" style="margin-left:10px"></i>
+	    </div>
+	    <div class="webim-body-content-textarea">
+	     <textarea id="imjs-textarea" rows="" cols="" name="" class="webim-textarea"
+	               placeholder="点击输入您想询问的问题..."></textarea>
+	    </div>
+	    </div>
+	    <!-- left-bottom end-->
+	    <div class="webim-body-comtent-footer" style="height: 30px;"><a class="webim-body-comtent-submit">发送</a>
+	     <a target="_blank" href="http://dingdong.ganji.com">叮咚在线 , 成交快. 马上下载&gt;&gt;</a>
+
+	     <div id="imjs-empty-tip" class="webim-body-footer-tips" style="display:none"><s>&nbsp;</s>发送内容不能为空哦</div>
+	     <div id="imjs-selectuser-tip" class="webim-body-footer-tips" style="display:none"><s>&nbsp;</s>请您选择用户哦</div>
+	    </div>
+	    </div>
+		<!--右侧联系人窗口-->
+		<div class="webim-user-list " style="display: {{clicked}}">
+			<div ng-click="list=!list;listBtn=listBtn=='fa-chevron-down'?'xx':'fa-chevron-down'" style="cursor:pointer;height: 24px;">
+				<i class="fa fa-chevron-down" style="padding-right: 2px;padding-left: 10px;" ng-show="list"></i>
+				<i class="fa fa-chevron-right" style="padding-right: 2px;padding-left: 10px;" ng-hide="list"></i>
+				<span>我的联系人</span>
+			</div>
+			<div class="" id="imjs-user-list">
+				<ul class="list-group alt" ng-show="list" style="margin-bottom: 0px;">
+					<li class="c-li c-li-open"><i class="fa fa-male" style="padding-right: 10px;padding-left: 15px;"></i>张生1</li>
+					<li class="c-li "><i class="fa fa-male" style="padding-right: 10px;padding-left: 15px;"></i>张生2</li>
+					<li class="c-li "><i class="fa fa-male" style="padding-right: 10px;padding-left: 15px;"></i>张生3</li>
+				</ul>
+			</div>
+			<div class="webim-system-msg">
+				<i class="fa fa-bell" style="padding-right: 2px;padding-left: 10px;"></i>
+				<span>系统消息</span>
+			</div>
+		</div>
+	    <!--底部伸展栏-->
+	    <div class="webim-lianxiren" ng-click="clicked=clicked=='none'?'block':'none'">
+	     <!--<span class="imjs-allnewmsg-count">0</span>-->
+	        <span class="imjs-lianxiren-tip" style="display: inline;">联系人[ <span class="fc-green">0</span> / <em
+	          class="imjs-lianxiren-count">1</em> ]</span>
+	     <span class="imjs-newmsgcount-tip" style="display: none;">您有<em class="imjs-newmsg-count">0</em>条新消息</span>
+	     <span class="imjs-talk-tip" style="display: none;"><em class="imjs-username">张生</em>-对话中</span>
+
+	    </div>
+	</div>
+</div>
+
+
+
+<!--操作提示-->
+<toaster-container toaster-options="{'position-class': 'toast-bottom-full-width'}">
+</toaster-container>
+
+<script data-main="scripts/main" src="require.js"></script>
+
+</body>
+</html>

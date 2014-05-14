@@ -1,0 +1,118 @@
+"user strict";
+
+angular.module('angularUiTestApp')
+	.controller('resConfigCtrl',['$scope', 'resourceFactory', function($scope, resourceFactory) {
+
+		$scope.resource ={};
+<<<<<<< .mine
+		$scope.secondMenus = [];
+=======
+        $scope.secondMenus=[];
+>>>>>>> .r880
+		console.log('resConfigCtrl');
+
+		listMenus(1);
+		//listPages(2);
+		console.log($scope.secondMenus);
+		//获取所有资源(一二级菜单资源)
+		function listMenus(resourceTypeId) {
+			resourceFactory.listMenus(resourceTypeId)
+			.success(function(menus){
+				$scope.menus = menus;
+<<<<<<< .mine
+				 for (var i=0;i<menus.length;i++) {
+                  // console.log(menus[i]);
+                  var resourceId = menus[i].resourceId;
+                  // console.log(resourceId);
+	              listSubResourcesByType(resourceId,1);
+=======
+>>>>>>> .r880
+
+<<<<<<< .mine
+              	}
+=======
+				 for (var i=0;i<menus.length;i++) {
+                   var resourceId = menus[i].resourceId;
+	               listSubResourcesByType(resourceId,1);
+               	}
+>>>>>>> .r880
+
+<<<<<<< .mine
+				// console.log(menus);
+
+=======
+
+>>>>>>> .r880
+			})
+			.error(function (error) {
+				$scope.status = 'Unable to load listmenus data: ' + error.message;
+			})
+		}
+
+		function listSubResourcesByType(resourceId,resourceTypeId){
+			resourceFactory.listSubResourcesByType(resourceId,resourceTypeId)
+			.success(function (secondMenus) {
+<<<<<<< .mine
+				// $scope.secondMenus = secondMenus;
+				// console.log("secondMenus");
+				// console.log(secondMenus);
+				 for (var i=0;i<secondMenus.length;i++) {
+                  // console.log(secondMenus[i]);
+	              $scope.secondMenus.push(secondMenus[i]);
+              	}
+				// console.log("secondMenus");
+				// console.log($scope.secondMenus);
+				// // $scope.secondMenus = secondMenus;
+=======
+
+                for (var i=0;i<secondMenus.length;i++) {
+	               $scope.secondMenus.push(secondMenus[i]);
+               	}
+>>>>>>> .r880
+			})
+			.error(function (err){
+				$scope.status = 'Unable to load pagesdata data: ' + error.message;
+			})
+		}
+
+		/*function listPages(resourceTypeId) {
+			resourceFactory.listResourcesByType(resourceTypeId)
+			.success(function (pages) {
+				$scope.pages = pages;
+<<<<<<< .mine
+                    // console.log(pages);
+=======
+                //console.log('pagele');
+                //console.log(pages);
+>>>>>>> .r880
+			})
+			.error(function (err){
+				$scope.status = 'Unable to load pagesdata data: ' + error.message;
+			})
+		}*/
+
+<<<<<<< .mine
+		// $scope.show = function() {
+		// 	console.log($scope);
+		// 	console.log($scope.resource.resourceId.resourceId);
+		// 	var resourceId = $scope.resource.resourceId.resourceId;
+		// 	listSubResourcesByType(resourceId,1);
+		// }
+=======
+		$scope.insertResource = function (res){
+>>>>>>> .r880
+
+            var data= {
+
+            }
+
+            resourceFactory.insertResource(data)
+                .success(function () {
+                    $scope.status = 'Insert res success!';
+                })
+                .error(function (e) {
+                    $scope.status = 'Unable to insert res: ' + e.message;
+                })
+        }
+
+	}])

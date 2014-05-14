@@ -1,0 +1,354 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                    type="button">
+                搜索
+            </button>
+
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel">
+            <header class="panel-heading font-bold">
+                金光项目
+                <span class="badge bg-info">
+                    5
+                </span>
+            </header>
+            <section class="panel-body">
+            	<div class="row">
+
+	                <article class="media col-md-3">
+	                    <div class="media-body">
+	                        <a class="h4" href="#">
+	                            四川明星电缆有限公司
+	                        </a>
+	                        <small class="block m-t-xs">
+	                            客户类型：<span class="text-info">目标客户</span>
+	                        </small>
+	                        <small class="text-sm">
+	                            最近过程管理：
+	                    <span class="text-danger">
+	                        9个月前
+	                    </span>
+	                        </small>
+	                    </div>
+	                </article>
+
+	                <article class="media col-md-3">
+	                    <div class="media-body">
+	                        <a class="h4" href="#">
+	                            深圳江铜营销股份有限公司
+	                        </a>
+	                        <small class="block m-t-xs">
+	                            客户类型：<span class="text-danger">放弃客户</span>
+	                        </small>
+	                        <small class="text-sm">
+	                           最近过程管理
+	                    1小时前
+	                        </small>
+	                    </div>
+	                </article>
+
+	                <article class="media col-md-3">
+	                    
+	                    <div class="media-body">
+	                        <a class="h4" href="#">
+	                            深圳江铜营销股份有限公司
+	                        </a>
+	                        <small class="block m-t-xs">
+	                            客户类型：<span class="text-danger">放弃客户</span>
+	                        </small>
+	                        <small class="text-sm">
+	                           最近过程管理
+	                    1小时前
+	                        </small>
+	                    </div>
+	                </article>
+
+	                <article class="media col-md-3">
+	                    
+	                    <div class="media-body">
+	                        <a class="h4" href="#">
+	                            深圳江铜营销股份有限公司
+	                        </a>
+	                        <small class="block m-t-xs">
+	                            客户类型：<span class="text-danger">放弃客户</span>
+	                        </small>
+	                        <small class="text-sm">
+	                           最近过程管理
+	                    1小时前
+	                        </small>
+	                    </div>
+	                </article>
+
+	                <article class="media col-md-3">
+	                    
+	                    <div class="media-body">
+	                        <a class="h4" href="#">
+	                            深圳江铜营销股份有限公司
+	                        </a>
+	                        <small class="block m-t-xs">
+	                            客户类型：<span class="text-danger">放弃客户</span>
+	                        </small>
+	                        <small class="text-sm">
+	                           最近过程管理
+	                    1小时前
+	                        </small>
+	                    </div>
+	                </article>
+				</div>
+            </section>
+        </section>
+    </div>
+
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                
+                上海江铜项目
+        <span class="badge bg-info">
+            12
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            四川明星电缆有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-info">目标客户</span>
+                        </small>
+                        <small class="text-sm">
+                            最近过程管理：
+		                    <span class="text-danger">
+		                        1年前
+		                    </span>
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            深圳江铜营销股份有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-danger">放弃客户</span>
+                        </small>
+                        <small class="text-sm">
+                           最近过程管理
+                    1小时前
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-danger">放弃客户</span>
+                        </small>
+                        <small class="text-sm">
+                            最近过程管理：
+		                    <span class="text-danger">
+		                        2年前
+		                    </span>
+                        </small>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                
+                曾氏项目
+        <span class="badge bg-info">
+            3
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            四川明星电缆有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-info">目标客户</span>
+                        </small>
+                        <small class="text-sm">
+                            最近过程管理：
+                    <span class="text-danger">
+                        9个月前
+                    </span>
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            深圳江铜营销股份有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-danger">放弃客户</span>
+                        </small>
+                        <small class="text-sm">
+                           最近过程管理
+                    1小时前
+                        </small>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                
+                其他项目
+        <span class="badge bg-info">
+            8
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            四川明星电缆有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-info">目标客户</span>
+                        </small>
+                        <small class="text-sm">
+                            最近过程管理：
+                    <span class="text-danger">
+                        9个月前
+                    </span>
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            深圳江铜营销股份有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-danger">放弃客户</span>
+                        </small>
+                        <small class="text-sm">
+                           最近过程管理
+                    1小时前
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+                        <small class="block m-t-xs">
+                            Bootstrap, Ratchet
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 05, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                
+                博雅项目
+		        <span class="badge bg-info">
+		            9
+		        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            四川明星电缆有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-info">目标客户</span>
+                        </small>
+                        <small class="text-sm">
+                            最近过程管理：
+                    <span class="text-danger">
+                        9个月前
+                    </span>
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            深圳江铜营销股份有限公司
+                        </a>
+                        <small class="block m-t-xs">
+                            客户类型：<span class="text-danger">放弃客户</span>
+                        </small>
+                        <small class="text-sm">
+                           最近过程管理
+                    1小时前
+                        </small>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+
+                        <small class="block m-t-xs">
+                            客户类型：存量客户
+                        </small>
+
+                        <small class="text-sm">
+                            最近过程管理：2个月前
+                        </small>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<header>
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                用户设置
+            </h3>
+            <p class="block text-muted">
+                对用户的调配
+            </p>
+        </div>
+        <div class="col-sm-8">
+            <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+                <div class="pull-left">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Users
+                            <span class="badge up bg-danger">
+                                +5
+                            </span>
+                        </span>
+                        <span class="h4">
+                            432k
+                        </span>
+                        <i class="fa fa-level-up text-success">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                        data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left m-l-lg">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Profit
+                        </span>
+                        <span class="h4">
+                            $4k
+                        </span>
+                        <i class="fa fa-level-down text-danger">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                        data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="list-group bg-white">
+                    <a class="list-group-item" ng-class="{ active: $state.includes('home.index.set_user.list') }" ui-sref="home.index.set_user.list">所有部门</a>
+
+                    <a class="list-group-item" ng-repeat="dept in depts" ui-sref="home.index.set_user.userlist({deptId:dept.departmentId})" ui-sref-active="active">
+                        <span class="badge bg-danger">
+                          12
+                        </span>
+                        {{dept.departmentName}}
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <section class="panel" ui-view>
+                </section>
+            </div>
+        </div>
+    </div>
+    </header>

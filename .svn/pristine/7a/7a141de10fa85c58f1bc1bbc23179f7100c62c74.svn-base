@@ -1,0 +1,36 @@
+<section class="vbox">
+    <header class="header bg-black navbar navbar-inverse">
+        <ul class="nav navbar-nav m-l-n">
+            <li class="dropdown" ng-repeat="submenu in submenus">
+                <a class="dropdown-toggle" href="#">
+                    {{submenu.resourceName}}
+                    <b ng-if="submenu.yxResourceSelfRelationsForSuperiorResourceId" class="caret">
+                    </b>
+                </a>
+
+                <ul class="dropdown-menu" ng-if="submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                    <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                        <a ui-sref="home.index.{{secsub.yxResourceBySublevelResourceId.resourceCode}}.list">
+                            {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+    </header>
+
+    <section class="scrollable wrapper">
+        <div class="row">
+            <div class="col-lg-8">
+                这个尼玛是系统设置啦这个尼玛是系统设置啦这个尼玛是系统设置啦
+            </div>
+            <div class="col-lg-4">
+                这个尼玛是系统设置啦
+            </div>
+        </div>
+    </section>
+</section>
+
+
+            

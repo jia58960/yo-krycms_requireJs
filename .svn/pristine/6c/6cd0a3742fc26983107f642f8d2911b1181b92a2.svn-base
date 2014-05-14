@@ -1,0 +1,212 @@
+
+define(['controllers/controllers', 'services/role_service'],
+  function(controllers) {
+  controllers.controller('roleCtrl', function ($scope, permissionFactory) {
+	  $scope.status;
+    $scope.roles;
+    getRoles();
+
+    function getRoles() {
+        permissionFactory.listAllRoles()
+            .success(function (roles) {
+                $scope.roles = roles;
+                console.log(roles);
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load roles data: ' + error.message;
+            });
+    }
+
+  })
+  .controller('roleDetailCtrl',['$scope', 'permissionFactory', '$stateParams', 'resourceFactory', 
+  function ($scope, permissionFactory, $stateParams, resourceFactory) {
+    console.log('roleDetailCtrl');
+    $scope.status;
+    $scope.permissions;
+    $scope.role_permissions;
+
+    //进入页面时初始化
+    init();
+
+    function init() {
+      getRoleInfo($stateParams.roleId);
+      getPermissions();
+      // console.log("permissions:");
+      // console.log($scope.permissions);
+      // console.log("role_permissions:");
+      // console.log($scope.role_permissions);
+    }
+
+  
+
+    $scope.selection =[];
+
+    function getPages(resourceTypeId) {
+      resourceFactory.listResourcesByType(resourceTypeId)
+      .success(function (pages){
+        $scope.pages = pages;
+        console.log("pages");
+        console.log(pages);
+        
+      })
+      .error(function (err){
+        $scope.status = 'Unable load pages data:' + err.message;
+      })
+    }
+
+    function getPermissions(){
+      permissionFactory.listAllPermissions()
+      .success(function (permissions){
+        $scope.permissions = permissions;
+        console.log("permissions");
+        console.log(permissions);
+        
+      })
+      .error(function (err){
+        $scope.status = 'Unable load permissions data:' + err.message;
+      })
+    }
+
+    function getRoleInfo(roleId){
+      permissionFactory.getRoleInfo(roleId)
+      .success(function (role){
+        $scope.role = role;
+        console.log("roleId:");
+        console.log(role.roleId);
+        listPermissionsByRole(role.roleId);
+      })
+      .error(function(e){
+        $scope.status = "Unable load role info data" + e.message;
+      })
+    }
+
+     function listPermissionsByRole(roleId){
+        permissionFactory.listPermissionsByRole(roleId)
+        .success(function (role_permissions){//获取角色已选中的权限
+          var role_permissionIds = [];
+          for (var i=0;i<role_permissions.length;i++) {
+              role_permissionIds[i] = role_permissions[i].permissionId;
+            }
+          $scope.role_permissions = role_permissionIds;
+          console.log("role_permissions:");
+          console.log($scope.role_permissions);
+        })
+        .error(function(e){
+          $scope.status = "Unable load role's permissions:" + e.message;
+        })
+     }
+
+
+    $scope.updateRole = function(role){
+       permissionFactory.updateRole(role)
+        .success(function () {
+            $scope.status ="update role success";
+        })
+        .error(function (error) {
+            $scope.status = 'Unable to update role: ' + error.message;
+        });
+    }
+
+    $scope.addPermissionsToRoles = function(){
+        console.log("selection:");
+        console.log($scope.role_permissions);
+        var roleId = [];
+        roleId[0] = $scope.role.roleId;
+        var data = {
+          roleId:roleId,
+          permissionId:$scope.role_permissions
+        };
+
+        permissionFactory.addPermissionsToRoles(data)
+        .success(function () {
+            $scope.status ="addPermissionsToRoles success";
+        })
+        .error(function (error) {
+            $scope.status = 'Unable to addPermissionsToRoles: ' + error.message;
+        });
+    }
+
+  }])
+  .controller('per_roleCtrl', function ($scope,resourceFactory,permissionFactory){
+
+    $scope.status;
+    $scope.role;
+    $scope.permission;
+    $scope.role_selected = [];
+    $scope.permission_selected = [];
+    getPermissions();
+    getRoles();
+
+    function getRoles() {
+        permissionFactory.listAllRoles()
+            .success(function (roles) {
+                $scope.roles = roles;
+                console.log(roles);
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load roles data: ' + error.message;
+            });
+    }
+    
+    function getPermissions(){
+      permissionFactory.listAllPermissions()
+      .success(function (permissions){
+        $scope.permissions = permissions;
+        console.log("permissions");
+        console.log(permissions);
+        
+      })
+      .error(function (err){
+        $scope.status = 'Unable load permissions data:' + err.message;
+      })
+    }
+
+    $scope.submit = function(){
+        console.log($scope.role_selected);
+        console.log($scope.permission_selected);
+        console.log($scope.type);
+        var data = {
+            roleId:$scope.role_selected,
+            permissionId:$scope.permission_selected
+        }
+        if($scope.type == 0){//add
+          permissionFactory.addPermissionsToRoles(data)
+           .success(function () {
+                $scope.status ='addPermissionsToRoles succeed';
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load addPermissionsToRoles: ' + error.message;
+            });
+
+        }else if($scope.type ==1 ){
+           permissionFactory.deletePermissionsFromRoles(data)
+           .success(function () {
+                $scope.status ='deletePermissionFromRole succeed';
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load deletePermissionFromRole: ' + error.message;
+            });
+        }
+    }
+
+    $scope.clear = function(){
+        $scope.role_selected =[];
+        $scope.permission_selected = [];
+    }
+  })
+  .controller('roleAddCtrl' ,function ($scope, permissionFactory) {
+      
+      $scope.insertRole = function(role){
+           permissionFactory.insertRole(role)
+            .success(function (role) {
+                console.log(role);
+                $scope.roles.push(role);
+                
+                console.log("add role success");
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to insert role: ' + error.message;
+            });
+      }
+  });
+});    

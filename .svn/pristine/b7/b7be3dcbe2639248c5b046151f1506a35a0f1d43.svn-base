@@ -1,0 +1,47 @@
+// The app/scripts/app.js file, which defines our AngularJS app
+define(['angular',
+    'uiRouter',
+    // 'ngCookies',
+    'ngResource',
+    'ngAnimate',
+    'ui.bootstrap',
+    'select2',
+   '../js/datatables/jquery.dataTables',
+    'ui.select2',
+    'tinymce',
+    'ui.tinymce',
+    'controllers/index',
+    // 'services/index',
+    // 'filters/index',
+    'directives/index',
+    'ngMoment',
+    'rcForm',
+    'rcDisabled',
+    'rcWizard',
+    'rcMailgun',
+    'toaster'
+    ], function (ng) {
+    'use strict';
+  return ng.module('angularUiTestApp', [
+    // 'kry_cms.filters',
+    // 'kry_cms.directives',
+    'kry_cms.controllers',
+    'kry_cms.services',
+    // 'ngCookies',
+    'ngResource',
+    'ngAnimate',
+    'ui.bootstrap',
+    'ui.router',
+    'datatablesDirectives',
+    'checklist-model',
+    'rcSubmit-model',
+    'ui.select2',
+    'ui.tinymce',
+    'angularMoment',
+    'rcForm',
+    'rcDisabled',
+    'rcWizard',
+    'rcMailgun',
+    'toaster'
+    ]);
+});

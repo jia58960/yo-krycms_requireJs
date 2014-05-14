@@ -1,0 +1,63 @@
+
+define(['services/services'],
+  function(services) {
+
+    services.factory('emplFactory', ['$http', function ($http) {
+
+    $http.defaults.useXDomain = true ;
+    var urlBase = 'http://10.188.192.200:8080/employee';
+    var emplFactory = {};
+
+    emplFactory.getDeptEmployees = function (deptId) {
+       // var path = url_prefix + 'department/listDepartmentEmployees?deptId='+deptId;
+        return $http.get(urlBase + '/department/'+ deptId);
+    };
+
+    emplFactory.getEmployeePage = function (data) {
+   
+        return $http.post(urlBase +'/page',data);
+    };
+
+    emplFactory.getEmployee = function (employeeId) {
+        // var path = url_prefix + 'department/getEmployee?employeeId='+employeeId;
+        return $http.get(urlBase +'/'+employeeId);
+    };
+    
+    emplFactory.getUserByEmployee = function (employeeId) {
+        // var path = url_prefix + 'department/getEmployee?employeeId='+employeeId;
+        return $http.get(urlBase +'/'+employeeId+'/user');
+    };
+    
+    emplFactory.getDepartmentsByEmployee = function(employeeId){
+      return $http.get(urlBase +'/'+employeeId+'/department');
+    }
+
+    emplFactory.getJobTitleByEmployeeAndDepartment = function(employeeId,departmentId){
+      return $http.get(urlBase +'/'+employeeId+'/department/'+departmentId+'/jobTitle');
+    }
+
+    emplFactory.getPositionByEmployeeAndDepartment = function(employeeId,departmentId){
+      return $http.get(urlBase +'/'+employeeId+'/department/'+departmentId+'/position');
+    };
+
+    emplFactory.insertEmployee = function (data) {
+       // var path = url_prefix + 'department/addEmployee';
+        return $http.post(urlBase,data);
+    };
+
+    emplFactory.deleteEmployee = function (employeeId) {
+         // var path = url_prefix + 'department/delEmployee?employeeId='+employeeId;
+        return $http.delete(urlBase +'/'+ employeeId);
+    };
+
+    emplFactory.updateEmployee = function (employeeId,data) {
+         // var path = url_prefix + 'department/updateEmployee';
+        return $http.put(urlBase +'/'+employeeId,data);
+    };
+
+  
+
+    return emplFactory;
+   
+  }]);
+});

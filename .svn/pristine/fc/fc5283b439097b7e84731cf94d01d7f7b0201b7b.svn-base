@@ -1,0 +1,71 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                    type="button">
+                搜索
+            </button>
+
+        </div>
+    </div>
+</header>
+
+<ul class="list-group alt">
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        XXX项目
+                    </a>
+                </div>
+                <small class="text-muted">
+                    项目描述1
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        XXX项目
+                    </a>
+                </div>
+                <small class="text-muted">
+                    项目描述2
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        XXX项目
+                    </a>
+                </div>
+                <small class="text-muted">
+                    描述
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        XXX项目
+                    </a>
+                </div>
+                <small class="text-muted">
+                    描述
+                </small>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,11 @@
+<table datatable dtOptions class="table table-striped m-b-none">
+	<thead>
+		<tr>
+			<th data-mdata="employeeId">ID</th>
+			<th data-mdata="employeeName">姓名</th>
+			<th data-mdata="employeeMobilePhoneMaster">手机</th>
+			<th data-mdata="employeeEmail">邮箱</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>

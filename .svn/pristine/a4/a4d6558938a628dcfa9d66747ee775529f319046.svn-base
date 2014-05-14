@@ -1,0 +1,12 @@
+<section class="vbox">
+    <header class="header bg-primary navbar navbar-inverse" ui-view="submenu">
+    </header>
+
+    <section class="scrollable" ui-view="content">
+        <div class="slim-scroll wrapper" data-height="auto" data-disable-fade-out="true" data-distance="0">
+            初始化我的工作台
+        </div>
+    </section>
+
+</section>
+

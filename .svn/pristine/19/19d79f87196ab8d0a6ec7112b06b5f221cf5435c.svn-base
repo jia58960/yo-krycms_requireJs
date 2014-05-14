@@ -1,0 +1,46 @@
+define(['app'], function (app) {
+    return app.config(
+        [          '$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
+                $stateProvider
+                      //银行管理页
+                      .state('home.index.bank_page',{
+                        abstract: true,
+                        url: '/bank_page',
+                        templateUrl: 'views/client_manage/bank_page.html',
+                        controller: 'bankListCtrl'
+                      })
+                      .state('home.index.bank_page.list', {
+                          url: '/list'
+                      })
+                    //以下为银行管理DEMO页面
+                    .state('home.index.credit_index', {
+                        abstract: true,
+                        url: '/credit_index',
+                        templateUrl: 'views/bank_manage/pages/credit_index.html'
+                    })
+                    .state('home.index.credit_index.list', {
+                        url: '/list',
+                        templateUrl: 'views/bank_manage/pages/credit_list.html'
+                    })
+                    .state('home.index.credit_index.add', {
+                        url: '/add',
+                        templateUrl: 'views/bank_manage/pages/credit_add.html'
+                        //controller:'DeptAddCtrl'
+                    })
+                    .state('home.index.credit_index.detail', {
+                        url: '/detail',
+                        templateUrl: 'views/bank_manage/pages/credit_detail.html',
+                        controller: 'buzGroupSetCtrl'
+                    })
+					.state('home.index.bankAdd', {
+						abstract: true,
+						url: '/bankAdd',
+						templateUrl: 'views/bank_manage/pages/bankAdd.html'
+					})
+					.state('home.index.bankAdd.list', {
+                        url: '/list'
+                    })
+					
+            }]);
+});

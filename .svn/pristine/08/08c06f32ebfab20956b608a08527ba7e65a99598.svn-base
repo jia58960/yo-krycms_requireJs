@@ -1,0 +1,160 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <link rel="stylesheet" href="styles/app.v2.css" type="text/css" />
+    <link rel="stylesheet" href="styles/font.css" type="text/css" cache="false" />
+    
+    <link rel="stylesheet" type="text/css" href="js/datatables/datatables.css">
+    <link rel="stylesheet" type="text/css" href="js/select2/select2.css">
+
+    <!--ng-table-->
+    <!-- <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" type="text/css" /> -->
+
+    <style type="text/css">
+
+    .welcome {
+    top:30%;
+    position: relative;
+    text-align: center;
+}
+
+    /*---------------locked屏幕字体效果--------------*/
+    @-webkit-keyframes blackblur {
+      from { text-shadow: 0 0 72px black; color: transparent; }
+      to   { text-shadow: 0;              color: black;       }
+    }  
+
+    .smokemonster span:nth-of-type(1)  { -webkit-animation: blackblur 2s 0.5s    1 alternate; }
+    .smokemonster span:nth-of-type(2)  { -webkit-animation: blackblur 2s 0.54s  1 alternate; }
+    .smokemonster span:nth-of-type(3)  { -webkit-animation: blackblur 2s 0.58s 1 alternate; }
+    .smokemonster span:nth-of-type(4)  { -webkit-animation: blackblur 2s 0.64s  1 alternate; }
+    .smokemonster span:nth-of-type(5)  { -webkit-animation: blackblur 2s 0.67s 1 alternate; }
+    .smokemonster span:nth-of-type(6)  { -webkit-animation: blackblur 2s 0.7s  1 alternate; }
+    .smokemonster span:nth-of-type(7)  { -webkit-animation: blackblur 2s 0.74s 1 alternate; }
+    .smokemonster span:nth-of-type(8)  { -webkit-animation: blackblur 2s 0.78s  1 alternate; }
+    .smokemonster span:nth-of-type(9)  { -webkit-animation: blackblur 2s 0.82s 1 alternate; }
+    .smokemonster span:nth-of-type(10) { -webkit-animation: blackblur 2s 0.85s  1 alternate; }
+    .smokemonster span:nth-of-type(11) { -webkit-animation: blackblur 2s 0.89s 1 alternate; }
+    .smokemonster span:nth-of-type(12) { -webkit-animation: blackblur 2s 0.93s  1 alternate; }
+    .smokemonster span:nth-of-type(13) { -webkit-animation: blackblur 2s 0.97s  1 alternate; }
+    .smokemonster span:nth-of-type(14) { -webkit-animation: blackblur 2s 1s  1 alternate; }
+
+    .smokemonster {
+      color: black;
+      display: block;
+      padding: 20px;
+      font: bold 72px Helvetica;
+      text-shadow: 0 0 3px gray;
+      /*-webkit-text-stroke:0.3px gray;*/
+      /*text-transform: uppercase;*/
+      letter-spacing: -8px;
+    }
+
+        /*拉帘子*/
+        .locked {
+            /*display: none!important;*/
+
+            -webkit-transition:all cubic-bezier0, 1, 1, 1) 0.5s;
+            -moz-transition:all cubic-bezier(0, 1, 1, 1) 0.5s;
+            -o-transition:all cubic-bezier(0, 1, 1, 1) 0.5s;
+            transition:all cubic-bezier(0, 1, 1, 1) 0.5s;
+            opacity: 1;
+
+            position: absolute;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(./images/lockedbg.png) repeat scroll;
+            background-image: -webkit-image-set(url("./images/lockedbg.png") 1x,url("./images/lockedbg@2x.png") 2x);
+            background-image: -moz-image-set(url("./images/lockedbg.png") 1x,url("./images/lockedbg@2x.png") 2x);
+            background-image: -ms-image-set(url("./images/lockedbg.png") 1x,url("./images/lockedbg@2x.png") 2x);
+            background-image: -o-image-set(url("./images/lockedbg.png") 1x,url("./images/lockedbg@2x.png") 2x);
+
+        }
+         
+        .locked.ng-hide-add, .locked.ng-hide-remove {
+          /*opacity:0;*/
+          /*top:0px;*/
+            display: block!important;
+          /*opacity:0;*/
+        }
+         
+        .locked.ng-hide {
+            opacity: 0;
+          /*top:0px;*/
+         
+        }
+
+    </style>
+    
+</head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <!-- lock frame -->
+        <div id="locked" class="locked" ng-hide="dongSwitch" ng-init="dongSwitch=false" ng-click="dongSwitch=true">
+            <section class="welcome">
+                <h2 class="smokemonster">
+                    <span class="char1">Y</span>
+                    <span class="char2">.</span>
+                    <span class="char3">X</span>
+                    <span>&nbsp;</span>
+                    <span class="char4">A</span>
+                    <span class="char5">I</span>
+                    <span>&nbsp;</span>
+                    <span class="char6">s</span>
+                    <span class="char7">y</span>
+                    <span class="char8">s</span>
+                    <span class="char9">t</span>
+                    <span class="char10">e</span>
+                    <span class="char11">m</span>
+                    <span class="char12">.</span>
+                </h2>
+
+            </section>
+        </div>
+
+    <!-- lock frame end -->
+
+    <!--   <div ui-view=""></div> -->
+  
+      <section class="hbox stretch">
+            <!-- .aside -->
+            <aside class="bg-primary aside-sm" id="nav">
+                <section class="vbox" ui-view="menu">
+                    
+                </section>
+            </aside>
+            <!-- /.aside -->
+            <!-- .vbox -->
+            <section id="content" ui-view="dashbord"></section>
+            <!-- /.vbox -->
+        </section>
+
+                        <div><a href="#" ng-click="dongSwitch=false">XXXXX</a></div>
+
+    <script data-main="scripts/main" src="require.js"></script>
+    
+</body>
+</html>

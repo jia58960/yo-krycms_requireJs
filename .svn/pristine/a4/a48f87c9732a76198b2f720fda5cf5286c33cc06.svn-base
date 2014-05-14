@@ -1,0 +1,50 @@
+define(['controllers/controllers', 'services/login_service','services/websocket/login'],
+ function(controllers) {
+  controllers.controller('loginCtrl', function ($scope,loginFactory,MyService,toaster,$location) {
+  	console.log("loginCtrl");
+
+	$scope.status;
+  var websocket;
+  // $scope.user ={userName:"123",userPassword:"111222"};
+
+  $scope.doLogin = function(user){
+    loginFactory.doLogin(user)
+      .success(function (success) {
+          if(success.resultCode == 200){
+
+            $scope.status = '登录成功';
+            console.log("doLogin");
+            $location.path('/');
+
+            websocket = MyService.doLogin(user);
+            // ,function(msg){
+            //   console.log("message");
+            //   console.log(msg);
+            // }
+            console.log("websocket");
+            console.log(websocket);
+          }else if (success.resultCode == 102) {
+            toaster.pop('error', "操作失败", success.resultReason);
+            $scope.status = success.resultReason;
+          };
+          
+      })
+      .error(function (error) {
+          $scope.status = '登录失败: ' + error.message;
+          console.log($scope.status);
+      });
+  };
+
+  $scope.logout = function(){
+      loginFactory.logout()
+        .success(function () {
+            $scope.status = '退出成功';
+            console.log("logout");
+        })
+        .error(function (error) {
+            $scope.status = '退出失败: ' + error.message;
+        });
+  };
+
+  });
+});

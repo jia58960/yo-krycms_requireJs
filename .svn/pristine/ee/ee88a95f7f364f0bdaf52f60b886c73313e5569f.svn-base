@@ -1,0 +1,6 @@
+define(['controllers/controllers', 'services/client_service'],
+ function(controllers) {
+  controllers.controller('clientListCtrl', function ($scope, cleintFactory, $modal) {
+  		
+  })
+});

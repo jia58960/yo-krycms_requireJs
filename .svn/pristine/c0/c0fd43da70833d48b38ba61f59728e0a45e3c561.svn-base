@@ -1,0 +1,71 @@
+define(['app'], function (app) {
+    return app.config(
+        [          '$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
+                $stateProvider
+                    //银行管理页
+                    .state('home.index.bank_page', {
+                        abstract: true,
+                        url: '/bank_page',
+                        templateUrl: 'views/bank_manage/bank_page.html'
+                    })
+                    .state('home.index.bank_page.list', {
+                        url: '/list'
+                    })
+                    //以下为银行管理DEMO页面
+                    .state('home.index.credit_index', {
+                        abstract: true,
+                        url: '/credit_index',
+                        templateUrl: 'views/bank_manage/pages/credit_index.html'
+                    })
+                    .state('home.index.credit_index.list', {
+                        url: '/list'
+                    })
+                    .state('home.index.credit_index.add', {
+                        url: '/add',
+                        templateUrl: 'views/bank_manage/pages/credit_add.html'
+                        //controller:'DeptAddCtrl'
+                    })
+                    .state('home.index.credit_index.detail', {
+                        url: '/detail',
+                        templateUrl: 'views/bank_manage/pages/credit_detail.html',
+                        controller: 'buzGroupSetCtrl'
+                    })
+                    //新增银行表单页DEMO
+                    .state('home.index.bankAdd', {
+                        abstract: true,
+                        url: '/bankAdd',
+                        templateUrl: 'views/bank_manage/pages/bankAdd.html'
+                    })
+                    .state('home.index.bankAdd.list', {
+                        url: '/list'
+                    })
+					//银行联系人总览DEMO
+					.state('home.index.bankContact', {
+						abstract: true,
+						url: '/bankContact',
+						templateUrl: 'views/bank_manage/pages/bankContact.html'
+					})
+					.state('home.index.bankContact.list', {
+                        url: '/list'
+                    })
+					//新增银行联系人DEMO
+					.state('home.index.contactAdd', {
+						abstract: true,
+						url: '/contactAdd',
+						templateUrl: 'views/bank_manage/pages/contactAdd.html'
+					})
+					.state('home.index.contactAdd.list', {
+                        url: '/list'
+                    })
+					//新增营销记录DEMO
+					.state('home.index.marketAdd', {
+						abstract: true,
+						url: '/marketAdd',
+						templateUrl: 'views/bank_manage/pages/marketAdd.html'
+					})
+					.state('home.index.marketAdd.list', {
+                        url: '/list'
+                    })
+            }]);
+});

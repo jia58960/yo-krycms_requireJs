@@ -1,0 +1,98 @@
+<div class="row b-b m-l-none m-r-none">
+    <div class="col-sm-4">
+        <h3 class="m-t m-b-none">
+            项目设置
+        </h3>
+        <p class="block text-muted">
+            对项目组的设置调配等
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+            <div class="pull-left">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Users
+                    <span class="badge up bg-danger">
+                        +5
+                    </span>
+                </span>
+                <span class="h4">
+                    432k
+                </span>
+                    <i class="fa fa-level-up text-success">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                         data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left m-l-lg">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Profit
+                </span>
+                <span class="h4">
+                    $4k
+                </span>
+                    <i class="fa fa-level-down text-danger">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                         data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="hbox stretch">
+    <aside id="subNav" class="aside bg-white b-r">
+        <div class="wrapper b-b">
+            项目(组)设置
+        </div>
+
+        <div class="list-group bg-white">
+
+            <a class="list-group-item dropdown-toggle">
+                <i class="fa fa-comment icon-muted"></i>
+                拓展部
+            </a>
+            <a class="list-group-item active" ui-sref="home.index.pro_group_setting.detail">
+                <i class="fa fa-comment icon-muted"></i>
+                资金部
+            </a>
+            <a class="list-group-item" href="###">
+                <i class="fa fa-comment icon-muted"></i>
+                融资租赁部
+            </a>
+        </div>
+    </aside>
+    <aside>
+        <section class="vbox">
+            <header class="header bg-white b-b clearfix">
+                <div class="row m-t-sm">
+                    <div class="col-sm-12 m-b-xs">
+                        <a class="btn btn-sm btn-success" ui-sref="home.index.pro_group_setting.add">
+                            <i class="fa fa-plus">
+                            </i>
+                            新增项目
+                        </a>
+                    </div>
+
+                </div>
+            </header>
+            <section class="scrollable wrapper w-f" ui-view></section>
+        </section>
+    </aside>
+</section>

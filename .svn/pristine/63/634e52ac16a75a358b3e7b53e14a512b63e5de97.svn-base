@@ -1,0 +1,125 @@
+    <div class="col-sm-7">
+      <section class="panel">
+        <header class="panel-heading font-bold">添加联系人</header>
+        <div class="panel-body">
+          <form class="bs-example form-horizontal">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">姓名:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="张三" />
+              </div>
+              <label class="col-lg-2 control-label">姓别:</label>
+              <div class="col-lg-4" style="margin-top: 6px;">
+				<label class="col-lg-4">
+					<input type="radio" ng-model="color" value="male">男<br/>
+				</label>
+				<label class="col-lg-4">
+					<input type="radio" ng-model="color" value="female">女<br/>
+				</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">手机:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="12345678910" />
+              </div>
+              <label class="col-lg-2 control-label">固话:</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="0794-1234567" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">邮箱:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="12345678@gmail.com" />
+              </div>
+              <label class="col-lg-2 control-label">职务:</label>
+              <div class="col-lg-4">
+                <select name="account" class="form-control">
+				  <option>请选择</option>
+				  <option>客户经理</option>
+				  <option>总行行长</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">籍贯:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="广东" />
+              </div>
+              <label class="col-lg-2 control-label">出生日期:</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="2014-03-28" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">传真:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="12345678910" />
+              </div>
+              <label class="col-lg-2 control-label">身份证号:</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" placeholder="362525201403282222" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">地址:</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" placeholder="如：南山区白石洲" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">教育经历:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="南昌大学"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">个人经历:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="漂洋过海"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">性格特点:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="自由不羁"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">爱好特长:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="睡懒觉"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">饮食偏好:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="不爱吃辣"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">家庭信息:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="暂无"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">其他信息:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="暂无"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+			  <div class="col-lg-3"></div>
+              <div class="col-lg-4">
+                <a href="#" class="btn btn-s-md btn-info">提交</a>
+              </div>
+              <div class="col-lg-3">
+                <a href="#" class="btn btn-s-md btn-info">返回</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>

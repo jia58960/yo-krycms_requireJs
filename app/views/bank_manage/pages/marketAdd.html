@@ -1,0 +1,118 @@
+<div class="col-sm-7">
+    <section class="panel">
+        <header class="panel-heading font-bold">新增营销计划</header>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销主题:</label>
+
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" ng-model="marketingPlan.marketingSubject" style="width:420px;"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; " >*</span>计划营销时间:</label>
+
+                    <div class="col-lg-6">
+                        <input name="employeeJoinDate" placeholder="yyyy-MM-dd" type="text" datepicker-popup="yyyy-MM-dd"  ng-required="true" close-text="关闭" ng-model="marketingPlan.marketingPlanCron" class="form-control" style="width: 197px;text-align: center"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销银行:</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" style="width: 197px;text-align: center" ng-model="bankId" ng-options="x.bankId as x.bankFullName for x in banks" ng-change="getBankContacts(bankId)">
+                            <option value="">请选择</option>
+                        </select>
+                        <span class="help-block m-b-none">注：可双击输入框或输入部分关键字进行筛选</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销对象:</label>
+                    <div class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="contactIds"
+                                style="width:420px;">
+                            <option ng-repeat="x in contacts" ng-value="x.contactId">{{x.contactName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red;">*</span>我司代表:</label>
+                    <div class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="employeeIds"
+                                style="width:420px;">
+                            <option ng-repeat="x in employees" ng-value="x.employeeId">{{x.employeeName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销主体:</label>
+                    <div class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="corporationEntityIds"
+                                style="width:420px;">
+                            <option ng-repeat="x in corporationEntities" ng-value="x.corporationEntityId">{{x.corporationEntityName}}</option>
+                        </select>
+                         <span class="help-block m-b-none">针对公司营销时选择，如:金瑞亿等</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销客户:</label>
+
+                    <div class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="customerIds"
+                                style="width:420px;">
+                            <option ng-repeat="x in customers" ng-value="x.customerId">{{x.customerName}}</option>
+                        </select>
+                         <span class="help-block m-b-none">针对某(些)客户时选择，如:深圳江铜等</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销形式:</label>
+
+
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" ng-model="marketingPlan.marketingWay"  style="width:420px;"/> <span>营销形式如:晚餐、午餐、送礼等</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color:red;">*</span>提醒:</label>
+
+                    <div class="col-lg-3">
+                        <select name="account" class="form-control" style="width:95px;" ng-model="marketingPlan.marketingPlanNotification">
+                            <option value="">请选择</option>
+                            <option value="0">不提醒</option>
+                            <option value="1">提前1天</option>
+                            <option value="2">提前2天</option>
+                            <option value="3">提前3天</option>
+                            <option value="4">提前4天</option>
+                            <option value="5">提前5天</option>
+                            <option value="6">提前6天</option>
+                            <option value="7">提前7天</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">情况简述:</label>
+
+                    <div class="col-lg-9">
+                        <textarea class="form-control" style="width:420px;" ng-model="contentText"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">结论:</label>
+
+                    <div class="col-lg-9">
+                        <textarea class="form-control" placeholder="结论在营销完成后填写" style="width:420px;" ng-model="conclusionText"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-4">
+                        <a href class="btn btn-s-md btn-info" ng-click="addMarketPlan()">提交</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

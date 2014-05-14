@@ -1,0 +1,31 @@
+define(['app'], function(app) {
+  return app.config(
+        [          '$stateProvider', '$urlRouterProvider',
+            function ($stateProvider,   $urlRouterProvider) {
+                $stateProvider
+
+                    //资源配置路由设置
+                    //注册资源
+                    .state('home.index.res_reg', {
+                        abstract: true,
+                        url: '/res_reg',
+                        templateUrl: 'views/res_config/res_reg.html',
+                        controller: 'resRegCtrl'
+                    })
+                    .state('home.index.res_reg.list', {
+                        url: '/list'
+                    })
+                    //编辑资源
+                    .state('home.index.res_edit',{
+                        abstract: true,
+                        url: '/res_edit',
+                        templateUrl: 'views/res_config/res_edit.html',
+                        controller: 'resEditCtrl'
+                    })
+                    .state('home.index.res_edit.list', {
+                        url: '/list'
+                    })
+
+
+            }]);
+});

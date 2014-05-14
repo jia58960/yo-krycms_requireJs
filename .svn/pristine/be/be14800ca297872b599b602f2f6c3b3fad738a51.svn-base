@@ -1,0 +1,84 @@
+define(['app'], function (app) {
+    return app.config(
+        [          '$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
+                $stateProvider
+
+                    //客户管理页
+                    .state('home.index.module.client_page', {
+                        url: '/client_page',
+                        views: {
+                            'content@home.index':{
+                                templateUrl: 'views/client_manage/client_page.html',
+                                controller: 'projectListCtrl'
+                            }
+                        }
+                    })
+
+                    //以下页面为DEMO页面
+
+
+                    //客户项目列表页
+                    .state('home.index.clientprolist_page', {
+                        abstract: true,
+                        url: '/clientprolist_page',
+                        templateUrl: 'views/client_manage/pages/clientprolist_page.html'
+                    })
+                    .state('home.index.clientprolist_page.list', {
+                        url: '/list'
+                    })
+                    .state('home.index.clientprolist_page.ofen', {
+                        url: '/ofen',
+                        templateUrl: 'views/client_manage/pages/clientprolist_ofen.html'
+                        //controller:'DeptAddCtrl'
+                    })
+                    .state('home.index.clientprolist_page.prolist', {
+                        url: '/prolist',
+                        templateUrl: 'views/client_manage/pages/clientprolist.html'
+                    })
+                    //过程管理列表页
+                    .state('home.index.processlist_page', {
+                        abstract: true,
+                        url: '/processlist_page',
+                        templateUrl: 'views/client_manage/pages/processlist_page.html'
+                        //controller: 'resConfigCtrl'
+                    })
+                    .state('home.index.processlist_page.list', {
+                        url: '/list'
+                    })
+                    //过程管理详细页
+                    .state('home.index.processdetail_page', {
+                        abstract: true,
+                        url: '/processdetail_page',
+                        templateUrl: 'views/client_manage/pages/processdetail_page.html',
+                        controller: function ($scope) {
+                            $scope.message = {
+                                text: 'hello world!',
+                                time: '2014-03-15 11:25'
+                            };
+                        }
+                    })
+                    .state('home.index.processdetail_page.list', {
+                        url: '/list'
+                    })
+                    //新增过程管理页
+                    .state('home.index.processAdd', {
+                        abstract: true,
+                        url: '/processAdd',
+                        templateUrl: 'views/client_manage/pages/processAdd.html'
+                    })
+                    .state('home.index.processAdd.list', {
+                        url: '/list'
+                    })
+                    //新增过程管理页
+                    .state('home.index.clientAdd', {
+                        abstract: true,
+                        url: '/clientAdd',
+                        templateUrl: 'views/client_manage/pages/clientAdd.html'
+                    })
+                    .state('home.index.clientAdd.list', {
+                        url: '/list'
+                    })
+
+            }]);
+});

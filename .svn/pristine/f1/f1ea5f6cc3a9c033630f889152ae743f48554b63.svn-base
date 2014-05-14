@@ -1,0 +1,36 @@
+
+                <section class="vbox">
+                    <header class="header bg-dark bg-gradient"> 
+                        <ul class="nav nav-tabs"> 
+                            <li class="dropdown" ng-repeat="submenu in submenus">
+                                <a class="dropdown-toggle">
+                                    {{submenu.resourceName}}
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                                        <a>
+                                            {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>  
+                        </ul> 
+                    </header>
+                    
+                    <section class="scrollable wrapper">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                这个尼玛是系统设置啦这个尼玛是系统设置啦这个尼玛是系统设置啦
+                            </div>
+                            <div class="col-lg-4">
+                                这个尼玛是系统设置啦
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav">
+                </a>
+            

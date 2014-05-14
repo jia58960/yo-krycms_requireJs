@@ -1,0 +1,38 @@
+                <section class="vbox">
+                    <header class="header bg-dark bg-gradient"> 
+                        <ul class="nav navbar-nav"> 
+                            
+                            <li class="dropdown" ng-repeat="submenu in submenus">
+                                <a class="dropdown-toggle" href="#">
+                                    {{submenu.resourceName}}
+                                    <b class="caret">
+                                    </b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                                        <a ui-sref="home.index.{{secsub.yxResourceBySublevelResourceId.resourceCode}}.list">
+                                            {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li> 
+
+                        </ul> 
+                    </header>
+                                 
+                    <section class="scrollable wrapper" ui-view>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                资源配置：包括对部门XXX 角色以及权限的基础配置额
+                            </div>
+                            <div class="col-lg-4">
+                                资源配置：包括对部门XXX 角色以及权限的基础配置额123
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen"
+                data-target="#nav">
+                </a>
+            

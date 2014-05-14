@@ -1,0 +1,37 @@
+"use strict";
+angular.module('angularUiTestApp')
+    .controller('buzGroupSetCtrl',['$scope', function($scope){
+        var deptMembers = [
+            { text: '资金部', children: [
+                { id: '2', text: '郑伟' },
+                { id: '5', text: '黄志艳' }
+            ]},
+            { text: '业务部', children: [
+                { id: '1', text: '陈家奎' },
+                { id: '6', text: '陈忠涛' }
+            ]},
+            { text: '商务中心', children: [
+                { id: '4', text: '魏美玲' },
+                { id: '3', text: '贺洁' },
+                { id: '9', text: '梁晓莹' }
+            ]},
+            { text: '办公室', children: [
+                { id: '8', text: '刘艳静' },
+                { id: '7', text: '秋歌' }
+            ]}
+        ];
+        $scope.deptMeb = {
+            multiple: true,
+            query: function (query) {
+                query.callback({ results: deptMembers });
+            },
+            initSelection: function(element, callback) {
+                var val = $(element).select2('val'),
+                    results = [];
+                for (var i=0; i<val.length; i++) {
+                    results.push(findState(val[i]));
+                }
+                callback(results);
+            }
+        };
+    }])

@@ -1,0 +1,84 @@
+<section class="vbox">
+    <header class="header bg-dark bg-gradient">
+        <ul class="nav navbar-nav">
+            <li class="dropdown" ng-repeat="submenu in submenus">
+                <a class="dropdown-toggle" href="#">
+                    {{submenu.resourceName}}
+                    <b class="caret">
+                    </b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                        <a ui-sref="home.index.{{secsub.yxResourceBySublevelResourceId.resourceCode}}.list">
+                            {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <section class="scrollable wrapper" ui-view>
+        <div class="row b-b m-l-none m-r-none">
+            <div class="col-sm-4">
+                <h3 class="m-t m-b-none">
+                    客户管理
+                </h3>
+                <p class="block text-muted">
+                    客户各项的管理
+                </p>
+            </div>
+            <div class="col-sm-8">
+                <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+                    <div class="pull-left">
+                        <div class="pull-left m-r-xs">
+                            <span class="block">
+                                Users
+                                <span class="badge up bg-danger">
+                                    +5
+                                </span>
+                            </span>
+                            <span class="h4">
+                                432k
+                            </span>
+                            <i class="fa fa-level-up text-success">
+                            </i>
+                        </div>
+                        <div class="clear">
+                            <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                                 data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                                <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                        width="40" height="35">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-left m-l-lg">
+                        <div class="pull-left m-r-xs">
+                            <span class="block">
+                                Profit
+                            </span>
+                            <span class="h4">
+                                $4k
+                            </span>
+                            <i class="fa fa-level-down text-danger">
+                            </i>
+                        </div>
+                        <div class="clear">
+                            <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                                 data-height="35" data-type="bar" class="sparkline inline">
+                                <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                        width="40" height="35">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper font-bold">
+            这是客户管理与银行管理的TODO页面，类似于现有CMS的待办事项
+        </div>
+    </section>
+</section>

@@ -1,0 +1,190 @@
+<!--
+Author  : zhangjia
+Date    : 20130929
+Describe: user_dept_module.
+-->
+    <!-- BEGIN PAGE CONTENT-->
+	
+	<div class="row-fluid">
+
+		<div class="span12">					
+
+					<!-- BEGIN FORM PORTLET-->
+
+			<div  class="portlet box red" id="fm_user_new">
+
+				<div class="portlet-title">
+
+					<div class="caption"><i class="icon-edit"></i> 部门设置</div>
+
+					<div class="actions">
+
+                        <a class="btn blue" id="addDeptBtn" href="javascript:;"><i class="icon-plus"></i> 新增部门</a>
+
+                    </div>
+
+				</div>
+
+				<!-- BEGIN FORM-->
+				<div class="portlet-body">
+
+					<div class="row-fluid">
+
+                        <div class="span12">
+
+                            <!--BEGIN TABS-->
+
+                            <div class="tabbable tabbable-custom tabs-left">
+
+                                <!-- Only required for left/right tabs -->
+
+                                <ul class="nav nav-tabs tabs-left" id="deptlist">
+									<!--部门列表放置区-->
+
+                                </ul>
+
+                                <div class="tab-content">
+
+									<div id="deptInfo" class="tab-pane active" style="min-height:150px;">
+                                        <!--部门常规信息编辑-->
+                                	</div>  
+
+	                                <div class="tab-pane" id="deOthInfo">
+
+	                                    <div class="row-fluid">
+
+                                            <div class="pull-left" style="padding:10px 14px">
+
+                                                <h4>其它设置</h4>
+
+                                            </div>
+
+                                            <div class="pull-right" style="padding:10px 14px">
+                                                <a class="btn icn-only green" id="deptSet" href="#"><i class="m-icon-swapleft m-icon-white"></i> 返回</a>                          
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div id="depJob">
+                                            <!--职称放置-->
+                                        </div>
+
+                                        <div id="depVirt">
+                                            
+                                        </div>
+
+	                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+				</div>
+				<!-- END FORM-->       
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- END PAGE CONTENT -->
+	
+
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+ 
+	<script src="media/js/table-editable.js"></script>    
+	
+	<!-- END PAGE LEVEL SCRIPTS -->
+	<script type="text/javascript">
+
+	jQuery(document).ready(function() {   
+
+        var urlfix = "<%=urlfix%>";
+        console.log(urlfix);
+
+        var urljasonfix = eval(urlfix);
+        
+        //部门列表
+        if(!urljasonfix.deptlist){
+
+            urljasonfix.deptlist =
+            [{
+                "ra":"deptlist",
+                "dir":"Com/deptlist",
+                "dif":'department/listAllDepartments',
+                "p":{"deptId":'4'}
+                }
+            ];            
+        }
+        yixunload(urljasonfix.deptlist,urlfix);  
+
+       	//部门信息
+        if(!urljasonfix.deptInfo){
+
+            urljasonfix.deptInfo =
+            [{
+                "ra":"deptInfo",
+                "dir":"Set/BI/deptInfo",
+                "dif":'department/getDepartment',
+                "p":{"deptId":'4'}
+                }
+            ];            
+        }
+        yixunload(urljasonfix.deptInfo,urlfix);  
+        
+        //点部门刷部门详细信息
+        $("#deptlist li a").on('click',function(){
+            $("#deptlist").show();
+
+            var tp = $(this).parent('li');
+            tp.addClass('active').siblings().removeClass('active');
+
+            var deptid = $(this).attr('id');
+             urljasonfix.deptInfo =
+            [{
+                "ra":"deptInfo",
+                "dir":"Set/BI/deptInfo",
+                "dif":'department/getDepartment',
+                "p":{"deptId":deptid}
+                }
+            ];  
+            yixunload(urljasonfix.deptInfo,urlfix);            
+            
+        })
+
+		//点击新增部门
+        $("#addDeptBtn").click(function(){
+
+            $("#deptInfo").addClass('active');
+
+            $("#deOthInfo").removeClass('active');
+
+            urljasonfix.deptInfo =
+            [
+                {"ra":"deptInfo",
+                "dir":"Set/BI/deptinfo",
+                "dif":'',
+                "p":{"deptId":""}
+                }
+            ];
+            yixunload(urljasonfix.deptInfo,urlfix);
+
+        });
+
+        //切换到部门常规设置
+        $("#deptSet").on('click',function(){
+            $("#deptInfo").addClass('active');
+            $("#deOthInfo").removeClass('active');
+        })
+		
+	});
+
+	</script>
+
+	<!-- END JAVASCRIPTS -->   

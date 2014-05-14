@@ -1,0 +1,89 @@
+
+define(['services/services'],
+    function(services) {
+    services.factory('bankFactory', ['$http', function ($http) {
+
+    var urlBase = 'http://10.188.192.200:8080';
+    var bankFactory = {};
+    var entityUrl = '/entity';
+    var bankUrl = '/bank';
+    var entityBankUrl = '/entityBank';
+
+    //主体
+    bankFactory.getEntentities = function () {
+        return $http.get(urlBase + entityUrl + '/all',{cache: true});
+    };
+
+    bankFactory.getEntity = function (entityId) {
+        return $http.get(urlBase + entityUrl + '/' + entityId,{cache: true});
+    };
+
+    bankFactory.insertEntity = function (data) {
+        return $http.post(urlBase + entityUrl,data);
+    };
+
+    bankFactory.deleteEntity = function (entityId) {
+        return $http.delete(urlBase +entityUrl + '/'+ entityId);
+    };
+
+    bankFactory.updateEntity = function (entityId,data) {
+        return $http.put(urlBase + entityUrl + '/' + entityId ,data);
+    };
+
+    //银行
+    bankFactory.getBanks = function () {
+        return $http.get(urlBase + bankUrl + '/all',{cache: true});
+    };
+
+    bankFactory.getBank = function (bankId) {
+        return $http.get(urlBase + bankUrl + '/' + bankId,{cache: true});
+    };
+
+    bankFactory.insertBank = function (data) {
+        return $http.post(urlBase + bankUrl,data);
+    };
+
+    bankFactory.deleteBank = function (bankId) {
+        return $http.delete(urlBase +bankUrl + '/'+ bankId);
+    };
+
+    //主体银行
+    bankFactory.getEntityBanks = function (entityId) {
+        return $http.get(urlBase + entityBankUrl + 'entity/'+entityId,{cache: true});
+    };
+
+    bankFactory.getEntityBank = function (bankId) {
+        return $http.get(urlBase + entityBankUrl + '/' + bankId,{cache: true});
+    };
+
+    bankFactory.insertEntityBank = function (data) {
+        return $http.post(urlBase + entityBankUrl,data);
+    };
+
+    bankFactory.deleteEntityBank = function (bankId) {
+        return $http.delete(urlBase +entityBankUrl + '/'+ bankId);
+    };
+
+    bankFactory.updateEntityBank = function (bankId,data) {
+        return $http.put(urlBase + entityBankUrl + '/' + bankId ,data);
+    };
+
+    bankFactory.getBankManagers = function(bankId){
+            return $http.get(urlBase  +bankUrl+ '/' +bankId + '/manages');
+        };
+
+    bankFactory.addManagerToBank = function(bankId,data){
+        return $http.post(urlBase + bankUrl + '/' + bankId +'manager',data);
+    };
+
+    bankFactory.deleteManagerFromBank = function(bankId,managerId){
+        return $http.delete(urlBase + bankUrl + '/' + bankId +'manager'+managerId);
+    };
+
+    bankFactory.deliverManagerToBank = function(bankId,toBankId,managerId){
+        return $http.delete(urlBase + bankUrl + '/' + bankId +'toClientId/'+toBankId+'/manager'+managerId);
+    };
+
+    return bankFactory;
+    }]);
+});

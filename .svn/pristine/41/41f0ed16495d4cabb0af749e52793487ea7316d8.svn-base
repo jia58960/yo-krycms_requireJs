@@ -1,0 +1,469 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                    type="button">
+                搜索
+            </button>
+
+        </div>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a class="panel-toggle text-muted" href="#">
+                            <i class="fa fa-caret-down text-active">
+                            </i>
+                            <i class="fa fa-caret-up text">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                News
+        <span class="badge bg-info">
+            32
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-info fa-stack-2x">
+                    </i>
+                    <i class="fa fa-bold text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap 3: What you need to know
+                        </a>
+                        <small class="block m-t-xs">
+                            Sleek, intuitive, and powerful mobile-first front-end framework for faster
+                            and easier web development.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 23, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-primary fa-stack-2x">
+                    </i>
+                    <i class="fa fa-file text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap documents
+                        </a>
+                        <small class="block m-t-xs">
+                            There are a few easy ways to quickly get started with Bootstrap, each
+                            one appealing to a different skill level and use case. Read through to
+                            see what suits your particular needs.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 12, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a class="panel-toggle text-muted" href="#">
+                            <i class="fa fa-caret-down text-active">
+                            </i>
+                            <i class="fa fa-caret-up text">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                News
+        <span class="badge bg-info">
+            32
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-info fa-stack-2x">
+                    </i>
+                    <i class="fa fa-bold text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap 3: What you need to know
+                        </a>
+                        <small class="block m-t-xs">
+                            Sleek, intuitive, and powerful mobile-first front-end framework for faster
+                            and easier web development.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 23, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-primary fa-stack-2x">
+                    </i>
+                    <i class="fa fa-file text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap documents
+                        </a>
+                        <small class="block m-t-xs">
+                            There are a few easy ways to quickly get started with Bootstrap, each
+                            one appealing to a different skill level and use case. Read through to
+                            see what suits your particular needs.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 12, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-default fa-stack-2x">
+                    </i>
+                    <i class="fa fa-star text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+                        <small class="block m-t-xs">
+                            Bootstrap, Ratchet
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 05, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a class="panel-toggle text-muted" href="#">
+                            <i class="fa fa-caret-down text-active">
+                            </i>
+                            <i class="fa fa-caret-up text">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                News
+        <span class="badge bg-info">
+            32
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-info fa-stack-2x">
+                    </i>
+                    <i class="fa fa-bold text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap 3: What you need to know
+                        </a>
+                        <small class="block m-t-xs">
+                            Sleek, intuitive, and powerful mobile-first front-end framework for faster
+                            and easier web development.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 23, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-primary fa-stack-2x">
+                    </i>
+                    <i class="fa fa-file text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap documents
+                        </a>
+                        <small class="block m-t-xs">
+                            There are a few easy ways to quickly get started with Bootstrap, each
+                            one appealing to a different skill level and use case. Read through to
+                            see what suits your particular needs.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 12, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a class="panel-toggle text-muted" href="#">
+                            <i class="fa fa-caret-down text-active">
+                            </i>
+                            <i class="fa fa-caret-up text">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                News
+        <span class="badge bg-info">
+            32
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-info fa-stack-2x">
+                    </i>
+                    <i class="fa fa-bold text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap 3: What you need to know
+                        </a>
+                        <small class="block m-t-xs">
+                            Sleek, intuitive, and powerful mobile-first front-end framework for faster
+                            and easier web development.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 23, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-primary fa-stack-2x">
+                    </i>
+                    <i class="fa fa-file text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap documents
+                        </a>
+                        <small class="block m-t-xs">
+                            There are a few easy ways to quickly get started with Bootstrap, each
+                            one appealing to a different skill level and use case. Read through to
+                            see what suits your particular needs.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 12, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-default fa-stack-2x">
+                    </i>
+                    <i class="fa fa-star text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+                        <small class="block m-t-xs">
+                            Bootstrap, Ratchet
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 05, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="col-md-3 col-sm-4">
+        <section class="panel">
+            <header class="panel-heading">
+                <ul class="nav nav-pills pull-right">
+                    <li>
+                        <a class="panel-toggle text-muted" href="#">
+                            <i class="fa fa-caret-down text-active">
+                            </i>
+                            <i class="fa fa-caret-up text">
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                News
+        <span class="badge bg-info">
+            32
+        </span>
+            </header>
+            <section class="panel-body">
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-info fa-stack-2x">
+                    </i>
+                    <i class="fa fa-bold text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap 3: What you need to know
+                        </a>
+                        <small class="block m-t-xs">
+                            Sleek, intuitive, and powerful mobile-first front-end framework for faster
+                            and easier web development.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 23, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-primary fa-stack-2x">
+                    </i>
+                    <i class="fa fa-file text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4" href="#">
+                            Bootstrap documents
+                        </a>
+                        <small class="block m-t-xs">
+                            There are a few easy ways to quickly get started with Bootstrap, each
+                            one appealing to a different skill level and use case. Read through to
+                            see what suits your particular needs.
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 12, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+                <div class="line pull-in">
+                </div>
+                <article class="media">
+                    <div class="pull-left">
+                <span class="fa fa-stack fa-2x">
+                    <i class="fa fa-circle text-default fa-stack-2x">
+                    </i>
+                    <i class="fa fa-star text-white fa-stack-1x">
+                    </i>
+                </span>
+                    </div>
+                    <div class="media-body">
+                        <a class="h4 text-success" href="#">
+                            Mobile first html/css framework
+                        </a>
+                        <small class="block m-t-xs">
+                            Bootstrap, Ratchet
+                        </small>
+                        <em class="text-xs">
+                            Posted on
+                    <span class="text-danger">
+                        Feb 05, 2013
+                    </span>
+                        </em>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+</div>

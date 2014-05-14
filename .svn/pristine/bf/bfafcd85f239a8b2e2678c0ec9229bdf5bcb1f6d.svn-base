@@ -1,0 +1,63 @@
+<section class="panel">
+    <form role="form" class="bg-white">
+        <header class="panel-heading font-bold">基本信息</header>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            业务组名称
+                        </label>
+                        <input type="text" name="groupName" ng-model="group.groupName" class="form-control">
+                    </div>
+                </div>
+              <!--   <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            颜色标识
+                        </label>
+                        <input type="text" name="departmentColor" ng-model="dept.departmentColor" class="form-control">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+            <header class="panel-heading font-bold">关联信息</header>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>
+                                    业务组负责人
+                                </label>
+                                 <select style="width:300px" ui-select2 multiple ng-model="group.manageId">
+                                    <optgroup label="{{dept.departmentName}}" ng-repeat="dept in depts">
+                                        <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                                    </optgroup>
+                                </select> 
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>
+                                    业务组成员
+                                </label>
+                               <select style="width:300px" ui-select2 multiple ng-model="employeeIds" ng-change="show()">
+                                    <optgroup label="{{dept.departmentName}}" ng-repeat="dept in depts">
+                                        <option value="{{a.krEmployee.employeeId}}" ng-repeat="a in dept.krDepartmentEmployeeRelations">{{a.krEmployee.employeeName}}</option>
+                                    </optgroup>
+                                </select> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-sm btn-default" type="submit" ng-click="updateDept(dept)">
+                        提交
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </section>

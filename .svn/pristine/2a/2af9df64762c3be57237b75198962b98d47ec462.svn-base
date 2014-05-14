@@ -1,0 +1,324 @@
+<header>
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                资源注册
+            </h3>
+            <p class="block text-muted">
+                对主模块、菜单以及页面等资源的注册
+            </p>
+        </div>
+        <div class="col-sm-8">
+            <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+                <div class="pull-left">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Users
+                            <span class="badge up bg-danger">
+                                +5
+                            </span>
+                        </span>
+                        <span class="h4">
+                            432k
+                        </span>
+                        <i class="fa fa-level-up text-success">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                        data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left m-l-lg">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Profit
+                        </span>
+                        <span class="h4">
+                            $4k
+                        </span>
+                        <i class="fa fa-level-down text-danger">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                        data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="hbox">
+    <aside class="bg-white-only">
+        <tabset>
+            <tab heading="模块注册">
+                <section class="panel">
+                    <header class="panel-heading">
+                        资源注册
+                    </header>
+                    <div class="panel-body">
+
+                        <form class="bs-example form-horizontal" name="moduleRegForm" ng-submit="insertRes('module')">
+
+                            <div class="form-group" ng-class="{'has-error': moduleRegForm.moduleName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    模块名称
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text" placeholder="eg:系统设置" name="moduleName" ng-model="res.resourceName" required class="form-control">
+                                    <span class="help-block m-b-none">
+                                        主模块名称，eg:系统设置
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" ng-class="{'has-error': moduleRegForm.moduleName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    模块标识码
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text" placeholder="eg:res_config" ng-model="res.resourceCode" required class="form-control">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{'has-warning': moduleRegForm.moduleIcon.$invalid}">
+                                <label class="control-label col-lg-2">
+                                    图标
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text" ng-model="res.resourceIcon" name="moduleIcon" placeholder="eg:fa fa-cog" required class="form-control" />
+                                    <span class="help-block m-b-none">
+                                        注：图标最好能体现出该模块作用，此处填写基于Font Awesome的icon，eg:'fa fa-cogs',详情请参考 <a ng-click="openIcons()">Font Awesome</a> 的icon列表.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-default" type="submit" ng-disabled="!moduleRegForm.$valid">提交</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </section>
+            </tab>
+
+            <tab heading="菜单注册">
+                <section class="panel">
+                    <header class="panel-heading">
+                        菜单注册
+                    </header>
+                    <div class="panel-body">
+                        <form class="bs-example form-horizontal" name="menuRegForm" ng-submit="insertRes('menu')">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    所属模块
+                                </label>
+                                <div class="col-lg-10">
+
+                                     <select class="form-control" ng-model="superRes" ng-options="x.resourceId as x.resourceName for x in menus">
+
+                                    </select>
+
+                                    <span class="help-block m-b-none">
+                                        选择菜单所属的主模块
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{'has-error': menuRegForm.menuName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    菜单名称
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text" ng-model="res.resourceName" name="menuName" placeholder="eg:用户设置" required class="form-control">
+                                    <span class="help-block m-b-none">
+                                        注：菜单名称是指主模块下的菜单名称，<span class="text-danger">并非页面名</span>，eg:用户设置
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{'has-error': moduleRegForm.menuName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    菜单标识码
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text" placeholder="eg:res_config" ng-model="res.resourceCode" required class="form-control">
+                                    
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-default" type="submit" ng-disabled="!menuRegForm.$valid">提交</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+            </tab>
+
+            <tab heading="页面注册">
+                <section class="panel">
+                    <header class="panel-heading">
+                        页面注册
+                    </header>
+                    <div class="panel-body">
+                        <form class="bs-example form-horizontal" name="pageRegForm" ng-submit="insertRes('page')">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    所属菜单
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <select class="form-control" ng-model="superRes" ng-options="x.resourceId as x.resourceName for x in secondMenus" ng-change="show(superRes)">
+                                        <option value="">-请选择-</option>
+                                    </select>
+                                   <!--  <select class="form-control m-b" >
+                                        <option ng-repeat="secmenu in secondMenus" value="{{secmenu.resourceId}}">{{secmenu.resourceName}}</option>
+                                    </select> -->
+
+                                    <span class="help-block m-b-none">
+                                       选择注册页面所属菜单
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{'has-error': pageRegForm.pageName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    页面名称
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <input type="text" placeholder="eg:用户设置页面" ng-model="res.resourceName" required class="form-control">
+                                    <span class="help-block m-b-none">
+                                        注：此处页面名称指菜单下最终页面的名称，<span class="text-danger">并非菜单名</span>，eg:用户设置页面
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-class="{'has-error': pageRegForm.pagePath.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    路径
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <input type="text" placeholder="eg:Res/" ng-model="res.resourceDescribe" class="form-control">
+                                    <span class="help-block m-b-none">
+                                    对应前端文件结构主模块的目录名，eg:Res/
+                                </span>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group" ng-class="{'has-error': pageRegForm.pageFileName.$invalid}">
+                                <label class="col-lg-2 control-label">
+                                    页面文件名
+                                </label>
+                                <div class="col-lg-10">
+
+
+                                    <input type="text" placeholder="eg:res_reg" ng-model="res.resourceCode" class="form-control">
+
+                                    <span class="help-block m-b-none">
+                                        即页面模板的文件名，若页面为res_reg.html,则文件名为res_reg
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-default" type="submit" ng-disabled="!pageRegForm.$valid">提交</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+            </tab>
+        </tabset>
+
+    </aside>
+    <aside class="b-l aside-lg bg-light">
+        <section class="wrapper">
+            <div class="text-center m-b">
+                <div class="inline">
+                    <div data-size="180" data-loop="false" data-scale-color="#ddd" data-bar-color="#afcf6f"
+                    data-track-color="#eee" data-line-width="25" data-percent="65" class="easypiechart easyPieChart"
+                    style="width: 180px; height: 180px; line-height: 180px;">
+                        <span class="h2">
+                            65
+                        </span>
+                        %
+                        <div class="easypie-text">
+                            Processing
+                        </div>
+                        <canvas height="180" width="180">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="accordion2" class="panel-group m-b">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                    <div class="panel-collapse in" id="collapseOne">
+                        <div class="panel-body text-sm">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                            dolor brunch. Food truck quinoa nesciunt.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="collapseTwo">
+                        <div class="panel-body text-sm">
+                            Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                            nesciunt you probably haven't heard of them accusamus labore sustainable
+                            VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseThree" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #3
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="collapseThree">
+                        <div class="panel-body text-sm">
+                            Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                            cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aside>
+</section>

@@ -1,0 +1,410 @@
+<header>
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                资源注册
+            </h3>
+            <p class="block text-muted">
+                对主模块、菜单以及页面等资源的注册
+            </p>
+        </div>
+        <div class="col-sm-8">
+            <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+                <div class="pull-left">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Users
+                            <span class="badge up bg-danger">
+                                +5
+                            </span>
+                        </span>
+                        <span class="h4">
+                            432k
+                        </span>
+                        <i class="fa fa-level-up text-success">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                        data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-left m-l-lg">
+                    <div class="pull-left m-r-xs">
+                        <span class="block">
+                            Profit
+                        </span>
+                        <span class="h4">
+                            $4k
+                        </span>
+                        <i class="fa fa-level-down text-danger">
+                        </i>
+                    </div>
+                    <div class="clear">
+                        <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                        data-height="35" data-type="bar" class="sparkline inline">
+                            <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                            width="40" height="35">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="hbox">
+    <aside class="bg-white-only">
+        <tabset>
+            <tab heading="模块注册">
+                <section class="panel">
+                    <header class="panel-heading">
+                        资源注册
+                    </header>
+                    <div class="panel-body">
+
+                        <form class="form-horizontal" name="moduleRegForm" rc-submit="insertRes('module')">
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    模块名称
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.moduleName)}"
+                                           placeholder="例:系统设置" name="moduleName" ng-model="res.resourceName" required class="form-control">
+                                    <span ng-show="moduleRegForm.moduleName.$error.required" class="help-block m-b-none">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    模块标识码
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.moduleIdentify)}"
+                                           placeholder="例:res_config" name="moduleIdentify" ng-model="res.resourceCode" required class="form-control">
+                                    <span class="help-block m-b-none">
+                                        注：模块标识码将作为模块首页的文件名，推荐以英文单词缩写加下划线连接的方式命名。例如："系统设置"可命名为"sys_setting"
+                                    </span>
+                                    <span ng-show="moduleRegForm.moduleIdentify.$error.required" class="help-block m-b-none">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">
+                                    图标
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.moduleIcon)}"
+                                           ng-model="res.resourceIcon" name="moduleIcon" placeholder="例:fa fa-cogs" required class="form-control" />
+                                    <span class="help-block m-b-none">
+                                        注：图标最好能体现出模块意义，此处填写基于Font Awesome的icon，eg:'fa fa-cogs',详情请参考 <a ng-click="openIcons()">Font Awesome</a> 的icon列表.
+                                    </span>
+                                    <span class="help-block" m-b-none ng-show="moduleRegForm.moduleIcon.$error.required">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">
+                                    资源排序号
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="number"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.moduleSortNumber)}"
+                                           max="99" min="1"
+                                           ng-model="res.resourceSortNumber" name="moduleSortNumber" placeholder="例:20" required class="form-control" />
+                                    <span class="help-block m-b-none">
+                                        注：资源采用正序排列，即排序号越小的资源越靠前。排序号介于1-99之间。
+                                    </span>
+                                    <span class="help-block" m-b-none
+                                          ng-show="moduleRegForm.moduleSortNumber.$error.required">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-success" type="submit">提 交</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </section>
+            </tab>
+
+            <tab heading="菜单注册">
+                <section class="panel">
+
+                    <header class="panel-heading">
+                        菜单注册
+                    </header>
+
+                    <div class="panel-body">
+
+                        <form class="bs-example form-horizontal" name="menuRegForm" rc-submit="insertRes('menu')">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    所属模块
+                                </label>
+                                <div class="col-lg-10">
+
+                                     <select class="form-control" ng-class="{'parsley-error':rc.menuRegForm.needsAttention(menuRegForm.moduleHandler)}" name="moduleHandler" required ng-model="superRes" ng-options="x.resourceId as x.resourceName for x in menus">
+                                         <option value="">-请选择-</option>
+                                    </select>
+                                    <span class="help-block m-b-none" ng-show="menuRegForm.moduleHandler.$error.required">
+                                        请先选择菜单
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    菜单名称
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.menuRegForm.needsAttention(menuRegForm.menuName)}"
+                                           ng-model="res.resourceName" name="menuName" placeholder="例:用户设置" required class="form-control">
+                                    <span class="help-block m-b-none" ng-show="menuRegForm.menuName.$error.required">
+                                       必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    菜单类型
+                                </label>
+                                <div class="col-lg-10">
+                                    <div class="checkbox">
+                                        <label> <input type="checkbox" ng-model="checked" ng-init="checked=false">是页面</label>                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" ng-if="checked">
+                                <label class="col-lg-2 control-label">
+                                    页面标识码
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.menuRegForm.needsAttention(menuRegForm.pageIdentifyCode)}"
+                                           placeholder="例:dept_setting" ng-model="res.resourceCode" class="form-control"
+                                           name="pageIdentifyCode" required />
+                                    <span class="help-block m-b-none">
+                                        注：页面标识码将作为页面文件的文件名，推荐以英文单词缩写加下划线连接的方式命名。例如："部门设置"可命名为"dept_setting"
+                                    </span>
+                                    <span class="help-block m-b-none"
+                                          ng-show="menuRegForm.pageIdentifyCode.$error.required">
+                                       必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">
+                                    资源排序号
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="number"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.menuSortNumber)}"
+                                           max="99" min="1"
+                                           ng-model="res.resourceSortNumber" name="menuSortNumber" placeholder="例:20"
+                                           required class="form-control" />
+                                    <span class="help-block m-b-none">
+                                        注：资源采用正序排列，即排序号越小的资源越靠前。排序号介于1-99之间。
+                                    </span>
+                                    <span class="help-block" m-b-none
+                                          ng-show="moduleRegForm.menuSortNumber.$error.required">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-success" type="submit">提 交</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+            </tab>
+
+            <tab heading="页面注册">
+                <section class="panel">
+                    <header class="panel-heading">
+                        页面注册
+                    </header>
+                    <div class="panel-body">
+                        <form class="bs-example form-horizontal" name="pageRegForm" rc-submit="insertRes('page')">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    所属菜单
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <select class="form-control"
+                                            ng-class="{'parsley-error': rc.pageRegForm.needsAttention(pageRegForm.belongMenuName)}"
+                                            ng-model="superRes" name="belongMenuName" required
+                                            ng-options="x.resourceId as x.resourceName for x in secondMenus"
+                                            ng-change="show(superRes)">
+                                        <option value="">-请选择-</option>
+                                    </select>
+                                    <span class="help-block m-b-none" ng-show="pageRegForm.belongMenuName.$error.required">
+                                       请选择所属菜单
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    页面名称
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.pageRegForm.needsAttention(pageRegForm.pageName)}"
+                                           placeholder="例:用户设置" name="pageName" ng-model="res.resourceName" required class="form-control" />
+                                    <span class="help-block m-b-none" ng-show="pageRegForm.pageName.$error.required">
+                                       必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">
+                                    页面文件名
+                                </label>
+                                <div class="col-lg-10">
+
+                                    <input type="text"
+                                           ng-class="{'parsley-error': rc.pageRegForm.needsAttention(pageRegForm.pageFileName)}"
+                                           placeholder="例:user_set" name="pageFileName" required ng-model="res.resourceCode" class="form-control">
+                                    <span class="help-block m-b-none">
+                                       注：对应页面名称的英文缩写，将作为页面文件名，推荐使用英文单词缩写加下划线。例：页面名为"部门设置",则页面文件名为"dept_set"
+                                    </span>
+                                    <span class="help-block m-b-none" ng-show="pageRegForm.pageFileName.$error.required">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">
+                                    资源排序号
+                                </label>
+                                <div class="col-lg-10">
+                                    <input type="number"
+                                           ng-class="{'parsley-error': rc.moduleRegForm.needsAttention(moduleRegForm.pageSortNumber)}"
+                                           max="99" min="1"
+                                           ng-model="res.resourceSortNumber" name="pageSortNumber" placeholder="例:20"
+                                           required class="form-control" />
+                                    <span class="help-block m-b-none">
+                                        注：资源采用正序排列，即排序号越小的资源越靠前。排序号介于1-99之间。
+                                    </span>
+                                    <span class="help-block" m-b-none
+                                          ng-show="moduleRegForm.pageSortNumber.$error.required">
+                                        必填项
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-offset-2 col-lg-10">
+                                    <button class="btn btn-sm btn-success" type="submit">提 交</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+            </tab>
+        </tabset>
+
+    </aside>
+    <aside class="b-l aside-lg bg-light">
+        <section class="wrapper">
+            <div class="text-center m-b">
+                <div class="inline">
+                    <div data-size="180" data-loop="false" data-scale-color="#ddd" data-bar-color="#afcf6f"
+                    data-track-color="#eee" data-line-width="25" data-percent="65" class="easypiechart easyPieChart"
+                    style="width: 180px; height: 180px; line-height: 180px;">
+                        <span class="h2">
+                            65
+                        </span>
+                        %
+                        <div class="easypie-text">
+                            Processing
+                        </div>
+                        <canvas height="180" width="180">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="accordion2" class="panel-group m-b">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                    <div class="panel-collapse in" id="collapseOne">
+                        <div class="panel-body text-sm">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
+                            dolor brunch. Food truck quinoa nesciunt.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="collapseTwo">
+                        <div class="panel-body text-sm">
+                            Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+                            nesciunt you probably haven't heard of them accusamus labore sustainable
+                            VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <a href="#collapseThree" data-parent="#accordion2" data-toggle="collapse"
+                        class="accordion-toggle">
+                            Collapsible Group Item #3
+                        </a>
+                    </div>
+                    <div class="panel-collapse collapse" id="collapseThree">
+                        <div class="panel-body text-sm">
+                            Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+                            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                            cred nesciunt sapiente ea proident.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aside>
+</section>

@@ -1,0 +1,63 @@
+define(['app'], function(app) {
+  return app.config(
+    ['$stateProvider', '$urlRouterProvider',
+      function ($stateProvider,   $urlRouterProvider) {
+
+        /////////////////////////////
+        // Redirects and Otherwise //
+        /////////////////////////////
+
+        // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
+        $urlRouterProvider
+
+        .when('/user/:id', '/contacts/:id')
+
+          // If the url is ever invalid, e.g. '/asdf', then redirect to '/' aka the home state
+          .otherwise('/');
+
+        $stateProvider
+
+          //////////
+          // Home //
+          //////////
+          .state("home", {
+
+            // Use a url of "/" to set a states as the "index".
+            url: "/",
+            views: {
+              "menu": {
+                templateUrl: 'views/menu.html',
+                controller: 'menuCtrl'
+              },
+              'dashbord': {
+                templateUrl: 'views/dashbord.html'
+              }
+            }
+          })
+          .state('login', {
+              url: '/login',
+              views: {
+              'dashbord': {
+                templateUrl: 'views/login.html',
+                controller:'loginCtrl'
+              }
+            }
+              
+          })
+          //首页
+          .state('home.index', {
+            // abstract: true,
+            url: 'index?page&menuID',
+            views: {
+              'dashbord@':{
+                templateUrl: function ($stateParams) {
+                  return 'views/'+$stateParams.page + '.html'
+                },
+                controller: 'submenuCtrl'
+
+              }
+            }
+          })
+      }]);
+
+});

@@ -1,0 +1,67 @@
+<section class="panel">
+    <form role="form" class="bg-white">
+        <header class="panel-heading font-bold">基本信息</header>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            业务组名称
+                        </label>
+                        <input type="text" name="departmentName" ng-model="dept.departmentName" class="form-control">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            颜色标识
+                        </label>
+                        <input type="text" name="departmentColor" ng-model="dept.departmentColor" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header class="panel-heading font-bold">关联信息</header>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>业务组负责人</label>
+                        <input type="text" ng-model="busGroupPrincipal" ui-select2="deptMeb" style="width:300px" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label>
+                            业务组成员
+                        </label>
+                        <select name="" style="width: 300px" ui-select2 multiple ng-model="deptMember">
+                            <optgroup label="ITR部">
+                                <option value="1K">张佳</option>
+                                <option value="HI">陈万才</option>
+                            </optgroup>
+                            <optgroup label="资金部">
+                                <option value="CA">郑伟</option>
+                                <option value="NV">黄志艳</option>
+                            </optgroup>
+                            <optgroup label="业务部">
+                                <option value="AZ">陈家奎</option>
+                                <option value="CO">陈忠涛</option>
+                                <option value="ID">谌夫琦</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-sm btn-default" type="submit">提交</button>
+            <button class="btn btn-sm btn-danger" type="button">删除</button>
+
+        </div>
+    </form>
+    </div>
+</section>

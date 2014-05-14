@@ -1,0 +1,7 @@
+<label class="col-sm-2 control-label">选择角色</label>
+<div class="col-sm-10">
+<label class="checkbox-inline" ng-repeat="role in roles">
+<input type="checkbox" checklist-model="role_selected" checklist-value="{{role.roleId}}"/>
+{{role.roleName}}
+</label>
+</div>

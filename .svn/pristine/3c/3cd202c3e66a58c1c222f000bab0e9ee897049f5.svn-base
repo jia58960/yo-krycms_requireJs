@@ -1,0 +1,46 @@
+<table datatable dtOptions class="table table-striped m-b-none">
+    <thead>
+    <tr>
+        <th data-mdata="employeeId">所在阶段</th>
+        <th data-mdata="employeeName">银行</th>
+        <th data-mdata="employeeMobilePhoneMaster">公司</th>
+        <th data-mdata="employeeEmail">项目</th>
+        <th data-mdata="employeeEmail">授信总量</th>
+        <th data-mdata="employeeEmail">授信敞口</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>签协议</td>
+            <td>渤海银行</td>
+            <td>金瑞亿</td>
+            <td>海能达</td>
+            <td>769</td>
+            <td>509</td>
+        </tr>
+        <tr>
+            <td>签协议</td>
+            <td>渤海银行</td>
+            <td>金瑞亿</td>
+            <td>海能达</td>
+            <td>769</td>
+            <td>509</td>
+        </tr>
+        <tr>
+            <td>签协议</td>
+            <td>渤海银行</td>
+            <td>金瑞亿</td>
+            <td>海能达</td>
+            <td>769</td>
+            <td>509</td>
+        </tr>
+        <tr>
+            <td>签协议</td>
+            <td>渤海银行</td>
+            <td>金瑞亿</td>
+            <td>海能达</td>
+            <td>769</td>
+            <td>509</td>
+        </tr>
+    </tbody>
+</table>

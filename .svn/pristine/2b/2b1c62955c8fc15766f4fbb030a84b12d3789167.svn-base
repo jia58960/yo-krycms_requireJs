@@ -1,0 +1,96 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                    type="button">
+                搜索
+
+            </button>
+
+        </div>
+    </div>
+</header>
+
+<ul class="list-group alt">
+    <li class="list-group-item">
+        <div class="media">
+            <div class="pull-left">
+                <span class="fa fa-stack fa-1x">
+                    <i class="fa fa-circle text-info fa-stack-2x"></i>
+                    <i class="fa fa-euro text-white fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        Chris Fox
+                    </a>
+                </div>
+                <small class="text-muted">
+                    about 2 minutes ago
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="pull-left">
+                <span class="fa fa-stack fa-1x">
+                    <i class="fa fa-circle text-danger fa-stack-2x"></i>
+                    <i class="fa fa-bold text-white fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        Amanda Conlan
+                    </a>
+                </div>
+                <small class="text-muted">
+                    about 2 hours ago
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="pull-left">
+                <span class="fa fa-stack fa-1x">
+                    <i class="fa fa-circle text-success fa-stack-2x"></i>
+                    <i class="fa fa-jpy text-white fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        Dan Doorack
+                    </a>
+                </div>
+                <small class="text-muted">
+                    3 days ago
+                </small>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item">
+        <div class="media">
+            <div class="pull-left">
+                <span class="fa fa-stack fa-1x">
+                    <i class="fa fa-circle text-primary fa-stack-2x"></i>
+                    <i class="fa fa-file text-white fa-stack-1x"></i>
+                </span>
+            </div>
+            <div class="media-body">
+                <div>
+                    <a href="#">
+                        Lauren Taylor
+                    </a>
+                </div>
+                <small class="text-muted">
+                    about 2 minutes ago
+                </small>
+            </div>
+        </div>
+    </li>
+</ul>

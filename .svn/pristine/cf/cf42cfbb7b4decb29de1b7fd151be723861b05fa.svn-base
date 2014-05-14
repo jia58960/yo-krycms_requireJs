@@ -1,0 +1,33 @@
+<section class="vbox">
+    <header class="header bg-dark bg-gradient"> 
+        <ul class="nav navbar-nav"> 
+            <li class="dropdown" ng-repeat="submenu in submenus">
+                <a class="dropdown-toggle">
+                    {{submenu.resourceName}}
+                    <b class="caret">
+                    </b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                        <a>
+                            {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                        </a>
+                    </li>
+                    
+                </ul>
+            </li>  
+        </ul> 
+    </header>
+    
+    <section class="scrollable wrapper" ui-view>
+        <div class="row">
+            <div class="col-lg-8">
+                权限配置
+            </div>
+            <div class="col-lg-4">
+                权限配置
+            </div>
+        </div>
+    </section>
+</section>
+            

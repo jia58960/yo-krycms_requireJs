@@ -1,0 +1,109 @@
+define(['services/services'],
+    function (services) {
+        services.factory('bankFactory', ['$http', function ($http) {
+
+            var urlBase = 'http://10.188.199.4:8080/YIXUN_1.5_WEB';
+//            var urlBase = 'http://10.188.192.41:8080';
+            var bankFactory = {};
+            var entityUrl = '/entity';
+            var bankUrl = '/bank';
+            var entityBankUrl = '/entityBank';
+
+            //主体
+            bankFactory.getEntentities = function () {
+                return $http.get(urlBase + entityUrl + '/all', {cache: true});
+            };
+
+            bankFactory.getEntity = function (entityId) {
+                return $http.get(urlBase + entityUrl + '/' + entityId, {cache: true});
+            };
+
+            bankFactory.insertEntity = function (data) {
+                return $http.post(urlBase + entityUrl, data);
+            };
+
+            bankFactory.deleteEntity = function (entityId) {
+                return $http.delete(urlBase + entityUrl + '/' + entityId);
+            };
+
+            bankFactory.updateEntity = function (entityId, data) {
+                return $http.put(urlBase + entityUrl + '/' + entityId, data);
+            };
+
+            //获取所有银行
+            bankFactory.getAllBizBanks = function () {
+                return $http.get(urlBase + bankUrl + '/all', {cache: true});
+            };
+            //获取所有银行类型
+            bankFactory.getTypeBanks = function () {
+                return $http.get(urlBase + bankUrl + '/bankType',{cache:true});
+            };
+            //获取所有银行类别
+            bankFactory.getCatagoryBanks = function () {
+                return $http.get(urlBase + bankUrl + '/bank',{cache:true});
+            };
+            //根据银行类别获取其下所有主级银行
+            bankFactory.getListParentBanks = function (bankCategoryId) {
+                return $http.get(urlBase + bankUrl + '/parentBanks/'+bankCategoryId);
+            };
+            //获取某父级银行的下一级银行
+            bankFactory.getListSubBanks = function (bizBankId) {
+                return $http.get(urlBase + bankUrl + '/subBanks/'+bizBankId);
+            };
+            //获取所有主体
+            bankFactory.getAllCorporationEntities = function(){
+                return $http.get(urlBase  +entityUrl+ '/all',{cache:true});
+            };
+            bankFactory.getBank = function (bankId) {
+                return $http.get(urlBase + bankUrl + '/' + bankId, {cache: true});
+            };
+
+            //新增银行
+            bankFactory.insertBank = function (data) {
+                return $http.post(urlBase + bankUrl, data);
+            };
+
+            bankFactory.deleteBank = function (bankId) {
+                return $http.delete(urlBase + bankUrl + '/' + bankId);
+            };
+
+            //主体银行
+            bankFactory.getEntityBanks = function () {
+                return $http.get(urlBase + bankUrl + '/entity' , {cache: true});
+            };
+
+            bankFactory.getEntityBank = function (bankId) {
+                return $http.get(urlBase + entityBankUrl + '/' + bankId, {cache: true});
+            };
+
+            bankFactory.insertEntityBank = function (data) {
+                return $http.post(urlBase + entityBankUrl, data);
+            };
+
+            bankFactory.deleteEntityBank = function (bankId) {
+                return $http.delete(urlBase + entityBankUrl + '/' + bankId);
+            };
+
+            bankFactory.updateEntityBank = function (bankId, data) {
+                return $http.put(urlBase + entityBankUrl + '/' + bankId, data);
+            };
+
+            bankFactory.getBankManagers = function (bankId) {
+                return $http.get(urlBase + bankUrl + '/' + bankId + '/manages');
+            };
+
+            bankFactory.addManagerToBank = function (bankId, data) {
+                return $http.post(urlBase + bankUrl + '/' + bankId + 'manager', data);
+            };
+
+            bankFactory.deleteManagerFromBank = function (bankId, managerId) {
+                return $http.delete(urlBase + bankUrl + '/' + bankId + 'manager' + managerId);
+            };
+
+            bankFactory.deliverManagerToBank = function (bankId, toBankId, managerId) {
+                return $http.delete(urlBase + bankUrl + '/' + bankId + 'toClientId/' + toBankId + '/manager' + managerId);
+            };
+
+            return bankFactory;
+        }]);
+    });

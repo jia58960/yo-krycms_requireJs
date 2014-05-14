@@ -1,0 +1,430 @@
+define(['controllers/controllers', 'services/bank_service', 'services/contact_service', 'services/market_service','services/dept_service','services/customer_service'],
+    function (controllers) {
+        controllers
+            //银行联系人总览
+            .controller('bankContactCtrl', ['$scope', 'bankFactory', 'contactFactory', 'toaster', function ($scope, bankFactory, contactFactory, toaster) {
+                $scope.banks;
+                $scope.contacts = [];
+                $scope.contactsPerPage = 19;
+                $scope.currentPage = 0;
+                $scope.pageCountArray = new Array();
+                $scope.pageCount = function pageCount() {
+                    return Math.ceil($scope.contacts.length / $scope.contactsPerPage) - 1;
+                };
+                //获取左侧所有银行列表
+                bankFactory.getAllBizBanks()
+                    .success(function (banks) {
+                        $scope.banks = banks;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取右侧所有联系人列表
+                contactFactory.getContacts()
+                    .success(function (contacts) {
+                        $scope.contacts = contacts;
+                        updatePageCountArray();
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to contacts : ' + error.message;
+                    });
+                //点击银行获取联系人
+                $scope.getBankContacts = function (bankId) {
+                    contactFactory.getBankContacts(bankId)
+                        .success(function (contacts) {
+                            $scope.contacts = contacts;
+                            $scope.currentPage = 0;
+                            updatePageCountArray();
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                };
+//                //点击查看更多详情
+//                $scope.getContactDetail = function (contactId) {
+//                    console.log(123);
+//                    contactFactory.getContact(contactId)
+//                        .success(function (contacts) {
+//                            //doSomeThing
+//                        })
+//                        .error(function (error) {
+//                            $scope.status = 'Unable to contacts : ' + error.message;
+//                        });
+//                };
+//                //查看相关联系人
+//                $scope.getRelatedContacts = function (contactId) {
+//                    contactFactory.getRelatedContacts(contactId)
+//                        .success(function (contacts) {
+//                            //doSomething
+//                        })
+//                        .error(function (error) {
+//                            $scope.status = 'Unable to contacts : ' + error.message;
+//                        });
+//                };
+//                //编辑联系人
+//                $scope.editContact = function (contactId) {
+//                    contactFactory.getContact(contactId)
+//                        .success(function (contacts) {
+//                            //doSomething
+//                        })
+//                        .error(function (error) {
+//                            $scope.status = 'Unable to contacts : ' + error.message;
+//                        });
+//                };
+                //删除联系人
+                $scope.delContact = function (index,contactId) {
+                    var contactIndex = index;
+                    contactFactory.delContact(contactId)
+                        .success(function (data) {
+                            if (data.resultCode == 200) {
+                                //移除元素
+                                $scope.contacts.splice(contactIndex+$scope.currentPage*$scope.contactsPerPage,1);
+                                //重置当前页
+                                $scope.currentPage = $scope.currentPage>$scope.pageCount()?$scope.pageCount():$scope.currentPage;
+                                $scope.currentPage = $scope.currentPage==-1?0:$scope.currentPage;
+                                toaster.pop('success', "操作成功", "删除联系人成功", 3000);
+                            }else{
+                                toaster.pop('success', "操作失败", "未知异常"+data.resultCode, 3000);
+                            }
+                            $scope.status = "lianxiren delete succeed!";
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                };
+
+                //分页按钮
+                $scope.prevPage = function () {
+                    if ($scope.currentPage > 0) {
+                        $scope.currentPage--;
+                    }
+                };
+                $scope.prevPageDisabled = function () {
+                    return $scope.currentPage === 0 ? "disabled" : "";
+                };
+                $scope.nextPage = function () {
+                    if ($scope.currentPage < $scope.pageCount()) {
+                        $scope.currentPage++;
+                    }
+                };
+                $scope.nextPageDisabled = function () {
+                    var pageCount = $scope.pageCount();
+                    return (($scope.currentPage === pageCount) || pageCount == -1) ? "disabled" : "";
+                };
+                $scope.setPage = function (n) {
+                    $scope.currentPage = n;
+                };
+                function updatePageCountArray() {
+                    var arr = [];
+                    var j = $scope.pageCount();
+                    for (var i = 0; i <= j; i++) {
+                        arr.push(i);
+                    }
+                    $scope.pageCountArray = arr;
+                }
+            }])
+            .controller('bankAddCtrl', ['$scope', 'bankFactory', 'deptFactory','toaster', function ($scope, bankFactory,deptFactory,toaster) {
+                $scope.bank;
+                $scope.bankTypes;
+                $scope.bankCategories;
+                $scope.sub1Banks;
+                $scope.sub2Banks;
+                $scope.sub3Banks;
+                $scope.sub4Banks;
+                $scope.bankFullName;
+                $scope.corporationEntities;
+                //获取所有银行类型
+                bankFactory.getTypeBanks()
+                    .success(function (bankTypes) {
+                        $scope.bankTypes = bankTypes;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取所属银行类别
+                bankFactory.getCatagoryBanks()
+                    .success(function (bankCategories) {
+                        $scope.bankCategories = bankCategories;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取关联主体
+                bankFactory.getAllCorporationEntities()
+                    .success(function (data) {
+                        $scope.corporationEntities = data
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取主管领导
+                deptFactory.getAllLeader()
+                    .success(function (data) {
+                        $scope.leaders = data;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取主办银行经理
+                deptFactory.getAllHostor()
+                    .success(function (data) {
+                        $scope.hostors = data;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+                //获取协办银行经理
+                deptFactory.getAllAssister()
+                    .success(function (data) {
+                        $scope.assisters = data;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks: ' + error.message;
+                    });
+
+                //所属银行类别下拉handle
+                $scope.bankTypeHandle = function (bankCategoryId) {
+                    bankFactory.getListParentBanks(bankCategoryId)
+                        .success(function (banks) {
+                            $scope.sub1Banks = banks;
+                            $scope.sub2Banks = {};
+                            $scope.sub3Banks = {};
+                            $scope.sub4Banks = {};
+                            updateBankFullName();
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                }
+                //所属银行名称一级下拉handle
+                $scope.sub1BankHandle = function (bizBankId) {
+                    bankFactory.getListSubBanks(bizBankId)
+                        .success(function (banks) {
+                            $scope.sub2Banks = banks;
+                            $scope.sub3Banks = {};
+                            $scope.sub4Banks = {};
+                            updateBankFullName();
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                }
+                //所属银行名称二级下拉handle
+                $scope.sub2BankHandle = function (bizBankId) {
+                    bankFactory.getListSubBanks(bizBankId)
+                        .success(function (banks) {
+                            $scope.sub3Banks = banks;
+                            $scope.sub4Banks = {};
+                            updateBankFullName();
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                }
+                //所属银行名称三级下拉handle
+                $scope.sub3BankHandle = function (bizBankId) {
+                    bankFactory.getListSubBanks(bizBankId)
+                        .success(function (banks) {
+                            $scope.sub4Banks = banks;
+                            updateBankFullName();
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                }
+                //所属银行名称四级下拉handle
+                $scope.sub4BankHandle = function () {
+                    updateBankFullName();
+                }
+                //新增银行按钮
+                $scope.addBank = function () {
+                    var data = {
+                        bank: $scope.bank,
+                        corporationEntity: $scope.corporationEntity
+                    };
+                    bankFactory.insertBank(data)
+                        .success(function (message) {
+                            console.log(message);
+                            if (message.resultCode == 200) {
+                                toaster.pop('success', "操作成功", "添加联系人成功", 3000);
+                            }
+                            $scope.status = "resource updateResource succeed!";
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                }
+                //更新银行全称
+                function updateBankFullName() {
+                    //一级名称
+                    var sub1BankName = document.getElementById('sub1BankId');
+                    sub1BankName = sub1BankName.options[sub1BankName.selectedIndex].text;
+                    sub1BankName = sub1BankName=='请选择'?'':sub1BankName;
+                    //二级名称
+                    var sub2BankName = document.getElementById('sub2BankId');
+                    sub2BankName = sub2BankName.options[sub2BankName.selectedIndex].text;
+                    sub2BankName = sub2BankName=='请选择'?'':sub2BankName;
+                    //三级名称
+                    var sub3BankName = document.getElementById('sub3BankId');
+                    sub3BankName = sub3BankName.options[sub3BankName.selectedIndex].text;
+                    sub3BankName = sub3BankName=='请选择'?'':sub3BankName;
+                    //四级名称
+                    var sub4BankName = document.getElementById('sub4BankId');
+                    sub4BankName = sub4BankName.options[sub4BankName.selectedIndex].text;
+                    sub4BankName = sub4BankName=='请选择'?'':sub4BankName;
+                    $scope.bank.bankFullName = sub1BankName + sub2BankName + sub3BankName + sub4BankName;
+                }
+            }])
+            .controller('contactAddCtrl', ['$scope', 'contactFactory', 'toaster', function ($scope, contactFactory, toaster) {
+                $scope.contact;
+                //获取所有银行职位分行类别
+                contactFactory.getAllPositionBankType()
+                    .success(function (data) {
+                        $scope.positionBankTypes = data;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load position : ' + error.message;
+                    });
+                //添加联系人按钮
+                $scope.addContact = function () {
+                    var data = {
+                        contact: $scope.contact,
+                        bankContactPosition: $scope.bankContactPosition,
+                        positionBankType: $scope.positionBankType,
+                        contactMoreInfoText:  $scope.contactMoreInfoText
+                    };
+                    contactFactory.addBankContact(22, data)
+                        .success(function (message) {
+                            console.log(message);
+                            if (message.resultCode == 200) {
+                                toaster.pop('success', "操作成功", "添加联系人成功", 3000);
+                            }
+                            $scope.status = "resource updateResource succeed!";
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to insert contact : ' + error.message;
+                        });
+                };
+                //职位联动（根据银行职位分行类别得到银行职位）
+                $scope.selectPositionHandle = function (positionBankTypeId) {
+                    contactFactory.getAllBankContactPositionByPositionBankTypeId(positionBankTypeId)
+                        .success(function (data) {
+                            $scope.bankPositions = data;
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to insert contact : ' + error.message;
+                        });
+                };
+            }])
+            .controller('contactRelateAddCtrl', ['$scope', 'contactFactory','toaster', function ($scope, contactFactory,toaster) {
+                $scope.contact;
+                //获取所有银行职位分行类别
+                contactFactory.getAllPositionBankType()
+                    .success(function (data) {
+                        $scope.positionBankTypes = data;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load position : ' + error.message;
+                    });
+                //添加相关联系人按钮
+                $scope.addContact = function () {
+                    var data = {
+                        contact: $scope.contact,
+                        bankContactPosition: {positionBankTypeId: $scope.positionBankTypeId},
+                        positionBankType: {bankPositionId: $scope.bankPositionId},
+                        textStore: {smallTextContent: $scope.smallTextContent}
+                    };
+                    contactFactory.addContact( data)
+                        .success(function (message) {
+                            console.log(message);
+                            if (message.resultCode == 200) {
+                                toaster.pop('success', "操作成功", "添加相关联系人成功", 3000);
+                            }
+                            $scope.status = "resource updateResource succeed!";
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to insert contact : ' + error.message;
+                        });
+                };
+                //职位联动（根据银行职位分行类别得到银行职位）
+                $scope.selectPositionHandle = function (positionBankTypeId) {
+                    contactFactory.getAllBankContactPositionByPositionBankTypeId(positionBankTypeId)
+                        .success(function (data) {
+                            $scope.bankPositions = data;
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to insert contact : ' + error.message;
+                        });
+                };
+            }])
+            .controller('marketAddCtrl', ['$scope', 'deptFactory','bankFactory','contactFactory','marketFactory','customerFactory', 'toaster', function ($scope, deptFactory,bankFactory,contactFactory,marketFactory,customerFactory,toaster) {
+                //获取所有营销银行
+                bankFactory.getAllBizBanks()
+                    .success(function (banks) {
+                        $scope.banks = banks;
+                    })
+                    .error(function (error) {
+                        $scope.status = 'Unable to load banks : ' + error.message;
+                    });
+
+                //获取我司代表
+                deptFactory.listDepartmentPositionsEmployees()
+                    .success(function(data){
+                        $scope.employees = data;
+                    })
+                    .error(function(error){
+                        $scope.status = 'Unable to load banks : ' + error.message;
+                    });
+                //获取所有营销主体
+                bankFactory.getAllCorporationEntities()
+                    .success(function(data){
+                        $scope.corporationEntities = data;
+                    })
+                    .error(function(error){
+                        $scope.status = 'Unable to load banks : ' + error.message;
+                    });
+                //获取所有营销客户
+                customerFactory.getAllCustomers()
+                    .success(function(data){
+                        $scope.customers = data;
+                    })
+                    .error(function(error){
+                        $scope.status = 'Unable to load banks : ' + error.message;
+                    });
+
+                //营销银行下拉联动handle
+                $scope.getBankContacts = function (bankId) {
+                    contactFactory.getBankContacts(bankId)
+                        .success(function (data) {
+                            $scope.contacts = data;
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                };
+                //新增营销计划按钮
+                $scope.addMarketPlan = function () {
+                    var data = {
+                        marketingPlan:$scope.marketingPlan,
+                        contentText:$scope.contentText,
+                        conclusionText:$scope.conclusionText,
+                        contact:$scope.contact,
+                        customer:$scope.customer,
+                        bank:$scope.bank,
+                        corporationEntity:$scope.corporationEntity,
+                        employee:$scope.employee
+                    };
+                    marketFactory.addMarketingPlanAll(data)
+                        .success(function (message) {
+                            console.log(message);
+                            if (message.resultCode == 200) {
+                                toaster.pop('success', "操作成功", "添加营销计划成功", 3000);
+                            }
+                            $scope.status = "resource updateResource succeed!";
+                        })
+                        .error(function (error) {
+                            $scope.status = 'Unable to contacts : ' + error.message;
+                        });
+                };
+            }]);
+    });

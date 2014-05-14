@@ -1,0 +1,44 @@
+
+define(['controllers/controllers', 'services/resource_service'],
+  function(controllers) {
+  controllers.controller('menuCtrl', ['$scope', 'resourceFactory', function ($scope, resourceFactory) {
+  	//console.log("menuCtrl");
+
+  	$scope.status;
+    $scope.menus;
+
+  	listMenus(1);
+
+    function listMenus(resourceTypeId) {
+        resourceFactory.listMenus(resourceTypeId)
+            .success(function (menus) {
+                $scope.menus = menus;
+                //console.log(menus);
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load Menus data: ' + error.message;
+            });
+    }
+
+  }])
+  .controller('submenuCtrl',['$scope', '$stateParams', 'resourceFactory', function ($scope, $stateParams, resourceFactory){
+
+    //console.log($stateParams);
+
+    $scope.status;
+    $scope.submenus;
+
+    getSubResourcesByType($stateParams.menuID,1);
+
+    function getSubResourcesByType (resourceId,resourceTypeId){
+       resourceFactory.listSubResourcesByType(resourceId,resourceTypeId)
+            .success(function (submenus) {
+                $scope.submenus = submenus;
+                
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load Menus data: ' + error.message;
+            });
+    }
+  }]);
+});

@@ -1,0 +1,52 @@
+<div class="col-sm-7" style="padding-top: 15px;">
+    <section class="panel">
+        <header class="panel-heading font-bold">任务进度汇报</header>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">任务标题:</label>
+                    <span class="col-lg-4" style="line-height:35px;">
+                        对外贸易项目讨论专区
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">发起人:</label>
+                     <span class="col-lg-4" style="line-height:35px;">
+                        梁晓莹
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">剩余天数:</label>
+                     <span class="col-lg-4" style="line-height:35px;">
+                        270天
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">内容:</label>
+                    <div class="col-lg-9">
+                        <textarea style="width: 399px;height: 80px;"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><span>说明:</span></label>
+                    <span class="col-lg-9"  style="line-height:35px;">
+                        <span>
+                            1、系统会自动将您发表的进度汇报的消息以内部短消息的形式通知该任务的负责人(
+                            <span style="color: green;">梁晓莹</span>
+                            )、参与人(
+                            <span style="color: green;">甘剑雄,董静文,郑威,黄芷妍,陈炳龙,许可正,黄俊杰,李舒然,梁晓莹,赫洁,许梦逸,袁慧,韦美玲,周玉虹,贾科光</span>
+                            )和阅知人(
+                            <span style="color: green;">余杰,王乐,聂淼,钟东明,张轩樵,贺洁华,董事长</span>)。
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-9">
+                        <a href="#" class="btn btn-s-md btn-info">提交</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

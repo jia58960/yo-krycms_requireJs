@@ -1,0 +1,79 @@
+define(['controllers/controllers', 'services/bank_service'],
+ function(controllers) {
+  controllers.controller('bankListCtrl',['$scope','bankFactory', function($scope,bankFactory){
+    $scope.banks;
+    getBanks();
+
+    function getBanks() {
+        bankFactory.getBanks()
+            .success(function (banks) {
+                $scope.banks = banks;
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to load banks data: ' + error.message;
+            });
+    }
+
+  }])
+  .controller('bankDetailCtrl',['$scope',,'bankFactory', '$modal', '$log', function($scope,bankFactory,$modal, $log){
+        $scope.banks;
+        $scope.bank={};
+        
+        getBanks();
+        getBank($stateParams.bankId);
+
+        function getBanks() {
+            bankFactory.getBanks()
+                .success(function (banks) {
+                    $scope.banks = banks;
+                })
+                .error(function (error) {
+                    $scope.status = 'Unable to load banks data: ' + error.message;
+                });
+        }
+
+        function getBank(bankId){
+            bankFactory.getBank(bankId)
+                .success(function (bank) {
+                    $scope.bank = bank;
+                })
+                .error(function (error) {
+                    $scope.status = 'Unable to load bank data: ' + error.message;
+                });
+        }
+
+        $scope.updateBank = function (bank) {
+
+            var data = {
+                bank:bank
+            };
+            bankFactory.updateBank(bank.bankId,data)   
+            .success(function () {
+                $scope.status = 'Updated bank! Refreshing bank list.';
+            })
+            .error(function (error) {
+                $scope.status = 'Unable to update bank: ' + error.message;
+            });
+        };
+
+    }])
+ .controller('buzBankAddCtrl',['$scope','bankFactory', function($scope,bankFactory){
+    $scope.bank={};
+    $scope.banks;
+
+    $scope.insertBank = function(bank) {
+        var data = {
+            bank:bank
+        };
+         bankFactory.insertBank(data)
+        .success(function () {
+            $scope.status = 'Inserted Bank! Refreshing BAnk list.';
+            $scope.banks.push(bank);
+        })
+        .error(function(error) {
+            $scope.status = 'Unable to insert bank: ' + error.message;
+        });
+    }
+
+ }])
+});

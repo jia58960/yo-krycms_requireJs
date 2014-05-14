@@ -1,0 +1,6 @@
+define(['controllers/controllers', 'services/bank_service'],
+ function(controllers) {
+  controllers.controller('bankListCtrl', function ($scope, bankFactory, $modal) {
+
+  })
+});

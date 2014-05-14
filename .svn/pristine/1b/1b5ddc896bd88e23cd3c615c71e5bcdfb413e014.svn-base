@@ -1,0 +1,55 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="zh" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
+    <link rel="stylesheet" href="styles/app.v2.css" type="text/css" />
+    <link rel="stylesheet" href="styles/font.css" type="text/css" />
+    <link rel="stylesheet" href="styles/fuelux.css" type="text/css" />
+    
+    <link rel="stylesheet" type="text/css" href="js/datatables/datatables.css">
+      <link rel="stylesheet" type="text/css" href="js/select2/select2.css">
+
+    <!--ng-table-->
+    <!-- <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" type="text/css" /> -->
+    
+</head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">对不起，您的浏览器已 <strong>过时</strong> . 请<a href="http://browsehappy.com/">在此升级您的浏览器</a> .</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <!--   <div ui-view=""></div> -->
+  
+      <section class="hbox stretch">
+            <!-- .aside -->
+            <aside class="bg-dark aside-sm" id="nav">
+                <section class="vbox" ui-view="menu">
+                    
+                </section>
+            </aside>
+            <!-- /.aside -->
+            <!-- .vbox -->
+            <section id="content" ui-view="dashbord"></section>
+            <!-- /.vbox -->
+        </section>
+
+    <script data-main="scripts/main" src="require.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                角色设置
+            </h3>
+            <p class="block text-muted">
+                对角色等的调配等
+            </p>
+        </div>
+        
+    </div>
+    
+        <section class="hbox stretch">
+            <aside id="subNav" class="aside bg-white b-r">
+                <div class="wrapper b-b font-bold">
+                    <a ng-class="{ active: $state.includes('home.index.set_role.list') }" ui-sref="home.index.set_role.list">所有角色</a>
+                </div>
+                <ul class="nav">
+                    <li class="b-b" ng-repeat="role in roles" ui-sref-active="active">
+                        <a ui-sref="home.index.set_role.detail({roleId:role.roleId})">
+                            <i class="fa fa-comment icon-muted"></i>
+                            {{role.roleName}}
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <aside>
+                <section class="vbox">
+                    <header class="header bg-white b-b clearfix">
+                        <div class="row m-t-sm">
+                            <div class="col-sm-12 m-b-xs">
+                                <a class="btn btn-sm btn-success" ui-sref="home.index.set_role.add">
+                                    <i class="fa fa-plus">
+                                    </i>
+                                    创建角色
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </header>
+                    <section class="scrollable wrapper w-f" ui-view ng-animate="'view'"></section>
+                    <footer class="footer bg-white b-t">
+                        <div class="row m-t-sm text-center-xs">
+                            <div class="col-sm-4 text-center">
+                                <small class="text-muted inline m-t-sm m-b-sm">
+                                    这里也是可以自定义的区域
+                                </small>
+                            </div>                            
+                        </div>
+                    </footer>
+                </section>
+            </aside>
+        </section>
+    

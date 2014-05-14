@@ -1,0 +1,109 @@
+    <div class="col-sm-7" style="padding-top: 15px;">
+      <section class="panel">
+        <header class="panel-heading font-bold">新增银行资料</header>
+        <div class="panel-body">
+          <form class="bs-example form-horizontal">
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><span style="color: red">*</span>银行类型:</label>
+              <div class="col-lg-5">
+                <select  class="form-control" ng-model="bank.bankTypeId" ng-options="x.bankTypeId as x.bankTypeName for x in bankTypes">
+				  <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><span style="color: red">*</span>所属银行类别:</label>
+              <div class="col-lg-5">
+                <select class="form-control" ng-model="bank.bankCategoryId" ng-options="x.bankCategoryId as x.bankCategoryName for x in bankCategories"  ng-change="bankTypeHandle(bank.bankCategoryId)">
+                    <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label class="col-lg-3 control-label"><span style="color: red">*</span>所属银行名称:</label>
+                    <div class="col-lg-5">
+                        <select class="form-control m-b" id="sub1BankId" ng-model="bank.sub1BankId" ng-options="x.bankId as x.bankFullName for x in sub1Banks" ng-change="sub1BankHandle(bank.sub1BankId)">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <select  class="form-control m-b" id="sub2BankId" ng-model="bank.sub2BankId" ng-options="x.bankId as x.bankFullName for x in sub2Banks" ng-change="sub2BankHandle(bank.sub2BankId)">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-5">
+                        <select  class="form-control m-b" id="sub3BankId" ng-model="bank.sub3BankId" ng-options="x.bankId as x.bankFullName for x in sub3Banks" ng-change="sub3BankHandle(bank.sub3BankId)">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+                        <select  class="form-control m-b" id="sub4BankId" ng-model="bank.sub4BankId" ng-options="x.bankId as x.bankFullName for x in sub4Banks" ng-change="sub4BankHandle()">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><span style="color: red">*</span>银行全称:</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" ng-model="bank.bankFullName" disabled/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">项目说明:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" placeholder="项目说明"  style="height:100px;" ng-model="bank.bankExplain"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">关联主体:</label>
+              <div class="col-sm-9" >
+                  <label class="checkbox-inline" ng-repeat=" x in corporationEntities">
+                    <input type="checkbox" ng-model="corporationEntity" ng-value="x" /> {{x.corporationEntityName}}
+                  </label>
+			  </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label"><span style="color: red">*</span>主管领导:</label>
+              <div class="col-lg-9">
+                  <select  class="form-control m-b" ng-model="masterLeader" ng-options="x.employeeId as x.employeeName for x in leaders">
+                      <option value="">请选择</option>
+                </select>
+              </div>
+            </div>
+            <div class="rows">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-6 control-label" style="padding-right:21px;"><span style="color: red">*</span>主办银行经理:</label>
+                  <div class="col-lg-6"  style="padding-left:8px;">
+                    <select  class="form-control m-b" ng-model="bank.bankCatagoryId" ng-options="x.bankCatagoryId as x.bankCatagory for x in hostors">
+                        <option value="">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="col-lg-6 control-label">协办银行经理:</label>
+                  <div class="col-lg-6" style="padding-right:0px;">
+                    <select  class="form-control m-b" ng-model="bank.bankCatagoryId" ng-options="x.bankCatagoryId as x.bankCatagory for x in bankCatagoryVos">
+                        <option value="">请选择</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+			  <div class="col-lg-3"></div>
+              <div class="col-lg-9">
+                <a href class="btn btn-s-md btn-info" ng-click="addBank()">提交</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>

@@ -1,0 +1,114 @@
+<div class="col-sm-7">
+    <section class="panel">
+        <header class="panel-heading font-bold">新增营销计划</header>
+        <div class="panel-body">
+            <form class="bs-example form-horizontal">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销主题:</label>
+
+                    <label class="col-lg-9">
+                        <input type="text" class="form-control"/>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>计划营销时间:</label>
+
+                    <label class="col-lg-9">
+                        <input class="input-sm input-s datepicker-input form-control" size="16" type="text"
+                               value="12-02-2013" data-date-format="dd-mm-yyyy">
+                    </label>
+
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销银行:</label>
+
+                    <label class="col-lg-9">
+                        <select name="account" class="form-control">
+                            <option>请选择</option>
+                            <option>上海银行深圳分行</option>
+                            <option>东莞银行</option>
+                        </select>
+                        <span>注：可双击输入框或输入部分关键字进行筛选</span>
+                    </label>
+
+                    <label class="col-lg-3 control-label"><span style="color: red; ">*</span>营销对象:</label>
+
+                    <label class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="xx"
+                                style="width:464px">
+                            <option value="2">IT部</option>
+                            <option value="3">商务中心111</option>
+                        </select>
+                    </label>
+
+                    <label class="col-lg-3 control-label"><span style="color: red;">*</span>我司代表:</label>
+
+                    <label class="col-lg-9">
+                        <input type="text" class="form-control"/>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销主体:</label>
+
+                    <label class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="xx2"
+                                style="width:464px">
+                            <option value="2">IT部</option>
+                            <option value="3">商务中心111</option>
+                        </select>
+                         <span>针对公司营销时选择，如:金瑞亿等</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销客户:</label>
+
+                    <label class="col-lg-9">
+                        <select class="select2-container select2-container-multi" ui-select2 multiple data-ng-model="xx3"
+                                style="width:464px">
+                            <option value="2">IT部</option>
+                            <option value="3">商务中心111</option>
+                        </select>
+                         <span>针对某(些)客户时选择，如:深圳江铜等</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">营销形式:</label>
+
+                    <label class="col-lg-9">
+                        <input type="text" class="form-control"/> <span>营销形式如:晚餐、午餐、送礼等</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"><span style="color:red;">*</span>提醒:</label>
+
+                    <label class="col-lg-3">
+                        <select name="account" class="form-control" style="width:90px;">
+                            <option>不提醒</option>
+                            <option>提前1天</option>
+                            <option>提前2天</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">情况简述:</label>
+
+                    <label class="col-lg-9">
+                        <textarea class="form-control" style="height:60px;"></textarea>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">结论:</label>
+
+                    <label class="col-lg-9">
+                        <textarea class="form-control" placeholder="结论在营销完成后填写" style="height:60px;"></textarea>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-4">
+                        <a href="#" class="btn btn-s-md btn-info">提交</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

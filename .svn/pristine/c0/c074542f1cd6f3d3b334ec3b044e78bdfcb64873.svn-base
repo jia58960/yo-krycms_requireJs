@@ -1,0 +1,172 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                    type="button">
+                搜索
+
+            </button>
+
+        </div>
+    </div>
+</header>
+
+<ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+<li class="list-group-item">
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            深圳江铜营销谷粉有限公司
+        </strong>
+        <small>
+            Wellcome and play this web application template ...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            深圳江铜营销谷粉有限公司
+        </strong>
+        <small>
+            Morbi nec nunc condimentum...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            还能打实业谷粉有限公司
+        </strong>
+        <small>
+            Vestibulum ullamcorper sodales nisi nec...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            广州市鼎钢商贸有限公司
+        </strong>
+        <small>
+            Morbi nec nunc condimentum...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            中船重工
+        </strong>
+        <small>
+            Mobile first web app for startup...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">8</span>
+        </small>
+        <strong class="block">
+            远东买卖宝科技有限公司
+        </strong>
+        <small>
+            Morbi nec nunc condimentum...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">6</span>
+        </small>
+        <strong class="block">
+            江西纵横铜业有限公司
+        </strong>
+        <small>
+            Vestibulum ullamcorper sodales nisi nec...
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            广州珠江电缆
+        </strong>
+
+
+        <small>
+            最近过程管理：2小时前.
+        </small>
+    </a>
+</li>
+<li data-toggle="class:show" href="#email-content" class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">13</span>
+        </small>
+        <strong class="block">
+            中国林产品经销公司
+        </strong>
+        <small>
+            最近过程管理：2小时前
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">2</span>
+        </small>
+        <strong class="block">
+            山东侨昌化学有限公司
+        </strong>
+        <small>
+            最近过程管理：2小时前
+        </small>
+    </a>
+</li>
+<li class="list-group-item">
+
+    <a class="clear" href="#">
+        <small class="pull-right">
+            <span class="badge bg-success">3</span>
+        </small>
+        <strong class="block">
+            安徽双轮就业有限公司
+        </strong>
+        <small>
+            最近过程管理：2小时前
+        </small>
+    </a>
+</li>
+
+</ul>

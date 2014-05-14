@@ -1,0 +1,127 @@
+    <div class="col-sm-7">
+      <section class="panel">
+        <header class="panel-heading font-bold">添加银行联系人</header>
+        <div class="panel-body">
+          <form class="bs-example form-horizontal" name="myForm">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">姓名:</label>
+              <div class="col-lg-3">
+                <input type="text" id="contactName" class="form-control" ng-model="contact.contactName" placeholder="张三" />
+              </div>
+              <label class="col-lg-2 control-label">姓别:</label>
+              <div class="col-lg-4" style="margin-top: 6px;">
+				<label class="col-lg-4">
+					<input type="radio" name="gender" ng-bind="contact.sexId" value="male" checked="checked">男<br/>
+				</label>
+				<label class="col-lg-4">
+					<input type="radio" name="gender" ng-bind="contact.sexId" value="female">女<br/>
+				</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">手机:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" mobile-phone-unique ng-model="contact.contactMobilePhone" placeholder="12345678910" required/>
+                <span ng-show="numberUnique" style="color: red">存在相同联系人手机号码！</span>
+              </div>
+              <label class="col-lg-2 control-label">固话:</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" ng-model="contact.contactTelephone" placeholder="0794-1234567" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">邮箱:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="contact.contactEmail" placeholder="12345678@gmail.com" />
+              </div>
+              <label class="col-lg-2 control-label">职务:</label>
+              <div class="col-lg-4">
+                  <select name="account" class="form-control col-lg-8" ng-model="positionBankType"  ng-options="x as x.positionBankTypeName for x in positionBankTypes" ng-change="selectPositionHandle(positionBankType.positionBankTypeId)" style="width: 47%;float:left;" >
+                      <option value="">请选择</option>
+                  </select>
+                  <select name="account" class="form-control col-lg-4" ng-model="bankContactPosition" ng-options="x as x.bankPositionName for x in bankPositions" style="width: 47%;float:left;margin-left: 10px;">
+                      <option value="">请选择</option>
+                  </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">籍贯:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="contact.contactNativePlace" placeholder="广东" />
+              </div>
+              <label class="col-lg-2 control-label">出生日期:</label>
+              <div class="col-lg-4">
+                <input name="employeeJoinDate" placeholder="yyyy-MM-dd" type="text" datepicker-popup="yyyy-MM-dd"  ng-required="true" close-text="关闭" ng-model="contact.contactBirthday" class="form-control" style="text-align: center"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">传真:</label>
+              <div class="col-lg-3">
+                <input type="text" class="form-control" ng-model="contact.contactFax" placeholder="12345678910" />
+              </div>
+              <label class="col-lg-2 control-label">身份证号:</label>
+              <div class="col-lg-4">
+                <input type="text" class="form-control" ng-model="contact.contactIdentityNumber" placeholder="362525201403282222" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">地址:</label>
+              <div class="col-lg-9">
+                <input type="text" class="form-control" ng-model="contact.contactAddress" placeholder="如：南山区白石洲" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">教育经历:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactEducationExperience" placeholder="南昌大学"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">个人经历:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactPersonalExperience" placeholder="漂洋过海"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">性格特点:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactPersonality" placeholder="自由不羁"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">爱好特长:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactFavor" placeholder="睡懒觉"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">饮食偏好:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactPreference" placeholder="不爱吃辣"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">家庭信息:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contact.contactFamilyInfo" placeholder="暂无"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">其他信息:</label>
+              <div class="col-lg-9">
+				<textarea class="form-control" ng-model="contactMoreInfoText" placeholder="暂无"  style="height:50px;"/>
+              </div>
+            </div>
+            <div class="form-group">
+			  <div class="col-lg-3"></div>
+              <div class="col-lg-4">
+                <a href="javascript:void(0);" class="btn btn-s-md btn-info" ng-click="addContact()">提交</a>
+              </div>
+              <div class="col-lg-3">
+                <a href="javascript:void(0);" class="btn btn-s-md btn-info" ng-click="goBack()">返回</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>

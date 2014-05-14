@@ -1,0 +1,104 @@
+define(['app'], function(app) {
+  return app.config(
+    [          '$stateProvider', '$urlRouterProvider',
+      function ($stateProvider,   $urlRouterProvider) {
+        $stateProvider
+
+          //角色路由设置
+          .state('home.index.set_role', {
+            url: '/set_role',
+            templateUrl: 'views/sys_config/set_role.html',
+            controller:'roleCtrl'
+          })
+          .state('home.index.set_role.list', {
+            url: '/list',
+            templateUrl: 'views/sys_config/role_list.html',
+            controller:'roleCtrl'
+          })
+          .state('home.index.set_role.detail', {
+            url: '/detail/:roleId',
+            templateUrl: 'views/sys_config/role_info.html',
+            controller: 'roleDetailCtrl'
+          })  
+          .state('home.index.set_role.add', {
+            url: '/add',
+            templateUrl: 'views/sys_config/role_add.html',
+            controller:'roleAddCtrl'
+          }) 
+          //角色权限路由设置
+          .state('home.index.set_pertorole',{
+          	url:'/set_pertorole',
+          	templateUrl: 'views/sys_config/set_pertorole.html',
+          	controller: 'per_roleCtrl'
+          })
+          .state('home.index.set_pertorole.list', {
+            url: '/list',
+            // templateUrl: 'views/sys_config/role_list_checkbox.html',
+            // controller:'roleCtrl'
+          })
+          //用户角色路由设置
+          .state('home.index.set_usertorole',{
+          	url:'/set_usertorole',
+          	templateUrl: 'views/sys_config/set_usertorole.html',
+          	controller: 'user_roleCtrl'
+          })
+          .state('home.index.set_usertorole.list', {
+            url: '/list'//,
+            // templateUrl: 'views/sys_config/set_usertorole.html',
+            // controller:'user_roleCtrl'
+          })
+          
+          //用户路由设置
+          .state('home.index.set_user', {
+            abstract: true,
+            url: '/set_user',
+            templateUrl: 'views/sys_config/set_user.html',
+            controller:'DeptCtrl'
+          })
+          .state('home.index.set_user.list', {
+            url: '/list',
+            templateUrl: 'views/sys_config/user_deptlist.html'
+          })
+          .state('home.index.set_user.add', {
+            url: '/add',
+            templateUrl: 'views/sys_config/user_add.html',
+            controller:'employeeAddCtrl'
+          })
+          .state('home.index.set_user.userlist', {
+            url: '/deptId/:deptId',
+            templateUrl: 'views/sys_config/user_list.html',
+            controller: 'employeeCtrl'
+          })
+          .state('home.index.set_user.edit', {
+            url: '/edit/employeeId/:employeeId',
+            templateUrl: 'views/sys_config/user_info.html',
+            controller:'employeeUpdateCtrl'
+          })
+           .state('home.index.set_user.role', {
+            url: '/deptId/:deptId',
+            templateUrl: 'views/sys_config/user_rolelist.html',
+            controller: 'roleCtrl'
+          })
+          //部门路由设置
+          .state('home.index.set_dept', {
+            abstract: true,
+            url: '/set_dept',
+            templateUrl: 'views/sys_config/set_dept.html',
+            controller:'DeptCtrl'
+          })
+          .state('home.index.set_dept.add', {
+            url: '/add',
+            templateUrl: 'views/sys_config/dept_add.html',
+            controller:'DeptAddCtrl'
+          })
+          .state('home.index.set_dept.list', {
+            url: '/list',
+            templateUrl: 'views/sys_config/dept_deptlist.html'
+          })
+          .state('home.index.set_dept.detail', {
+            url: '/detail/:deptId',
+            templateUrl: 'views/sys_config/dept_info.html',
+            controller: 'emplCtrl'
+          })         
+      }]);
+});

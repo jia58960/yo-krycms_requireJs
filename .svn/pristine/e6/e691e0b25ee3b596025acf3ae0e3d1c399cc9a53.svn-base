@@ -1,0 +1,288 @@
+<!--
+Author  : hmm
+Date    : 20140228
+Describe: employeeinfo
+-->
+<form role="form" class="bg-white">
+<header class="panel-heading font-bold">基本信息</header>
+<div class="panel-body">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                    姓名<span class="required">*</span>
+                </label>
+                <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input type="text" name="employeeName" ng-model="employee.employeeName" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   用户名<span class="required">*</span>
+                </label>
+                 <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input type="text" name="userName" ng-model="user.userName" placeholder="用于系统登录" class="form-control" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   初始密码<span class="required">*</span>
+                </label>
+                 <div class="input-icon left">
+
+                    <i class="icon-lock"></i>
+
+                   <input type="password" ng-model="user.userPassword" ng-model="111111" class="form-control"/>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                    入职时间
+                </label>
+                <div class="input-icon left">
+
+                    <i class="icon-calendar"></i>
+
+                     <input name="employeeJoinDate" placeholder="yyyy-MM-dd" datepicker-popup="yyyy-MM-dd"  ng-required="true" close-text="关闭" ng-model="employee.employeeJoinDate" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   性别
+                </label>
+                <label class="radio">
+     
+                    <input type="radio" name="sexId" ng-model="employee.yxSex.sexId" value="1" />男
+     
+                </label>
+     
+                <label class="radio"> 
+                    <input type="radio" name="sexId" ng-model="employee.yxSex.sexId" value="2"/>女
+     
+                </label> 
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                    邮箱<span class="required">*</span>
+                </label>
+               <div class="input-icon left">
+ 
+                    <i class="icon-envelope"></i>
+     
+                    <input class="form-control" name="employeeEmail" type="text" placeholder="" ng-model="employee.employeeEmail" />    
+                    <p class="help-block">
+                        注：请填写常用邮箱地址，若无邮箱由公司分配。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   主手机<span class="required">*</span>
+                </label>
+                 <input type="text" placeholder="常用手机且信息可达" name="employeeMobilePhoneMaster" class="form-control" ng-model="employee.employeeMobilePhoneMaster">
+                <p class="help-block">
+                    注：该手机号将用于系统内部的重要信息提醒，请务必认真填写
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+           <div class="form-group">
+                <label>
+                   生日
+                </label>
+
+                <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="employee.employeeBirthday" is-open="opened" ng-required="true" close-text="关闭" />
+
+                <div class="input-icon left">
+
+                    <i class="icon-calendar"></i>
+
+                    <p class="help-block">
+                        注：请选择公历生日
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+   
+     <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                    第一部门
+                </label>
+
+                <select class="form-control" name="departmentId" ng-model="masterDepartmentId" ng-value="x.departmentId" ng-options="x.departmentName for x in masterDepts" ng-change="showMaster()">
+                    <option value="">-请选择-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+            <label>
+                   职称
+                </label>
+
+                <select class="form-control" name="jobTitleId" ng-model="masterJobTitleId" ng-value="x.jobTitleId" ng-options="x.jobTitleName for x in masterJobTitles">
+                    <option value="">-请选择-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+            <label>
+                   职位<span class="required">*</span>
+                </label>
+
+                <select class="form-control" name="positionId" ng-model="masterPositionId" ng-value="x.positionId" ng-options="x.positionName for x in masterPositions">
+                    <option value="">-请选择-</option>
+                </select>
+                <p class="help-block">
+                    注：请在"部门设置"中对职位信息进行设置
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                    第二部门
+                </label>
+
+                <select class="form-control" name="departmentId" ng-model="secondDepartmentId" ng-value="x.departmentId" ng-options="x.departmentName for x in secondDepts" ng-change="showSecond()">
+                    <option value="">-请选择-</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+            <label>
+                   职称
+                </label>
+
+                <select class="form-control" name="jobTitleId" ng-model="secondJobTitleId" ng-value="x.jobTitleId" ng-options="x.jobTitleName for x in secondJobTitles">
+                    <option value="">-请选择-</option>
+                </select>
+            </div>
+        </div>
+         <div class="col-sm-4">
+            <div class="form-group">
+            <label>
+                   职位<span class="required">*</span>
+                </label>
+
+                <select class="form-control" name="positionId" ng-model="secondPositionId" ng-value="x.positionId" ng-options="x.positionName for x in secondPositions">
+                    <option value="">-请选择-</option>
+                </select>
+                <p class="help-block">
+                    注：请在"部门设置"中对职位信息进行设置
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+        
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   排序号<span class="required">*</span>
+                </label>
+
+                <input type="text" name="employeeSortNumber" class="form-control" ng-model="employee.employeeSortNumber">
+            </div>
+        </div>
+    </div>
+
+<header class="panel-heading font-bold">其他联系信息</header>
+
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <div class="form-group">
+            <label>
+                   手机2
+                </label>
+
+                <input type="text" name="employeeMobilePhoneSecond" class="form-control" ng-model="employee.employeeMobilePhoneSecond">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   手机3
+                </label>
+
+                <input type="text" name="employeeMobilePhoneThird" class="form-control" ng-model="employee.employeeMobilePhoneThird">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-sm-6">
+            <div class="form-group">
+            <label>
+                   座机1
+                </label>
+
+                <input type="text" name="employeeTelephone" class="form-control" ng-model="employee.employeeTelephone">
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label>
+                   座机2
+                </label>
+
+                 <input type="text" name="employeeTelephoneSecond" class="form-control" ng-model="employee.employeeTelephoneSecond">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-sm-12">
+            <div class="form-group">
+            <label>
+                   座机3
+                </label>
+
+                <input type="text" name="employeeTelephoneThird" class="form-control" ng-model="employee.employeeTelephoneThird">
+            </div>
+        </div>
+    </div>
+    <button class="btn blue" id="emAddBtn" ng-click="updateEmployee(employee)">提交</button>
+    <input type="reset" class="btn" ng-click="clearEmployee()" />
+    
+</div>
+</form>

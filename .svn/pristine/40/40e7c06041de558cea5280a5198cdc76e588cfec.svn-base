@@ -1,0 +1,134 @@
+/**
+ * # WebSocket management service
+ *
+ * Creates socket connection to server, re-connects on disconnection, sends messages, and listens, cause events.
+ *
+ */
+
+
+define(['services/services'],
+	function(services) {
+
+	services.factory('ws', ['$q','$rootScope','$timeout','$log',function($q, $rootScope, $timeout, $log) {
+		/* Array with callback id */
+		var callbacks = {};
+		var listenCtrls = {};
+
+		var current_cb_id = 0;  //Default callback id
+
+
+		var createConnect = function () {
+//			url = "ws://10.188.192.200:8080/websocket/";
+			url = "ws://10.188.199.4:8080/YIXUN_1.5_WEB/websocket/";
+			ws = new WebSocket(url);
+
+			/* Client connected with WS Server */
+			ws.onopen = function(){
+				console.log("WS ready");
+				service.ready = true;
+			}
+
+			/* Reconnecting to server, if it was disconnected */
+			ws.onclose = function() {
+				service.ready = false;
+
+				$timeout(function () {
+					console.log('Reconnecting to server...')
+					createConnect();
+				}, 3000);
+			}
+
+			/* Client has received a message  */
+			ws.onmessage = function(msg) {
+
+				//Receiving  message
+				var reply = JSON.parse(msg.data);
+
+				console.log("Received data from websocket: ", reply);
+
+				/* Message for listen controller */
+				if (listenCtrls[reply.id]) {
+					console.log('Controller activated:'+ reply.id);
+
+					var args = arguments;
+
+					//Callback the listener controller
+					$rootScope.$apply(listenCtrls[reply.id].cb.call(args,reply['result']));
+				} else
+
+				/* Message for call controller */
+				if (callbacks[reply.id]) {
+					if(!!reply['error']) {
+						console.log("Firing callback with error", reply['error']);
+
+						//Return error callback
+						$rootScope.$apply(callbacks[reply.id].cb.reject(reply.error));
+					}
+
+					if(!!reply['result']) {
+						console.log("Firing callback with result", reply['result']);
+
+						//Keep promise and call callback
+						$rootScope.$apply(callbacks[reply.id].cb.resolve(reply.result));
+					}
+
+					delete callbacks[reply.id]; //Delete callback from array
+				} else {
+					/* Message without ID */
+					console.log('Unknown message:', reply)
+				}
+			}
+			return ws;
+		};
+
+		var ws  = createConnect();
+
+		var service = {
+			/* Calling function on server */
+			call: function(request) {
+				console.log("request:",request);
+
+//				request.jsonrpc = '2.0';
+
+				current_cb_id += 1;
+				request.id = current_cb_id;
+
+				/* Create defer object */
+				var defer = $q.defer();
+				console.log("defer:",defer);
+
+				callbacks[request.id] = {
+					time: new Date(),
+					cb: defer
+				}
+
+				console.log("Sending request", request);
+
+				ws.send(JSON.stringify(request));
+
+				return defer.promise;
+			},
+
+			send: function(message) {
+
+				console.log("Sending request", message);
+
+				ws.send(JSON.stringify(message));
+			},
+
+			listen: function(scopeId, callback) {
+
+				if (!listenCtrls[scopeId]) {
+
+					/* Create callback object */
+					listenCtrls[scopeId] =  {
+						cb: callback                }
+					console.log("listen:",listenCtrls);
+				}
+			},
+			ready: false
+
+		}
+		return service;
+	}]);
+});

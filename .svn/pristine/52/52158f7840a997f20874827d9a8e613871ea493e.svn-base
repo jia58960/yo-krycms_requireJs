@@ -1,0 +1,32 @@
+<header class="panel-heading">
+    <div class="input-group text-sm">
+        <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+        <div class="input-group-btn">
+            <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+            type="button">
+                搜索
+                
+            </button>
+           
+        </div>
+    </div>
+</header>
+<ul class="list-group alt">  
+    <li class="list-group-item" ng-repeat="dept2 in depts | filter:query" ui-sref-active="active">
+    <div class="media">
+        <a class="pull-right text-danger m-t-sm" ng-click="delDeptDialog(dept2.departmentId)" ng-model="dept2.departmentId" href="">
+            <i class="fa fa-times-circle fa-2x"></i>
+        </a>
+        <div class="media-body">
+            <div>
+                <a ui-sref="home.index.set_dept.detail({deptId:dept2.departmentId})">
+                   {{dept2.departmentName}}
+                </a>
+            </div>
+            <small class="text-muted">
+                {{dept2.departmentPinyin}}
+            </small>
+        </div>
+    </div>
+</li>                                      
+</ul>

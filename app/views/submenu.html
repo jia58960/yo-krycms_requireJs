@@ -1,0 +1,27 @@
+<ul class="nav navbar-nav">
+
+    <li class="dropdown" ng-repeat="submenu in submenus" ng-switch on="submenu.yxResourceSelfRelationsForSuperiorResourceId" ui-sref-active="active">
+
+        <a class="dropdown-toggle" ng-switch-when="" ui-sref="home.index.module.{{submenu.resourceCode}}">
+            {{submenu.resourceName}}
+        </a>
+
+        <a class="dropdown-toggle" ng-switch-default href="#">
+            {{submenu.resourceName}}
+            <b class="caret">
+            </b>
+        </a>
+
+        <ul class="dropdown-menu" ng-if="submenu.yxResourceSelfRelationsForSuperiorResourceId">
+
+            <li ng-repeat="secsub in submenu.yxResourceSelfRelationsForSuperiorResourceId">
+                <a ui-sref="home.index.module.{{secsub.yxResourceBySublevelResourceId.resourceCode}}">
+                    {{secsub.yxResourceBySublevelResourceId.resourceName}}
+                </a>
+            </li>
+
+        </ul>
+    </li>
+
+</ul>
+</div>

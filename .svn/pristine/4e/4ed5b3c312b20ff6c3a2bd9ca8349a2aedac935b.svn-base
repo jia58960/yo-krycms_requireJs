@@ -1,0 +1,562 @@
+<div class="row b-b m-l-none m-r-none">
+    <div class="col-sm-4">
+        <h3 class="m-t m-b-none">
+            客户管理
+        </h3>
+        <p class="block text-muted">
+            客户管理
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+            <div class="pull-left">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Users
+                    <span class="badge up bg-danger">
+                        +5
+                    </span>
+                </span>
+                <span class="h4">
+                    432k
+                </span>
+                    <i class="fa fa-level-up text-success">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                         data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left m-l-lg">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Profit
+                </span>
+                <span class="h4">
+                    $4k
+                </span>
+                    <i class="fa fa-level-down text-danger">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                         data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="scrollable wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    深圳奔大康有限公司-过程管理
+                    <span class="badge bg-default">120</span><span class="badge up bg-info">
+                        +10
+                    </span>
+
+                </header>
+                <section class="panel-body">
+                    <article class="media">
+                        <span class="pull-left thumb-sm">
+                            <img class="img-circle" src="images/avatar.jpg">
+                        </span>
+                        <div class="media-body">
+                            <div class="pull-right media-xs text-center text-muted">
+                                <strong class="h4">
+                                    1小时前
+                                </strong>
+                                <br>
+
+                            </div>
+                            <a class="h4" ui-sref="home.index.module.processdetail_page">
+                                鼎钢表示由于最近沪铜价格升幅较大
+                            </a>
+                            <small class="block">
+                                <a class="" href="#">
+                                    陈家奎
+                                </a>
+                                <span class="label label-success">
+                                    鼎钢
+                                </span>
+                            </small>
+                            <div class="block m-t-sm">
+                                拜访,接待对象：
+
+                                拜访对象：张宇航（副总经理） 杨信永（铜杆项目经理）
+
+                                我司前往人员：王总，聂总，甘剑雄，陈家奎
+
+                                拜访,接待目的：
+
+                                关系维护及2014年的销售计划的确定
+
+
+                                交谈内容：
+
+                                ①2013年双方的合作状态：总体保持友好的合作关系，但仍有可进步加强的地方；
+
+                                ②2014年鼎钢与我方在8mm铜杆业务上的合作量可达到2000-3000t/月，可与我方签订长单，但有一定的条件需满足；
+
+                                ③鼎钢对2.6mm铜线及电解铜都有一定的需求。
+
+
+                                存在的问题：
+
+                                ①现有江铜可送货范围为距上海300km以内，鼎钢希望送货距离能更远一些，同时可以在江铜常用的仓库进行仓库转货；
+
+                                ②现阶段，江铜不允许我方发货至其自身的直接下游，鼎钢希望可以有所突破；
+
+                                ③希望我方供货稳定；
+
+                                ④希望我方能同时供应2.6mm铜线及电解铜。
+                            </div>
+
+                            <div class="line line-lg"></div>
+                            <div data-toggle="buttons" class="btn-group m-b">
+                                <label class="btn btn-sm btn-white active">
+                                    <input type="radio" name="options">
+                                    讨论
+                                </label>
+                                <label class="btn btn-sm btn-white">
+                                    <input type="radio" name="options">
+                                    审批
+                                </label>
+                                <div class="panel-heading pull-right">
+                                    <a class="btn btn-xs btn-success" href="#">
+                                        陈家奎
+                                    </a>
+                                    <a class="btn btn-xs btn-success" href="#">
+                                        陈家奎
+                                    </a>
+                                    <a class="btn btn-xs btn-success" href="#">
+                                        陈家奎
+                                    </a>
+                                    <a class="btn btn-xs btn-success" href="#">
+                                        陈家奎
+                                    </a>
+                                    <a class="btn btn-xs btn-success" href="#">
+                                        陈家奎
+                                    </a>
+                                    <a class="btn btn-xs btn-danger" href="#">
+                                        陈忠涛
+                                    </a>
+                                </div>
+                            </div>
+                            <section class="comment-list block">
+                                <article class="comment-item">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                陈家奎
+                                            </a>
+                                            <label class="label bg-info m-l-xs">
+                                                业务部
+                                            </label>
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                24 分钟前
+                                            </span>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div>
+                                                开票工作如何安排，完成后请反馈。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <!-- .comment-reply -->
+                                <article class="comment-item comment-reply">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                王乐
+                                            </a>
+                                            <label class="label bg-dark m-l-xs">
+                                                总经理室
+                                            </label>
+
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                10 分钟前
+                                            </span>
+                                        </header>
+
+                                        <div class="panel-body">
+                                            <div>
+                                                请业务部门在任务管理器中对操作方案予以详细说明，贺总把控操作风险。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+
+                                <a class="btn btn-white btn-sm" href="#"><i class="fa fa-plus icon-muted"></i> 更多</a>
+                            </section>
+
+                        </div>
+
+
+
+                    </article>
+                    <div class="line pull-in">
+                    </div>
+                    <article class="media">
+                        <span class="pull-left thumb-sm text-center">
+                            <i class="fa fa-user fa fa-2x text-muted">
+                            </i>
+                        </span>
+                        <div class="media-body">
+                            <div class="pull-right media-xs text-center text-muted">
+                                <strong class="h4">
+                                    三个月前
+                                </strong>
+                                <br>
+
+                            </div>
+                            <a class="h4" href="#">
+                                今日已走完4300万银票开发票流程
+                            </a>
+                            <small class="block">
+                                <a class="" href="#">
+                                    陈忠涛
+                                </a>
+
+                            </small>
+                            <div class="block m-t-sm">
+                                今日已走完4300万银票开发票流程：
+
+                                晨珀应开到瑞鑫盛发票为835(t)*52400(元/t）=43,754,000元，
+
+                                瑞鑫盛应开到鼎钢发票为835(t)*53216(元/t）=44,435,360元
+
+                                后续贴现该银票后，对于实际贴息及差价双方产生的应退款再行结算。
+                            </div>
+                            
+                            <div class="line line-lg"></div>
+                            <div data-toggle="buttons" class="btn-group m-b">
+                                <label class="btn btn-sm btn-white active">
+                                    <input type="radio" name="options">
+                                    讨论
+                                </label>
+                                <label class="btn btn-sm btn-white">
+                                    <input type="radio" name="options">
+                                    审批
+                                </label>
+                            </div>
+                            <section class="comment-list block">
+                                <article class="comment-item">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                陈家奎
+                                            </a>
+                                            <label class="label bg-info m-l-xs">
+                                                业务部
+                                            </label>
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                24 分钟前
+                                            </span>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div>
+                                                开票工作如何安排，完成后请反馈。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <!-- .comment-reply -->
+                                <article class="comment-item comment-reply">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                王乐
+                                            </a>
+                                            <label class="label bg-dark m-l-xs">
+                                                总经理室
+                                            </label>
+
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                10 分钟前
+                                            </span>
+                                        </header>
+
+                                        <div class="panel-body">
+                                            <div>
+                                                请业务部门在任务管理器中对操作方案予以详细说明，贺总把控操作风险。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <!-- / .comment-reply -->
+                                <article class="comment-item">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                郑伟
+                                            </a>
+                                            <label class="label bg-success m-l-xs">
+                                                资金部
+                                            </label>
+                                        <span class="text-muted m-l-sm pull-right">
+                                            <i class="fa fa-clock-o">
+                                            </i>
+                                            大约1分钟前
+                                        </span>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div>
+                                                者是郑伟发的那么自己可以删除！
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" data-dismiss="alert" href="#comment-id-3">
+                                                    <i class="fa fa-trash-o text-muted">
+                                                    </i>
+                                                    删除
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <a class="btn btn-white btn-sm" href="#"><i class="fa fa-plus icon-muted"></i> 更多</a>
+                                </section>
+
+
+                        </div>
+                    </article>
+                    <div class="line pull-in">
+                    </div>
+                    <article class="media">
+                        <span class="pull-left thumb-sm text-center">
+                            <i class="fa fa-user fa fa-2x text-muted">
+                            </i>
+                        </span>
+                        <div class="media-body">
+                            <div class="pull-right media-xs text-center text-muted">
+                                <strong class="h4">
+                                    三个月前
+                                </strong>
+                                <br>
+
+                            </div>
+                            <a class="h4" href="#">
+                                今日已走完4300万银票开发票流程
+                            </a>
+                            <span class="block">
+                                <a class="" href="#">
+                                    陈忠涛
+                                </a>
+
+                            </span>
+                            <div class="block m-t-sm">
+                                今日已走完4300万银票开发票流程：
+
+                                晨珀应开到瑞鑫盛发票为835(t)*52400(元/t）=43,754,000元，
+
+                                瑞鑫盛应开到鼎钢发票为835(t)*53216(元/t）=44,435,360元
+
+                                后续贴现该银票后，对于实际贴息及差价双方产生的应退款再行结算。
+                            </div>
+
+                            <div class="line line-lg"></div>
+                            <div data-toggle="buttons" class="btn-group m-b">
+                                <label class="btn btn-sm btn-white active">
+                                    <input type="radio" name="options">
+                                    讨论
+                                </label>
+                                <label class="btn btn-sm btn-white">
+                                    <input type="radio" name="options">
+                                    审批
+                                </label>
+                            </div>
+                            <section class="comment-list block">
+                                <article class="comment-item">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                陈家奎
+                                            </a>
+                                            <label class="label bg-info m-l-xs">
+                                                业务部
+                                            </label>
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                24 分钟前
+                                            </span>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div>
+                                                开票工作如何安排，完成后请反馈。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <!-- .comment-reply -->
+                                <article class="comment-item comment-reply">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                王乐
+                                            </a>
+                                            <label class="label bg-dark m-l-xs">
+                                                总经理室
+                                            </label>
+
+                                            <span class="text-muted m-l-sm pull-right">
+                                                <i class="fa fa-clock-o">
+                                                </i>
+                                                10 分钟前
+                                            </span>
+                                        </header>
+
+                                        <div class="panel-body">
+                                            <div>
+                                                请业务部门在任务管理器中对操作方案予以详细说明，贺总把控操作风险。
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" href="#comment-form">
+                                                    <i class="fa fa-mail-reply text-muted">
+                                                    </i>
+                                                    回复
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <!-- / .comment-reply -->
+                                <article class="comment-item">
+                                    <a class="pull-left thumb-sm avatar">
+                                        <img class="img-circle" src="images/avatar.jpg">
+                                    </a>
+                                    <span class="arrow left">
+                                    </span>
+                                    <section class="comment-body panel text-sm">
+                                        <header class="panel-heading">
+                                            <a href="#">
+                                                郑伟
+                                            </a>
+                                            <label class="label bg-success m-l-xs">
+                                                资金部
+                                            </label>
+                                        <span class="text-muted m-l-sm pull-right">
+                                            <i class="fa fa-clock-o">
+                                            </i>
+                                            大约1分钟前
+                                        </span>
+                                        </header>
+                                        <div class="panel-body">
+                                            <div>
+                                                者是郑伟发的那么自己可以删除！
+                                            </div>
+                                            <div class="comment-action m-t-sm">
+                                                <a class="btn btn-white btn-xs" data-dismiss="alert" href="#comment-id-3">
+                                                    <i class="fa fa-trash-o text-muted">
+                                                    </i>
+                                                    删除
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </article>
+                                <a class="btn btn-white btn-sm" href="#"><i class="fa fa-plus icon-muted"></i> 更多</a>
+                            </section>
+
+
+                        </div>
+                    </article>
+
+                    </section>
+            </section>
+        </div>
+    </div>
+</section>

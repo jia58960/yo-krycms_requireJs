@@ -1,0 +1,145 @@
+<div class="row b-b m-l-none m-r-none">
+    <div class="col-sm-4">
+        <h3 class="m-t m-b-none">
+            新增过程管理
+        </h3>
+        <p class="block text-muted">
+            新增过程管理页面
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+            <div class="pull-left">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Users
+                    <span class="badge up bg-danger">
+                        +5
+                    </span>
+                </span>
+                <span class="h4">
+                    432k
+                </span>
+                    <i class="fa fa-level-up text-success">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                         data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left m-l-lg">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Profit
+                </span>
+                <span class="h4">
+                    $4k
+                </span>
+                    <i class="fa fa-level-down text-danger">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                         data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="scrollable wrapperscrollable wrapper">
+    <div class="row">
+        <div class="col-sm-9">
+            <form data-validate="parsley">
+                <section class="panel">
+                    <header class="panel-heading">
+                <span class="h4">
+                    新增客户
+                </span>
+                    </header>
+                    <div class="panel-body">
+                        <p class="text-muted">
+                            请完整填写客户信息
+                        </p>
+                        <div class="form-group">
+                            <label>
+                                主办客户经理
+                            </label>
+                            <input type="text" data-required="true" class="form-control parsley-validated">
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-6">
+                                <label>
+                                    协办客户经理A
+                                </label>
+                                <select name="" class="form-control">
+                                    <option value="">王乐</option>
+                                    <option value="">陈家奎</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>
+                                    协办客户经理B
+                                </label>
+                                <select class="form-control" name="" id="">
+                                    <option value="">王乐</option>
+                                    <option value="">陈家奎</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                            <div class="col-sm-6">
+                                <label>
+                                    客户全称
+                                </label>
+                                <input type="password" id="pwd" data-required="true" class="form-control parsley-validated">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label>
+                                    客户简称
+                                </label>
+                                <input type="password" data-required="true" data-equalto="#pwd" class="form-control parsley-validated">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                客户类型
+                            </label>
+                            <input type="text" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>行业分类</label>
+
+                        </div>
+                        <div class="form-group">
+                            <label>业务操作模式与类型</label>
+                            <label class="checkbox-inline"> <input type="checkbox" value="option1" id="inlineCheckbox1"> a </label>
+                            <label class="checkbox-inline"> <input type="checkbox" value="2" id="inlineCheckbox11"> a </label>
+                            <label class="checkbox-inline"> <input type="checkbox" value="3" id="inlineCheckbox12"> a </label>
+                        </div>
+
+                    </div>
+                    <footer class="panel-footer text-right bg-light lter">
+                        <button class="btn btn-success btn-s-xs" type="submit">
+                            Submit
+                        </button>
+                    </footer>
+                </section>
+            </form>
+        </div>
+    </div>
+</section>

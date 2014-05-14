@@ -1,0 +1,737 @@
+<!--
+Author  : zhangjia
+Date    : 20131029
+Describe: userinfo
+-->
+<div class="row-fluid">
+    <div class="pull-left" style="padding:10px 14px">
+
+        <h4>
+            
+
+                用户信息 {{serverdata.employeeName}}
+                新增用户
+
+
+        </h4>
+
+    </div>
+
+    <div class="pull-right" style="padding:10px 14px">
+
+        <a class="btn icn-only green" id="emlistBtn" href="#"><i class="m-icon-swapleft m-icon-white"></i> 用户列表</a>                          
+
+    </div>
+
+</div>
+
+<form action="" id="emInfoForm" class="form-horizontal">
+
+<h5 class="form-section">基本信息</h5>
+
+<div class="row-fluid">
+    
+    <div class="span6">
+        
+        <div class="control-group">
+ 
+        <label class="control-label">姓名<span class="required">*</span></label>
+ 
+            <div class="controls">
+                
+                <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input type="text" name="employeeName" class="span10 m-wrap" value="<%=serverdata.employeeName%>" />
+                </div>
+            </div>
+ 
+        </div>
+        
+    </div>
+    
+    <input type="hidden" name="employeeId" value="<%=serverdata.employeeId%>" />
+    
+    <div class="span6">
+        <div class="control-group">
+ 
+        <label class="control-label">用户名<span class="required">*</span></label>
+ 
+        <div class="controls">
+            <%if(serverdata.krUserEmployeeRelations && serverdata.krUserEmployeeRelations.length!=0){%>
+                        
+                    <%for(var u = 0;u<serverdata.krUserEmployeeRelations.length;u++){%>
+                        
+                        <div class="input-icon left">
+
+                            <i class="icon-user"></i>
+
+                            <input type="text" name="userName" class="span10 m-wrap " value="<%=serverdata.krUserEmployeeRelations[u].yxUser.userName%>" />
+
+                        </div>
+
+                        <input type="hidden" name="userId" value="<%=serverdata.krUserEmployeeRelations[u].yxUser.userId%>" />
+
+                    <%}%>
+
+            <%}else{%>
+                <div class="input-icon left">
+
+                    <i class="icon-user"></i>
+
+                    <input type="text" name="userName" placeholder="用于系统登录" class="span10 m-wrap" />
+
+                </div>
+
+            <%}%>
+
+        </div>
+ 
+    </div>
+
+    </div>
+
+</div>
+
+
+<div class="row-fluid">
+
+    <div class="span12">
+
+        <div class="control-group">
+ 
+            <label class="control-label">初始密码<span class="required">*</span></label>
+     
+            <div class="controls">
+                <div class="input-icon left">
+
+                    <i class="icon-lock"></i>
+
+                    <input type="password" name="userPassword" value="111111" class="span6 m-wrap"/>
+
+                    <p class="help-block">密码默认为6个1</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="row-fluid">
+    <div class="span6">
+        <div class="control-group">
+ 
+        <label class="control-label">入职时间<span class="required">*</span></label>
+ 
+        <div class="controls">
+            <div class="input-icon left">
+
+                <i class="icon-calendar"></i>
+
+                <input name="employeeJoinDate" placeholder="yyyy-MM-dd" class="span10 m-wrap date-picker"  style="cursor:pointer"  type="text" value="<%=serverdata.employeeJoinDate%>" />
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="span6">
+        <div class="control-group">
+ 
+        <label class="control-label">性别<span class="required">*</span></label>
+ 
+        <div class="controls">
+ 
+            <label class="radio">
+ 
+                <input type="radio" name="sexId" value="1"
+                <% if (serverdata.yxSex && serverdata.yxSex.sexId == 1) {%>
+                 checked 
+                <%}%> />
+ 
+                    男
+ 
+                </label>
+ 
+            <label class="radio">
+ 
+                <input type="radio" name="sexId" value="2"
+                <% if (serverdata.yxSex && serverdata.yxSex.sexId == 2) {%>
+                 checked
+                 <%}%> />
+ 
+                    女
+ 
+                </label> 
+ 
+        </div>
+ 
+    </div>
+    </div>
+</div>
+    
+<div class="row-fluid">
+
+    <div class="span6">
+    <div class="control-group">
+ 
+        <label class="control-label">邮箱<span class="required">*</span></label>
+ 
+        <div class="controls">
+ 
+            <div class="input-icon left">
+ 
+                <i class="icon-envelope"></i>
+ 
+                <input class="span10 m-wrap" name="employeeEmail" type="text" placeholder="" value="<%=serverdata.employeeEmail%>" />    
+ 				<p class="help-block">
+     				注：请填写常用邮箱地址，若无邮箱由公司分配。
+     			</p>
+            </div>
+ 
+        </div>
+ 
+    </div>
+
+        
+    </div>
+
+    <div class="span6">
+
+        <div class="control-group">
+     
+            <label class="control-label">主手机<span class="required">*</span></label>
+     
+            <div class="controls">
+     
+                <input type="text" placeholder="常用手机且信息可达" name="employeeMobilePhoneMaster" class=" span10 m-wrap" value="<%=serverdata.employeeMobilePhoneMaster%>">
+     			<p class="help-block">
+     				注：该手机号将用于系统内部的重要信息提醒，请务必认真填写
+     			</p>
+            </div>
+     
+        </div>
+
+    </div>
+
+</div>
+                        
+<div class="row-fluid">
+
+    <div class="span12">
+        <div class="control-group">
+ 
+        <label class="control-label">生日</label>
+ 
+        <div class="controls">
+            <div class="input-icon left">
+
+                <i class="icon-calendar"></i>
+
+                <input name="employeeBirthday" class="span6 m-wrap date-picker" data-date-viewmode="years" placeholder="yyyy-MM-dd" type="text" style="cursor:pointer" value="<%=serverdata.employeeBirthday%>" />
+
+                <p class="help-block">
+     				注：请选择公历生日
+     			</p>
+
+            </div>
+        </div>
+ 
+    </div>
+    </div>
+</div>
+
+     
+<div class="row-fluid">
+
+    <div class="span6">
+
+        <div class="control-group">
+                     
+            <label class="control-label">第一部门<span class="required">*</span></label> 
+                     
+            <div class="controls">
+                         
+                <select class="span10 m-wrap" name="departementId" id="Set_f">
+                
+                   <option value="">-请选择-</option>               
+                
+                </select>
+                
+            </div>
+                     
+        </div>
+
+    </div>
+
+    <div class="span6">
+        <div class="control-group">
+                     
+        <label class="control-label">职称<span class="required">*</span></label>
+                     
+        <div class="controls">
+                     
+            <select class="span10 m-wrap" name="jobTitleId" id="fJob">
+                     
+                <option value="">-选择部门-</option>
+                
+            </select>
+                     
+        </div>
+                     
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+
+    <div class="span6">
+
+        <div class="control-group">
+                     
+            <label class="control-label">第二部门</label>
+                     
+            <div class="controls">
+                         
+                <select class="span10 m-wrap" name="departementId" id="Set_s">
+
+                    <option value="">-请选择-</option>               
+                         
+                </select>
+                         
+            </div>
+                     
+        </div>
+    </div>
+
+    <div class="span6">
+        <div class="control-group">
+                     
+            <label class="control-label">职称</label>
+                     
+            <div class="controls">
+                         
+                <select class="span10 m-wrap" name="jobTitleId" id="sJob">
+                         
+                    <option value="">-选择部门-</option>
+                         
+                </select>
+                         
+            </div>
+                     
+        </div>
+    </div>
+
+</div>
+
+<div class="row-fluid">
+
+
+<% if(serverdata.krPositionEmployeeRelations && serverdata.krPositionEmployeeRelations.length!=0) {
+
+    var positions = '';
+    for(var p = 0;p < serverdata.krPositionEmployeeRelations.length;p ++){
+         positions = positions + serverdata.krPositionEmployeeRelations[p].krPosition.positionName+';';
+    }%>
+    <div class="span6">
+    <div class="control-group">
+
+        <label class="control-label">职位<span class="required">*</span></label>
+
+        <div class="controls">
+            
+            <input type="text" name="jobTitleId" class="span10 m-wrap" disabled="disabled"
+             value="<%=positions%>">         
+
+            <p class="help-block">
+                注：请在"部门设置"中对职位信息进行设置
+            </p>
+
+        </div>
+
+    </div>
+</div>
+    
+<%}%>
+
+<div class="span6">
+
+    <div class="control-group">
+
+        <label class="control-label">排序号<span class="required">*</span></label>
+
+        <div class="controls">
+
+            <input type="text" name="employeeSortNumber" class="span10 m-wrap" value="<%=serverdata.employeeSortNumber%>">
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<h5 class="form-section">其他联系信息</h5>
+
+<div class="row-fluid">
+
+<div class="span6">
+
+        <div class="control-group">
+ 
+            <label class="control-label">手机2</label>
+ 
+            <div class="controls">
+     
+                <input type="text" name="employeeMobilePhoneSecond" class="span10 m-wrap" value="<%=serverdata.employeeMobilePhoneSecond%>">
+     
+            </div>
+ 
+        </div>
+       
+</div>
+<div class="span6">
+    <div class="control-group">
+     
+        <label class="control-label">手机3</label>
+
+        <div class="controls">
+ 
+            <input type="text" name="employeeMobilePhoneThird" class="span10 m-wrap" value="<%=serverdata.employeeMobilePhoneThird%>">
+ 
+        </div>
+     
+    </div>
+</div>
+</div>
+    
+
+<div class="row-fluid">
+
+    <div class="span6">
+        <div class="control-group">
+     
+                <label class="control-label">座机1</label>
+     
+                <div class="controls">
+         
+                    <input type="text" name="employeeTelephone" class="span10 m-wrap" value="<%=serverdata.employeeTelephone%>">
+         
+                </div>
+     
+            </div>
+    </div>
+
+    <div class="span6">
+        <div class="control-group">
+     
+                <label class="control-label">座机2</label>
+     
+                <div class="controls">
+         
+                    <input type="text" name="employeeTelephoneSecond" class="span10 m-wrap" value="<%=serverdata.employeeTelephoneSecond%>">
+         
+                </div>
+     
+            </div>
+    </div>
+    
+</div>
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <div class="control-group">
+     
+            <label class="control-label">座机3</label>
+ 
+            <div class="controls">
+     
+                <input type="text" name="employeeTelephoneThird" class="span5 m-wrap" value="<%=serverdata.employeeTelephoneThird%>">
+     
+            </div>
+     
+        </div>
+    </div>
+
+    
+</div>
+
+                                                                 
+<div class="form-actions">
+        <% if (serverdata.employeeId) {%>
+        <button class="btn blue" id="emSaveBtn">保存</button>
+        <%} else {%>
+         <button class="btn blue" id="emAddBtn">提交</button>
+         <%}%>
+    <input type="reset" class="btn" value="重置" />
+
+</div>
+                                             
+</form>
+
+<!--获取部门极其职称数据-->
+<% if(serverdata.krDepartmentEmployeeRelations && serverdata.krDepartmentEmployeeRelations.length!=0){
+    var count = 0;
+for(var d = 0;d < serverdata.krDepartmentEmployeeRelations.length;d++){ count++;%>
+    
+    <input type="hidden" value='{"deptid":"<%=serverdata.krDepartmentEmployeeRelations[d].krDepartment.departmentId%>","jobid":"<%=serverdata.krDepartmentEmployeeRelations[d].krDepartment.krEmployeeJobTitles[0].jobTitleId%>"}' id="deptJob<%=d%>">
+    
+<%}}%>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var urlfix = "<%=urlfix%>";
+
+    var urljasonfix = eval(urlfix);
+
+    handleUniform();//表单美化
+
+    handleDatePickers('.date-picker','');
+
+    //返回用户列表
+    $("#emlistBtn").on('click',function(){
+
+        $("#employeeInfo").removeClass('active');
+        $("#employeeList").addClass('active');
+
+    })
+
+    //获取编辑的数据
+    var deptJobOneJson = $.parseJSON($('#deptJob0').val()),
+        deptJobTwoJson = $.parseJSON($('#deptJob1').val());
+    if(!deptJobOneJson || !deptJobTwoJson) {
+        deptJobOneJson = {};
+        deptJobTwoJson = {};
+    }
+
+    //加载第一部门
+    urljasonfix.Set_f =
+    [
+        {"ra":"Set_f",
+        "dir":"Set/BI/deptopt",
+        "dif":'department/listAllDepartments',
+        "p2":{"deptId":deptJobOneJson.deptid,"jobTitleId":deptJobOneJson.jobid},
+        "m":2
+
+        }
+    ];
+    yixunload(urljasonfix.Set_f,urlfix);
+
+    //加载第二部门
+    urljasonfix.Set_s =
+    [
+        {"ra":"Set_s",
+        "dir":"Set/BI/deptopt",
+        "dif":'department/listAllDepartments',
+        "p2":{"deptId":deptJobTwoJson.deptid,"jobTitleId":deptJobTwoJson.jobid},
+        "m":2
+        }
+    ];
+    yixunload(urljasonfix.Set_s,urlfix);
+
+    //默认选中（编辑时）
+    var defaultOneDeptId = urljasonfix.Set_f[0].p2.deptId,
+        defaultTwoDeptId = urljasonfix.Set_s[0].p2.deptId;
+
+    if(defaultOneDeptId){
+
+        $("#Set_f").val(defaultOneDeptId);
+
+        var defaultOneJobId = urljasonfix.Set_f[0].p2.jobTitleId;
+        //默认加载第一部门职称（编辑）
+        urljasonfix.fJob =
+        [{
+            "ra":"fJob",
+            "dir":"Set/BI/jobopt",
+            "dif":'department/listDepartmentJobTitles',
+            "p":{"deptId":defaultOneDeptId}
+        }];
+        yixunload(urljasonfix.fJob,urlfix);
+
+        $("#fJob").val(defaultOneJobId);
+
+    } 
+
+    if(defaultTwoDeptId){
+
+        $("#Set_s").val(defaultTwoDeptId);
+
+        var defaultTwoJobId = urljasonfix.Set_s[0].p2.jobTitleId;
+       
+        urljasonfix.sJob =
+        [{
+            "ra":"sJob",
+            "dir":"Set/BI/jobopt",
+            "dif":'department/listDepartmentJobTitles',
+            "p":{"deptId":defaultTwoDeptId}
+        }];
+        yixunload(urljasonfix.sJob,urlfix);
+
+        $("#sJob").val(defaultTwoJobId);
+    }
+
+    
+
+    //选择部门加载该部门下职称信息
+    $("#Set_f").change(function(){
+        var fdeptId = $(this).val();
+        urljasonfix.fJob =
+        [{
+            "ra":"fJob",
+            "dir":"Set/BI/jobopt",
+            "dif":'department/listDepartmentJobTitles',
+            "p":{"deptId":fdeptId},
+        }];
+        yixunload(urljasonfix.fJob,urlfix);
+
+    })
+    
+    $("#Set_s").change(function(){
+        var fdeptId = $(this).val();
+        urljasonfix.sJob =
+        [{
+            "ra":"sJob",
+            "dir":"Set/BI/jobopt",
+            "dif":'department/listDepartmentJobTitles',
+            "p":{"deptId":fdeptId},
+        }];
+        yixunload(urljasonfix.sJob,urlfix);
+
+    })
+
+    //验证表单
+    $("#emInfoForm").validate({
+        errorElement: 'span', //default input error message container
+        errorClass: 'help-inline', // default input error message class
+        rules: {
+            employeeName: {
+                minlength: 2,
+                required: true,
+            },
+            userName: {
+                required: true,
+                minlength: 5,
+            },
+            employeeJoinDate: {
+                required: true,
+            },
+            employeeEmail: {
+                required: true,
+                email:true,
+            },
+            employeeMobilePhoneMaster: {
+                required: true,
+                number:true,
+                rangelength:[11,11],
+            },
+            employeeSortNumber: {
+                required: true,
+            }
+
+        },
+
+        messages: { 
+            employeeName: {
+                required: "姓名不能为空",
+                minlength: "姓名至少为两个汉字",
+            },
+            userName: {
+                required: "用户名必填",
+                minlength: "用户名至少为5个字符",
+            },
+            employeeJoinDate: {
+                required: "请选择入职时间",
+            },
+            employeeEmail: {
+                required: "邮箱未分配",
+                email:"请分配正确的邮箱格式",
+            },
+            employeeMobilePhoneMaster: {
+                required: "主手机号必填",
+                number:"手机号必须为数字",
+                rangelength:"手机号必须为11位",
+            },
+            employeeSortNumber: {
+                required: "用户排序号必填",
+            }
+        },
+
+        highlight: function (element) { // hightlight error inputs
+            $(element)
+                .closest('.help-inline').removeClass('ok'); // display OK icon
+            $(element)
+                .closest('.control-group').removeClass('success').addClass('error'); // set error class to the control group
+        },
+
+        unhighlight: function (element) { // revert the change dony by hightlight
+            $(element)
+                .closest('.control-group').removeClass('error'); // set error class to the control group
+        },
+
+        success: function (label) {
+            if (label.attr("for") == "service" || label.attr("for") == "membership") { // for checkboxes and radip buttons, no need to show OK icon
+                label
+                    .closest('.control-group').removeClass('error').addClass('success');
+                label.remove(); // remove error label here
+            } else { // display success icon for other inputs
+                label
+                    .addClass('valid').addClass('help-inline ok') // mark the current input as valid and display OK icon
+                .closest('.control-group').removeClass('error').addClass('success'); // set success class to the control group
+            }
+        }
+
+               
+    });
+    //新增员工信息
+    $("#emAddBtn").click(function(){
+         
+        if($("#emInfoForm").valid()){
+
+            $('#emInfoForm').submit(function() {              
+                var data = $(this).serialize(); //序列化表单数据
+                //console.log(data);
+                $.getJSON(
+                    "http://10.188.192.200:8080/YIXUN_1.5_EE/department/addEmployee?jsoncallback=?", data,
+                    function(json) {
+                        console.log(json);
+                    }
+                ); 
+                return false; 
+            }); 
+        }
+    }); 
+
+    //保存员工信息
+    $("#emSaveBtn").click(function(){
+
+        if($("#emInfoForm").valid()){
+
+            $('#emInfoForm').submit(function() {
+                var data = $(this).serialize(); //序列化表单数据 
+                //console.log(data);
+                //return false;
+                $.getJSON(
+                    "http://10.188.192.200:8080/YIXUN_1.5_EE/department/updateEmployee?jsoncallback=?", data,
+                    function(json) {
+                        console.log(json);
+                    }
+                ); 
+                return false; 
+                
+            }); 
+        }
+    });
+}); 
+ 
+</script>

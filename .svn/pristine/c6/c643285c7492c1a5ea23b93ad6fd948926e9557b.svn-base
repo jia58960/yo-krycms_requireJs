@@ -1,0 +1,182 @@
+<div class="row b-b m-l-none m-r-none">
+    <div class="col-sm-4">
+        <h3 class="m-t m-b-none">
+            客户管理
+        </h3>
+
+        <p class="block text-muted">
+            客户管理
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
+            <div class="pull-left">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Users
+                    <span class="badge up bg-danger">
+                        +5
+                    </span>
+                </span>
+                <span class="h4">
+                    432k
+                </span>
+                    <i class="fa fa-level-up text-success">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-stacked-bar-color="['#afcf6f', '#eee']" data-bar-spacing="2"
+                         data-bar-width="4" data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left m-l-lg">
+                <div class="pull-left m-r-xs">
+                <span class="block">
+                    Profit
+                </span>
+                <span class="h4">
+                    $4k
+                </span>
+                    <i class="fa fa-level-down text-danger">
+                    </i>
+                </div>
+                <div class="clear">
+                    <div data-bar-color="#fb6b5b" data-bar-spacing="2" data-bar-width="4"
+                         data-height="35" data-type="bar" class="sparkline inline">
+                        <canvas style="display: inline-block; width: 40px; height: 35px; vertical-align: top;"
+                                width="40" height="35">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="scrollable wrapper">
+<div class="row">
+<div class="col-sm-6 portlet" ng-repeat="group in groups">
+    <section class="panel portlet-item" style="opacity: 1;">
+        <header class="panel-heading">
+            {{group.groupName}}
+        </header>
+        <section class="panel-body">
+
+            <article class="media">
+                <div class="pull-left">
+                            <span class="fa fa-stack fa-2x">
+                                <i class="fa fa-circle text-primary fa-stack-2x"></i>
+                                <i class="fa fa-bold text-white fa-stack-1x"></i>
+                            </span>
+                </div>
+                <div class="media-body">
+                    <a class="h4" ui-sref="home.index.module.clientprolist_page">
+                        项目列表
+                    </a>
+                    <small class="block m-t-xs">
+                        部门所有客户按照其类型及项目分类
+                    </small>
+
+                </div>
+            </article>
+            <div class="line pull-in"></div>
+
+
+            <div class="media" ng-repeat="project in group.projects">
+                    <span class="pull-left thumb-sm text-center">
+                        <i class="fa fa-cloud fa fa-2x text-muted"></i>
+                    </span>
+                <a class="pull-right m-t-sm text-primary" ui-sref="home.index.module.clientprolist_page.prolist({project:project.projectId})">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            {{project.projectName}}
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        项目描述
+                    </small>
+                </div>
+            </div>
+
+            <article class="media">
+                <div class="media-body">
+                    <div class="media-xs text-center text-muted">
+                        <a ui-sref="home.index.module.clientprolist_page" class="btn btn-white btn-xs">
+                            <i class="fa fa-plus text-muted text"></i> 查看更多
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="line pull-in"></div>
+
+
+
+            <article class="media">
+                <div class="pull-left">
+                            <span class="fa fa-stack fa-2x">
+                                <i class="fa fa-circle text-primary fa-stack-2x"></i>
+                                <i class="fa fa-group text-white fa-stack-1x"></i>
+                            </span>
+                </div>
+                <div class="media-body">
+                    <a class="h4" ui-sref="home.index.client_page.clientprolist_page.list">
+                        客户经理
+                    </a>
+                    <small class="block m-t-xs">
+                        部门所有客户按照其类型及项目分类
+                    </small>
+
+                </div>
+            </article>
+
+            <div class="line pull-in"></div>
+
+            <div class="media" ng-repeat="manager in group.managers">
+                        <span class="pull-left thumb-sm text-center">
+                            <i class="fa fa-user fa fa-2x text-muted"></i>
+                        </span>
+                <a class="pull-right m-t-sm text-primary" href="###">
+                    <i class="fa fa-arrow-circle-right fa-2x">
+                    </i>
+                </a>
+
+                <div class="media-body">
+                    <div>
+                        <a href="#">
+                            {{manager.managerName}}
+                        </a>
+                    </div>
+                    <small class="text-muted">
+                        最后登录： 2分钟前
+                    </small>
+                </div>
+            </div>
+
+            <article class="media">
+                <div class="media-body">
+                    <div class="media-xs text-center text-muted">
+                        <a href="###" class="btn btn-white btn-xs">
+                            <i class="fa fa-plus text-muted text"></i> 查看更多
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="line pull-in"></div>
+
+
+        </section>
+    </section>
+</div>
+</div>
+</section>

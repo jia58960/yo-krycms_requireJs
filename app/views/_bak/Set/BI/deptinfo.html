@@ -1,0 +1,294 @@
+<!--
+Author  : hmm
+Date    : 20140121
+Describe: deptinfo
+-->
+<script type="text/javascript" src="media/js/selectBox.js"></script>
+<div class="row-fluid">
+    <div class="pull-left" style="padding:10px 14px">
+
+        <h4>	
+			<span ng-if="angular.isDefined(dept.departmentId)">部门编辑</span> 
+			<span ng-if="angular.isDefined(dept.departmentId)">新增部门</span>
+        </h4>
+
+    </div>
+ <!-- 	<if true="">
+			
+		 -->	
+    <div ng-if="!{{dept.departmentName}}" class="pull-right" style="padding:10px 14px">
+        <a class="btn icn-only green" id="depOthBtn" href="#" data-dept="{{dept.departmentId}}"><i class="m-icon-swapleft m-icon-white"></i> 更多设置</a>                          
+    </div>
+   <!--  </if> -->
+</div>
+
+<form name="deptInfoForm" action="" class="form-horizontal" method="post" id="deptInfoForm">
+
+	<h5 class="form-section">基本信息</h5>
+
+	<div class="row-fluid">
+
+        <div class="span6">
+
+			<div class="control-group">
+
+				<label class="control-label">部门名称<span class="required">*</span></label>
+
+				<div class="controls">
+
+					<input type="text" ng-bind="dept.departmentName"  ng-model="dept.departmentName" name="departmentName" class="span10 m-wrap">
+
+				</div>
+
+			</div>
+
+        </div>
+
+		
+		<input type="hidden" name="departmentId" ng-bind="dept.departmentId" ng-model="dept.departmentId" />
+		
+		<div class="span6">
+
+        	<div class="control-group">
+
+				<label class="control-label">部门颜色标识<span class="required">*</span></label>
+
+				<div class="controls">
+
+					<div class="input-append color colorpicker-default" data-color="" data-color-format="rgba">
+
+						<input type="text" class="span6 m-wrap" name="departmentColor" ng-bind="dept.departmentColor" ng-model="dept.departmentColor" />
+
+					</div>
+
+				</div>
+
+			</div>
+
+        </div>
+        
+
+    </div>
+
+	
+	<div class="row-fluid">
+        
+		<div class="span6">
+
+			<div class="control-group">
+
+				<label class="control-label">父级部门</label>
+
+				<div class="controls">
+
+					 <select class="span10 m-wrap" data-placeholder="请选择部门" name="superDepartmentId" id="deptOptList" ng-model="dept.superDepartmentId" ng-options="x.departmentName for x in depts" ng-change="show()">
+				      <option value="">-请选择-</option>
+				    </select>
+
+				</div>
+
+			</div>
+
+        </div>
+
+        <div class="span6">
+
+        	<div class="control-group">
+
+				<label class="control-label">部门排序号<span class="required">*</span></label>
+
+				<div class="controls">
+
+					<input type="text" name="departmentSortNumber" class="span3 m-wrap" ng-bind="dept.departmentSortNumber" ng-model="dept.departmentSortNumber">
+
+				</div>
+
+			</div>
+
+        </div>
+
+    </div>
+
+	
+	<div class="row-fluid">
+
+        <div class="span6">
+
+			<div class="control-group">
+
+				<label class="control-label">部门简述</label>
+
+				<div class="controls">
+
+					<textarea class="span10 m-wrap" name="departmentDescribe" ng-bind="dept.departmentDescribe" ng-model="dept.departmentDescribe" rows="3">
+						{{dept.departmentDescribe}}</textarea>
+
+				</div>
+
+			</div>
+
+        </div>
+
+    </div>
+
+	<h5 class="form-section">职位信息</h5>
+
+   <!--  <div class="row-fluid" ng-if="{{dept.krDepartmentPositionRelations}}">
+
+        <div class="span6" ng-repeat="relation in dept.krDepartmentPositionRelations">
+
+        	<div class="control-group">
+		
+				<label class="control-label">{{relation.krPosition.positionName}}</label>
+		
+				<div class="controls" ng-repeat="relation1 in relation.krPosition.krPositionEmployeeRelations">
+
+				
+						{{relation1.krEmployee.employeeName+';'}}
+				</div>
+		
+			</div>
+
+        </div>
+
+    </div> -->
+	
+	<div class="row-fluid">
+	  
+        <div class="span6">
+	  
+          	<div class="control-group">
+	  
+	  			<label class="control-label">部门主管</label>
+	  
+	  			<div class="controls">
+	  	
+	  				<select class="span10 m-wrap chosen" name="departmentManagerId" multiple="multiple" ng-model="departmentManagerId">
+	  					
+	  				 	<option value="">请选择</option>
+	  					
+	  					<option value="1" selected="selected">王乐</option>						
+	  					
+	  					<option value="2">张轩樵</option>
+	  					
+	  					<option value="3">余杰</option>
+	  					
+	  					<option value="4" selected="selected">贺洁华</option>
+	  
+	  				</select>
+	  	
+	  			</div>
+	  
+	  		</div>
+	  
+      	</div>
+	  
+      	<div class="span6">
+  
+          	<div class="control-group">
+  
+	  			<label class="control-label">部门副主管</label>
+	  
+	  			<div class="controls">
+	  	
+	  				<select class="span10 m-wrap chosen" name="viceDepartmentManagerId" multiple="multiple" ng-model="viceDepartmentManagerId">
+	  
+	  					<option value="">请选择</option>
+	  
+	  					<option value="8">王乐</option>						
+	  
+	  					<option value="9" selected="selected">张轩樵</option>
+	  
+	  					<option value="5">余杰</option>
+	  
+	  					<option value="6">贺洁华</option>
+	  
+	  					<option value="3" selected="selected">董事长</option>
+	  
+	  				</select>
+	  	
+	  			</div>
+  
+  			</div>
+  
+      	</div>
+	  
+	</div>
+
+	<div class="row-fluid">
+	  
+        <div class="span6">
+	  
+          	<div class="control-group">
+	  
+	  			<label class="control-label">部门直管</label>
+	  
+	  			<div class="controls">
+	  	
+	  				<select class="span10 m-wrap chosen" ng-model="directDepartmentManagerId" name="directDepartmentManagerId" multiple="multiple">
+	  					
+	  				 	<option value="">请选择</option>
+	  					
+	  					<option value="1" selected="selected">王乐</option>						
+	  					
+	  					<option value="2">张轩樵</option>
+	  					
+	  					<option value="3">余杰</option>
+	  					
+	  					<option value="4" selected="selected">贺洁华</option>
+	  
+	  				</select>
+	  	
+	  			</div>
+	  
+	  		</div>
+	  
+      	</div>
+	  
+      	<div class="span6">
+  
+          	<div class="control-group">
+  
+	  			<label class="control-label">部门分管</label>
+	  
+	  			<div class="controls">
+	  	
+	  				<select class="span10 m-wrap chosen" data-placeholder="部门分管" name="separateDepartmentManagerId" multiple="multiple" ng-model="separateDepartmentManagerId">
+	  
+	  					<option value="">请选择</option>
+	  
+	  					<option value="8">王乐</option>						
+	  
+	  					<option value="9" selected="selected">张轩樵</option>
+	  
+	  					<option value="5">余杰</option>
+	  
+	  					<option value="6">贺洁华</option>
+	  
+	  					<option value="3" selected="selected">董事长</option>																
+	  
+	  				</select>
+	  	
+	  			</div>
+  
+  			</div>
+  
+      	</div>
+	  
+	</div>
+ 
+
+    <div class="form-actions">
+        <!--  <if true=""> -->
+		  <button  class="btn blue" id="deptSaveBtn" ng-click="updateDept(dept)" >保存</button>
+	<!--ng-show="isSave()" ng-disabled="deptInfoForm.$invalid || isUnchanged(dept)"	</if>
+		<else> -->
+		 <button ng-show="isSubmit()" class="btn blue" id="deptAddBtn" ng-click="insertDept(dept)">提交</button>
+		<!-- </else>
+		 -->
+                     
+        <input class="btn" type="reset" value="重置" ng-disabled="isUnchanged(dept)" />                            
+                     
+    </div>
+
+</form>

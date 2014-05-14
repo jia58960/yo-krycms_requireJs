@@ -1,0 +1,12 @@
+<!--
+Author  : hmm
+Date    : 20140114
+Describe: deptlist_module
+-->
+
+<h2>All Depts</h2>
+<ul>
+  <li ng-repeat="dept in depts">
+    <a ui-sref="depts.detail({deptId:dept.departmentId})">{{dept.departmentName}}</a>
+  </li>
+</ul> 

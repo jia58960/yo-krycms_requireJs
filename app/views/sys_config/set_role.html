@@ -1,0 +1,89 @@
+
+    <div class="row b-b m-l-none m-r-none">
+        <div class="col-sm-4">
+            <h3 class="m-t m-b-none">
+                角色设置
+            </h3>
+            <p class="block text-muted">
+                对角色等的调配等
+            </p>
+        </div>
+        
+    </div>
+    
+        <section class="hbox stretch">
+            <aside id="subNav" class="aside bg-white b-r">
+                <div class="wrapper b-b font-bold">
+                    <a ng-class="{ active: $state.includes('home.index.set_role.list') }" ui-sref="home.index.module.set_role">所有角色</a>
+                </div>
+                <ul class="nav">
+                    <li class="b-b" ng-repeat="role in roles" ui-sref-active="active">
+                        <a ui-sref="home.index.module.set_role.detail({roleId:role.roleId})">
+                            <i class="fa fa-comment icon-muted"></i>
+                            {{role.roleName}}
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <aside>
+                <section class="vbox">
+                    <header class="header bg-white b-b clearfix">
+                        <div class="row m-t-sm">
+                            <div class="col-sm-12 m-b-xs">
+                                <a class="btn btn-sm btn-success" ui-sref="home.index.module.set_role.add">
+                                    <i class="fa fa-plus">
+                                    </i>
+                                    创建角色
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </header>
+                    <section class="scrollable wrapper w-f" ui-view ng-animate="'view'">
+                        <header class="panel-heading">
+                            <div class="input-group text-sm">
+                                <input type="text" placeholder="Search" ng-model="query" class="input-sm form-control">
+                                <div class="input-group-btn">
+                                    <button data-toggle="dropdown" class="btn btn-sm btn-white dropdown-toggle"
+                                            type="button">
+                                        搜索
+                                    </button>
+
+                                </div>
+                            </div>
+                        </header>
+                        <ul class="list-group alt">
+                            <li class="list-group-item" ng-repeat="role2 in roles | filter:query" ui-sref-active="active">
+                                <div class="media">
+                                    <div class="pull-right text-success m-t-sm">
+                                        <i class="fa fa-circle">
+                                        </i>
+                                    </div>
+                                    <div class="media-body">
+                                        <div>
+                                            <a ui-sref="home.index.module.set_role.detail({roleId:role2.roleId})">
+                                                {{role2.roleName}}
+                                            </a>
+                                        </div>
+                                        <small class="text-muted">
+                                            {{role2.roleId}}
+                                        </small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+                    <footer class="footer bg-white b-t">
+                        <div class="row m-t-sm text-center-xs">
+                            <div class="col-sm-4 text-center">
+                                <small class="text-muted inline m-t-sm m-b-sm">
+                                    这里也是可以自定义的区域
+                                </small>
+                            </div>                            
+                        </div>
+                    </footer>
+                </section>
+            </aside>
+        </section>
+    
