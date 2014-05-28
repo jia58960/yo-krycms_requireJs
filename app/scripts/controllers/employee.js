@@ -16,7 +16,7 @@ define(['controllers/controllers', 'services/empl_service','services/dept_servic
                   "bProcessing": true,
                   "bServerSide": true,
                   iDisplayLength: 5,
-                  sAjaxSource: 'http://10.188.192.41:8080/employee/page?deptId='+ data,
+                  sAjaxSource: 'http://10.188.192.200:8000/employee/page?deptId='+ data,
                   sAjaxDataProp: 'aaData',
                   "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
                   sPaginationType: "full_numbers",

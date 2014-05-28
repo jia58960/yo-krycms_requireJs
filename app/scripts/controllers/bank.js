@@ -28,7 +28,7 @@ define(['controllers/controllers', 'services/bank_service', 'services/contact_se
                         "bProcessing": true,
                         "bServerSide": true,
                         "bStateSave": true,
-                        iDisplayLength: 5,
+                        iDisplayLength: 2,
                         sAjaxSource: baseUrl+urlParam ,
                         sAjaxDataProp: 'aaData',
                         "sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
@@ -56,6 +56,13 @@ define(['controllers/controllers', 'services/bank_service', 'services/contact_se
                             this.fnAdjustColumnSizing(true);
                         },
                         "fnCreatedRow":function(nRow, aData, iDataIndex){
+                            //添加查看相关联系人按钮
+                            $('td:eq(3)', nRow).html("<i class='fa fa-trash-o' title='查看相关联系人' ng-click='delContact("+aData.contactId+")' style='cursor: pointer'></i>");
+                            //添加编辑按钮
+                            $('td:eq(3)', nRow).html("<i class='fa fa-trash-o' title='删除' ng-click='delContact("+aData.contactId+")' style='cursor: pointer'></i>");
+                            //添加删除按钮
+                            $('td:eq(3)', nRow).html("<i class='fa fa-trash-o' title='删除' ng-click='delContact("+aData.contactId+")' style='cursor: pointer'></i>");
+                            //添加新增营销计划按钮
                             $('td:eq(3)', nRow).html("<i class='fa fa-trash-o' title='删除' ng-click='delContact("+aData.contactId+")' style='cursor: pointer'></i>");
                             $compile(nRow)($scope);//编译nRow并添加到$scope中使得ng-click能被angularjs识别
                         }
@@ -99,16 +106,20 @@ define(['controllers/controllers', 'services/bank_service', 'services/contact_se
                     contactFactory.delContact(contactId)
                         .success(function (data) {
                             if (data.resultCode == 200) {
-                                //移除元素
-                                $scope.contacts.splice(contactIndex + $scope.currentPage * $scope.contactsPerPage, 1);
-                                //重置当前页
-                                $scope.currentPage = $scope.currentPage > $scope.pageCount() ? $scope.pageCount() : $scope.currentPage;
-                                $scope.currentPage = $scope.currentPage == -1 ? 0 : $scope.currentPage;
                                 toaster.pop('success', "操作成功", "删除联系人成功", 3000);
+                                $scope.status = "lianxiren delete succeed!";
+                                var start = $scope.dataTable.fnSettings()._iDisplayStart;
+                                var total = $scope.dataTable.fnSettings().fnRecordsDisplay();
+                                //删除的数据为当前唯一一行
+                                if((total-start)==1&&start>0){
+                                        $scope.dataTable.fnPageChange( 'previous', true );
+                                }else{
+                                    $scope.dataTable.fnClearTable();
+                                }
                             } else {
                                 toaster.pop('success', "操作失败", "未知异常" + data.resultCode, 3000);
+                                $scope.status = "lianxiren delete unknow error!";
                             }
-                            $scope.status = "lianxiren delete succeed!";
                         })
                         .error(function (error) {
                             $scope.status = 'Unable to contacts : ' + error.message;

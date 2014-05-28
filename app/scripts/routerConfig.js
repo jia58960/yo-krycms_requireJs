@@ -67,7 +67,6 @@ define(['app', 'controllers/menu', 'controllers/resource', 'controllers/login'],
                                     var ctrlName = $stateParams.page + 'Ctrl';
                                     return ctrlName;
                                 }
-
                             }
                         }
                     })

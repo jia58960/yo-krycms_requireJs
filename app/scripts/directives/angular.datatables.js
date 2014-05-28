@@ -108,16 +108,16 @@ define(['directives/module_datatable'],
                         }
                     });
 
-                    var dataTable;
+                    $scope.dataTable;
                     $scope.$watch('dtOptions.sAjaxSource', function (sAjaxSource) {
                         if (!sAjaxSource) return;
                         options.sAjaxSource = sAjaxSource;
                         options.bDestroy = true;
                         options.bAutoWidth = false;//此行代码配合fnInitComplete:function(){this.fnAdjustColumnSizing(true);}可以解决重新绑定数据源后列宽不匹配，
-                        if (dataTable) {
-                            dataTable.dataTable().fnDestroy();
+                        if ($scope.dataTable) {
+                            $scope.dataTable.dataTable().fnDestroy();
                         }
-                        dataTable = $elem.dataTable(options);
+                        $scope.dataTable = $elem.dataTable(options);
                     });
                 }
             }

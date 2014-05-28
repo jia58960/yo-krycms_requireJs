@@ -6,10 +6,10 @@ define(['services/services'],
 
     $http.defaults.useXDomain = true ;
 
-//     var url_prefix = 'http://10.188.199.4:8080/YIXUN_1.5_WEB/';
+     var url_prefix = 'http://10.188.199.4:8080/YIXUN_1.5_WEB/';
 //        var url_prefix = 'http://10.188.192.41:8080/';
-     var url_prefix = 'http://10.188.192.200:8000/';
-     var resourceUrl = 'resource'
+     //var url_prefix = 'http://10.188.192.200:8000/';
+     var resourceUrl = 'resource';
       var resourceFactory = {};
 
     resourceFactory.listMenus = function (resourceTypeId) {
